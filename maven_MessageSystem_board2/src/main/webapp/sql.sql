@@ -9,6 +9,7 @@ create table web_member(
 -- test
 insert into web_member values('test1','test1','test1','test1');
 
+
 -- select
 select * from web_member;
 
