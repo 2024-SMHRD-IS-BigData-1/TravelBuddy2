@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
+import com.smhrd.model.BuddyFinding;
+import com.smhrd.model.BuddyFindingDAO;
 
 @WebServlet("/BuddyFindingService")
 public class BuddyFindingService extends HttpServlet {
@@ -33,8 +35,23 @@ public class BuddyFindingService extends HttpServlet {
 		int lng = Integer.parseInt(request.getParameter("lng"));
 		String title = multi.getParameter("title");
 		String content = multi.getParameter("cotent");
+		String calender = multi.getParameter("calender");
 		String writer = multi.getParameter("writer");
 		String filename = multi.getFilesystemName("filename");
+		
+		System.out.println(place+lat+lng+title+content+calender+writer+filename);
+		
+		BuddyFinding buddyFinding = new BuddyFinding(place, lat, lng, title, content, calender, writer, filename);
+		
+		int cnt = new BuddyFindingDAO().insertBF(buddyFinding);
+		
+		if(cnt > 0) {
+			System.out.println("파일 업로드 성공!");
+		}else {
+			System.out.println("파일 업로드 실패...");
+		}
+		
+		response.sendRedirect("Main.jsp");
 		
 	}
 

@@ -23,6 +23,7 @@ public class BuddyFinding {
 	@NonNull private String content; // 글
 	@NonNull private String calender; // 여행일자
 	@NonNull private String writer; // 닉네임
+	@NonNull private String filename; // 사진파일
 	private String date; // 글작성일
 
 }
