@@ -1,1 +1,23 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.smhrd.db.BuddyFindingMapper">
+  
+  <insert id="insertBF" parameterType="buddyFinding">
+  	insert into finding_buddy values(buddy_idx_seq.nextval, #{place_name}, #{lat}, #{lng}, #{title}, #{content}, #{travel_dt}, #{mem_id}, #{created_at})
+  </insert>
+  
+  <insert id="insertBF" parameterType="buddyFinding">
+  	insert into finding_buddy_file values(buddy_idx_seq.nextval, #{file_name}, #{file_size}, #{file_ext}, #{uploaded_at}, buddy_idx_seq.nextval)
+  </insert>
+  
+  <delete id="deleteBF">
+  	delete from finding_buddy where num=#{num}
+  </delete>
+  
+  <delete id="deleteBF">
+  	delete from finding_buddy_file where num=#{num}
+  </delete>
+  
+</mapper>
