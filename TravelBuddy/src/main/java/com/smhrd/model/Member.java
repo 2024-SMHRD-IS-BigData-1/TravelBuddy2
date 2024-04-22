@@ -30,12 +30,11 @@ public class Member {
 	private String email;
 	private String date;
 	private String role;
+	
 	public Member idCheck(String inputE) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 	public Member login(Member member) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 	
