@@ -1,1 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.smhrd.db.MemberMapper">
+  
+  <insert id = "join" parameterType="Member">
+    insert into web_member values(#{id}, #{pw}, #{name},#{nick},#{birthdate},#{gender},#{phone},#{email},#{date})
+  </insert>
+  
+  <select id = "Login" parameterMap="Member" resultType="com.smhrd.model.Member">
+  select * from web_memeber where id=#{id} and pw=#{pw} 
+  
+  </select>
+  
+  <update id="update" parameterType = "Member">
+    update web_member set pw=#{pw}, phone=#{phone}
+  	where id=#{id}
+  </update>
+  
+  <select id="memberList" resultType="Member">
+	select * from web_member where not(id='admin')  
+  </select>
+  
+  <delete id = "deleteMember" parameterType="String" >
+     delete from web_member where id=#{id}
+  </delete>
+  
+  <select id = "idCheck" parameterType="String" resultType="Member">
+     select * from web_member where id=#{id}
+  </select>
+  
+  </mapper>
+  
