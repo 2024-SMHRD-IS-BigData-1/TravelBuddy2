@@ -8,8 +8,6 @@
 </head>
 <body>
 
-	<a href="Join.jsp"><button>회원가입</button></a>
-	<a href="Login.jsp"><button>로그인</button></a>
 	
 
 </body>
