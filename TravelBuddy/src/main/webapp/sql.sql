@@ -1,1 +1,1 @@
-select * from members;
+select * from FINDING_BUDDY;
