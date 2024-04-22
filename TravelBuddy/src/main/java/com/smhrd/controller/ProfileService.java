@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 public class ProfileService extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// 프로필 서비스
-	
+		int naxSixe = 10*1024*1024;
 	}
 
 }

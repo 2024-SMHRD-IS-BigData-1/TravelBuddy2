@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<insert id="follow" parameterType="Member">
+  	insert into web_member values(#{my_id}, #{follow_id})
+  </insert>

@@ -1,5 +1,6 @@
 package com.smhrd.model;
 
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -8,19 +9,17 @@ import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-@AllArgsConstructor
-@RequiredArgsConstructor
+
 @NoArgsConstructor
 @Getter
 @Setter
 @ToString
-
-public class Community {
+public class Follow {
 	
-	private String content;
-	private String date;
-	@NonNull String id;
-	private String category;
+	@NonNull
+	private String my_id;
+	@NonNull
+	private String follow_id;
 	
-
+	
 }
