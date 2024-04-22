@@ -9,11 +9,14 @@
 <body>
 <h5>로그인</h5>
 
+<<<<<<< HEAD
+=======
 <input type="text" name="id" placeholder="Id을 입력하세요"><br>
 <input type="password" name="pw" placeholder="PW를 입력하세요"><br>
 <input type="submit" name="Login" value="LogIn" class="button fit">
 </form>
 
+>>>>>>> branch 'master' of https://github.com/2024-SMHRD-IS-BigData-1/TravelBuddy2
 	
 <h5>회원가입</h5>
 
