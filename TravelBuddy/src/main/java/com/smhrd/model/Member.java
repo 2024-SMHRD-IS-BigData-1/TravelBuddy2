@@ -1,33 +1,49 @@
 package com.smhrd.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
+@AllArgsConstructor
+@RequiredArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
+@ToString
+
+
 public class Member {
 	
+	@NonNull
 	private String id;
+	@NonNull
 	private String pw;
 	private String name;
 	private String nick;
 	private String birthdate;
 	private String gender;
 	private String phone;
-	private String eamil;
+	private String email;
 	private String date;
 	private String role;
+	public Member idCheck(String inputE) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	public Member login(Member member) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
-	public Member(String id, String pw, String name, String nick, String birthdate, String gender, String phone,
-			String eamil, String date, String role) {
-		super();
-		this.id = id;
-		this.pw = pw;
-		this.name = name;
-		this.nick = nick;
-		this.birthdate = birthdate;
-		this.gender = gender;
-		this.phone = phone;
-		this.eamil = eamil;
-		this.date = date;
-		this.role = role;
 	}
 	
 	
+	
+	
+	
 
-}
+

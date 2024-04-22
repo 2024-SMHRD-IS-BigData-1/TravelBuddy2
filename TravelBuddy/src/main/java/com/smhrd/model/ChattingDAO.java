@@ -1,5 +1,14 @@
 package com.smhrd.model;
 
-public class ChattingDAO {
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
 
-}
+import com.smhrd.db.SqlSessionManager;
+
+public class ChattingDAO {
+	
+	SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSession();
+
+	public void chatting() {
+		SqlSession session = sqlSessionFactory.openSession(true);
+}}
