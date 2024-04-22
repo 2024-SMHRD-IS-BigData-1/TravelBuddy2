@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 public class CommunityDelete extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// 커뮤니티 글 삭제
+		
 	
 	
 	}
