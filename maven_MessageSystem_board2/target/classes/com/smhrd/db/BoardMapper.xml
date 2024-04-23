@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <!DOCTYPE mapper
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
@@ -7,10 +6,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="com.smhrd.db.BoardMapper">
 
 	<insert id="insertBoard" parameterType="Board">
-		insert into web_board values(
-		num_board.nextval, #{title},#{writer},#{filename},#{content});
-	
+		INSERT INTO finding_buddy (buddy_idx, place_name, lat, lng, title, content, travel_dt,
+		mem_id, created_at)
+		VALUES (buddy_idx_seq.nextval, #{place_name}, #{lat}, #{lng}, #{title}, #{content}, #{travel_dt},
+		#{mem_id}, sysdate)
 	</insert>
-
 
 </mapper>

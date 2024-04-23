@@ -27,14 +27,17 @@ public class Member {
 	private String gender;
 	private String phone;
 	private String email;
+<<<<<<< HEAD
 	
+=======
+	private String date;
+	private String role;
+>>>>>>> branch 'master' of https://github.com/2024-SMHRD-IS-BigData-1/TravelBuddy2
 	
 	public Member idCheck(String inputE) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 	public Member login(Member member) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 	

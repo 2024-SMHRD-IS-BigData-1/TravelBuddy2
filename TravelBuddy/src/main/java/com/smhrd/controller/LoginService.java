@@ -9,10 +9,14 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.smhrd.model.Member;
+import com.smhrd.model.MemberDAO;
 
 @WebServlet("/LoginService")
 public class LoginService extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		System.out.println("로그인 페이지 입성!");
+		
 		request.setCharacterEncoding("UTF-8");
 		
 		String id = request.getParameter("id");
@@ -20,7 +24,7 @@ public class LoginService extends HttpServlet {
 		
 		Member member = new Member(id,pw);
 		
-		Member loginMember = new Member().login(member);
+		Member loginMember = new MemberDAO().login(member);
 	
 		if(loginMember != null) {
 			System.out.println("로그인 성공");
