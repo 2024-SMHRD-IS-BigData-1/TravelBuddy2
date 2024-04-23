@@ -9,12 +9,12 @@ import com.smhrd.db.SqlSessionManager;
 
 public class MemberDAO {
 	
-	SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSession();
+SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSession();
 
 	
 	public int join(Member member) {
 		SqlSession session = sqlSessionFactory.openSession(true);
-		int cnt = session.insert("com.smhrd.db.Mapper.join",member);
+		int cnt = session.insert("com.smhrd.db.MemberMapper.join",member);
 		session.close();
 		return cnt;
 	}

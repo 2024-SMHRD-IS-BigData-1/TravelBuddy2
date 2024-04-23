@@ -64,7 +64,7 @@ style 코드 압축
               <p>TravelBuddy는 해외여행동반 사이트입니다<div class="br" style="color: black;">설명: 어쩌고 저쩌고</div></p>
             </div>
             <div class="login-wrap p-4 p-md-5">
-              <form action="#" class="signin-form">
+              <form action="#" class="signin-form" method="post">
                 <div class="form-group mb-3">
                   <label class="label" for="name" style="color: black;">아이디</label>
                   <input type="text" class="form-control">
@@ -73,6 +73,7 @@ style 코드 압축
                   <label class="label" for="password" style="color: black;">비밀번호</label>
                   <input type="password" class="form-control">
                 </div>
+                </form>
                 <div class="form-group">
                   <button type="submit" class="form-control btn btn-primary rounded submit px-3">로그인</button>
                 </div>
@@ -88,7 +89,7 @@ style 코드 압축
                   </div>
                 </div>
               </form>
-              <p class="text-center" style="color: black;">처음 오시나요? <a data-toggle="tab" href="#signup">&nbsp;회원가입</a></p>
+              <p class="text-center" style="color: black;">처음 오시나요? <a data-toggle="tab" href="Join.jsp">&nbsp;회원가입</a></p>
             </div>
           </div>
         </div>

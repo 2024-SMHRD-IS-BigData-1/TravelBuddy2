@@ -21,15 +21,14 @@ public class MemberUpdateService extends HttpServlet {
 		String id = request.getParameter("id");
 		String pw = request.getParameter("pw");
 		String name = request.getParameter("name");
-		String nick = request.getParameter("nick");
 		String birthdate = request.getParameter("birthdate");
 		String gender = request.getParameter("gender");
-		String phone = request.getParameter("phone");
 		String email = request.getParameter("email");
-		String date = request.getParameter("date");
-		String role = request.getParameter("role");
+		String phone= request.getParameter("phone");
 		
-		Member member = new Member(id, pw, name,nick,birthdate,gender,phone,email,date,role);
+		
+		
+		Member member = new Member(id, pw, name,birthdate,gender,email,phone);
 		System.out.println(member.toString());
 		
 		int cnt = new MemberDAO().update(member);

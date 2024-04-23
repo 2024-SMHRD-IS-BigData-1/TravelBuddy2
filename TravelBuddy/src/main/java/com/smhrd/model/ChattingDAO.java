@@ -9,6 +9,6 @@ public class ChattingDAO {
 	
 	SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSession();
 
-	public void chatting() {
+	public void insertchatting(chatting) {
 		SqlSession session = sqlSessionFactory.openSession(true);
 }}

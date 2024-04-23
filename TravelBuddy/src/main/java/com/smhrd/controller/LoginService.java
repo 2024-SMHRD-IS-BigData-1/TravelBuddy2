@@ -30,7 +30,7 @@ public class LoginService extends HttpServlet {
 			System.out.println("로그인실패");
 		}
 		
-		response.sendRedirect("Main.jsp");
+		response.sendRedirect("Login.jsp");
 	}
 
 }

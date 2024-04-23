@@ -23,13 +23,12 @@ public class Member {
 	@NonNull
 	private String pw;
 	private String name;
-	private String nick;
 	private String birthdate;
 	private String gender;
-	private String phone;
 	private String email;
-	private String date;
-	private String role;
+	private String phone;
+	
+	
 	public Member idCheck(String inputE) {
 		// TODO Auto-generated method stub
 		return null;
