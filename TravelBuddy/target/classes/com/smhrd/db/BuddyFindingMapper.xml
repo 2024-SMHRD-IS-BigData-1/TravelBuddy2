@@ -5,19 +5,16 @@
 <mapper namespace="com.smhrd.db.BuddyFindingMapper">
   
   <insert id="insertBF" parameterType="buddyFinding">
-  	insert into finding_buddy values(buddy_idx_seq.nextval, #{place_name}, #{lat}, #{lng}, #{title}, #{content}, #{travel_dt}, #{mem_id}, #{created_at})
-  </insert>
-  
-  <insert id="insertBF" parameterType="buddyFinding">
-  	insert into finding_buddy_file values(buddy_idx_seq.nextval, #{file_name}, #{file_size}, #{file_ext}, #{uploaded_at}, buddy_idx_seq.nextval)
+  	INSERT INTO finding_buddy (buddy_idx, place_name, lat, lng, title, content, travel_dt,
+		mem_id, created_at)
+		VALUES (buddy_idx_seq.nextval, #{place_name}, #{lat}, #{lng}, #{title}, #{content}, #{travel_dt},
+		#{mem_id}, sysdate)
   </insert>
   
   <delete id="deleteBF">
-  	delete from finding_buddy where num=#{num}
+  	delete from finding_buddy where buddy_idx=#{buddy_idx}
   </delete>
   
-  <delete id="deleteBF">
-  	delete from finding_buddy_file where num=#{num}
-  </delete>
+
   
 </mapper>

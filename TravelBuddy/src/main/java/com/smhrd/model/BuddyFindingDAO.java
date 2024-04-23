@@ -17,9 +17,9 @@ public class BuddyFindingDAO {
 	}
 	
 	// 게시글 삭제
-	public void deleteBF(int num) {
+	public void deleteBF(int buddy_idx) {
 		SqlSession session = sqlSessionFactory.openSession(true);
-		session.delete("com.smhrd.db.BuddyFindingMapper.deleteBF", num);
+		session.delete("com.smhrd.db.BuddyFindingMapper.deleteBF", buddy_idx);
 		session.close();
 	}
 

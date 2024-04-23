@@ -8,22 +8,19 @@ import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
 @AllArgsConstructor
-@RequiredArgsConstructor
-@NoArgsConstructor
+
 @Getter
 @Setter
 
 public class BuddyFinding {
 	
-	private int num; // 식별번호
-	@NonNull private String place; // 여행지
-	@NonNull private int lat; // 위도
-	@NonNull private int lng; // 경도
-	@NonNull private String title; // 제목
-	@NonNull private String content; // 글
-	@NonNull private String calender; // 여행일자
-	@NonNull private String writer; // 닉네임
-	@NonNull private String filename; // 사진파일
-	private String date; // 글작성일
+	private int buddy_idx;
+	 private String place_name;
+	 private String lat;
+	 private String lng;
+	 private String title;
+	 private String content;
+	 private String travel_dt;
+	 private String mem_id;
 
 }
