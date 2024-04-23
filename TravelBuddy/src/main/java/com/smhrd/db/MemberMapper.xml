@@ -5,10 +5,11 @@
 <mapper namespace="com.smhrd.db.MemberMapper">
   
   <insert id = "join" parameterType="Member">
-    insert into Member values(#{id},#{pw},#{name},#{birthdate},#{gender},#{email},#{phone})
+    insert into Members(MEM_ID, MEM_PW, MEM_NAME, MEM_BIRTHDATE, MEM_GENDER, MEM_PHONE, MEM_EMAIL) 
+values(#{id},#{pw},#{name},#{birthdate},#{gender},#{phone} ,#{email})
   </insert>
   
-  <select id = "Login" parameterMap="Member" resultType="com.smhrd.model.Member">
+  <select id = "Login" parameterType="Member" resultType="Member">
     select * from web_memeber where id=#{id} and pw=#{pw} 
   </select>
   

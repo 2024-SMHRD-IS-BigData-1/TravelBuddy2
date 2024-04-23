@@ -258,30 +258,30 @@ option {
 				<div class="field birth">
 					<b>생년월일</b>
 					<div>
-						<input type="number" name=birthdate placeholder="연도(4자)">
-						<select>
+						<input type="number" name=year placeholder="연도(4자)">
+						<select name="month">
 							<option value="">월</option>
-							<option value="">1월</option>
-							<option value="">2월</option>
-							<option value="">3월</option>
-							<option value="">4월</option>
-							<option value="">5월</option>
-							<option value="">6월</option>
-							<option value="">7월</option>
-							<option value="">8월</option>
-							<option value="">9월</option>
-							<option value="">10월</option>
-							<option value="">11월</option>
-							<option value="">12월</option>
-						</select> <input type="number" placeholder="일">
+							<option value="1">1월</option>
+							<option value="2">2월</option>
+							<option value="3">3월</option>
+							<option value="4">4월</option>
+							<option value="5">5월</option>
+							<option value="6">6월</option>
+							<option value="7">7월</option>
+							<option value="8">8월</option>
+							<option value="9">9월</option>
+							<option value="10">10월</option>
+							<option value="11">11월</option>
+							<option value="12">12월</option>
+						</select> <input type="number" name="date" placeholder="일">
 					</div>
 				</div>
 
 				<div class="field gender">
 					<b>성별</b>
 					<div>
-						<label><input type="radio" name="gender">남자</label> <label><input
-							type="radio" name="gender">여자</label>
+						<label><input type="radio" name="gender" value="M">남자</label> <label><input
+							type="radio" name="gender" value="F">여자</label>
 					</div>
 				</div>
 

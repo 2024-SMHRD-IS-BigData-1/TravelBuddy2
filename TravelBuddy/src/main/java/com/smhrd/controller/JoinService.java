@@ -19,14 +19,17 @@ public class JoinService extends HttpServlet {
 		String id = request.getParameter("id");
 		String pw = request.getParameter("pw");
 		String name = request.getParameter("name");
-		String birthdate = request.getParameter("birthdate");
+		String year = request.getParameter("year");
+		String month = request.getParameter("month");
+		String date = request.getParameter("date");
 		String gender = request.getParameter("gender");
 		String email = request.getParameter("email");
 		String phone = request.getParameter("phone");
 		
+		String birthdate = year + month + date;
 		
         Member member = new Member(id, pw, name,birthdate,gender,email,phone);
-//        System.out.println("[JOIN] : " + member.toString());
+        System.out.println("[JOIN] : " + member.toString());
 		
 		int cnt = new MemberDAO().join(member);
 		
