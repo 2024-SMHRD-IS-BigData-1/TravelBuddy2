@@ -1,0 +1,90 @@
+<<<<<<< HEAD
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+	<typeAliases>
+		<typeAlias type="com.smhrd.model.Member" alias="Member"/>
+		<typeAlias type="com.smhrd.model.BuddyFinding" alias="BuddyFinding"/>
+		<typeAlias type="com.smhrd.model.Community" alias="Community"/>
+		<typeAlias type="com.smhrd.model.Profile" alias="Profile"/>
+		<typeAlias type="com.smhrd.model.Matching" alias="Matching"/>
+		<typeAlias type="com.smhrd.model.Chatting" alias="Chatting"/>
+		
+	</typeAliases>
+
+
+	<!-- 환경설정(계정, driver, url...) -->
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver" value="oracle.jdbc.driver.OracleDriver" />
+				<property name="url" value="jdbc:oracle:thin:@project-db-campus.smhrd.com:1524:xe" />
+				<property name="username" value="campus_24IS_BIG3_P2_5" />
+				<property name="password" value="smhrd5" />
+			</dataSource>
+		</environment>
+	</environments>
+	
+	<!-- SQL문들 정의해주는 mapper.xml을 계속해서 만들건데 어디에 있는지 경로를 지정해주는 태그 -->
+	<mappers>
+		<mapper resource="com/smhrd/db/MemberMapper.xml" />
+		<mapper resource="com/smhrd/db/BuddyFindingMapper.xml" />
+		<mapper resource="com/smhrd/db/CommunityMapper.xml" />
+		<mapper resource="com/smhrd/db/prifileMapper.xml" />
+		<mapper resource="com/smhrd/db/MatchingMapper.xml" />
+		<mapper resource="com/smhrd/db/ChattingMapper.xml" />
+	</mappers>
+	
+	
+	
+	
+=======
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+	<typeAliases>
+		<typeAlias type="com.smhrd.model.Member" alias="Member"/>
+		<typeAlias type="com.smhrd.model.BuddyFinding" alias="BuddyFinding"/>
+		<typeAlias type="com.smhrd.model.Community" alias="Community"/>
+		<typeAlias type="com.smhrd.model.Profile" alias="Profile"/>
+		<typeAlias type="com.smhrd.model.Matching" alias="Matching"/>
+		<typeAlias type="com.smhrd.model.Chatting" alias="Chatting"/>
+		
+	</typeAliases>
+
+
+	<!-- 환경설정(계정, driver, url...) -->
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver" value="oracle.jdbc.driver.OracleDriver" />
+				<property name="url" value="jdbc:oracle:thin:@project-db-campus.smhrd.com:1524:xe" />
+				<property name="username" value="campus_24IS_BIG3_P2_5" />
+				<property name="password" value="smhrd5" />
+			</dataSource>
+		</environment>
+	</environments>
+	
+	<!-- SQL문들 정의해주는 mapper.xml을 계속해서 만들건데 어디에 있는지 경로를 지정해주는 태그 -->
+	<mappers>
+		<mapper resource="com/smhrd/db/MemberMapper.xml" />
+		<mapper resource="com/smhrd/db/BuddyFindingMapper.xml" />
+		<mapper resource="com/smhrd/db/CommunityMapper.xml" />
+		<mapper resource="com/smhrd/db/prifileMapper.xml" />
+		<mapper resource="com/smhrd/db/MatchingMapper.xml" />
+		<mapper resource="com/smhrd/db/ChattingMapper.xml" />
+	</mappers>
+	
+	
+	
+	
+>>>>>>> branch 'master' of https://github.com/2024-SMHRD-IS-BigData-1/TravelBuddy2
+</configuration>
