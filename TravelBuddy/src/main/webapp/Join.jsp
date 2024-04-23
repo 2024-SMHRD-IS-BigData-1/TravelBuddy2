@@ -186,8 +186,9 @@ option {
             <div class="field">
                 <b>아이디</b>
                 <div class="id-input">
-                    <input type="text"  name ="id" placeholder="아이디 입력 (6~20자)">
-                    <input type="button" value="중복확인">
+                    <input type="text"  name ="id" id="inputE" placeholder="아이디 입력 (6~20자)">
+                    <input type="button" value="중복확인" onclick="checkE()">
+                    <span id="checkE"></span>
                 </div>
             </div>
             <div class="field">
@@ -264,6 +265,46 @@ option {
             </div>
         </div>
     </div>
+    
+    <script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/skel.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+	<script src="assets/js/main.js"></script>
+	<script type="text/javascript">
+		function checkE(){
+			var inputE = $("#inputE").val()
+			console.log(inputE)
+			// JSON(JavaScript Object Notation)
+			// {key1 : value1, key2 : value, {key3 : value3}}
+			$.ajax(
+				{
+					// 어디로 요청할건지
+					url : "IDcheck",
+					// 어떤 데이터를 보낼건지
+					data : {'inputE' : inputE},
+					// 어떤 방식으로 요청할건지
+					type : 'get',
+					// 성공했을 때 / 실패했을 때 어떻게 처리할건지
+					success : function(data){
+						if(data=='true'){
+							$('#checkE').html('사용 가능한 이메일입니다~')
+						}else{
+							$('#checkE').html('사용 불가능한 이메일입니다~')
+						}
+					},
+					error : function(){
+						alert("통신실패!")
+					}
+				}		
+			)
+			
+		}
+	
+	
+	</script>
 
 </body>
 </html>   
