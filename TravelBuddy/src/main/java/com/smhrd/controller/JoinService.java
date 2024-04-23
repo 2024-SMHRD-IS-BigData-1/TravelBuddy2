@@ -28,7 +28,7 @@ public class JoinService extends HttpServlet {
 		
 		String birthdate = year + month + date;
 		
-        Member member = new Member(id, pw, name,birthdate,gender,email,phone);
+        Member member = new Member(id,pw,name,birthdate,gender,email,phone);
         System.out.println("[JOIN] : " + member.toString());
 		
 		int cnt = new MemberDAO().join(member);

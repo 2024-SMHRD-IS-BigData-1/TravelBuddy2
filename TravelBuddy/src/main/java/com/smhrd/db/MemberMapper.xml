@@ -5,15 +5,15 @@
 <mapper namespace="com.smhrd.db.MemberMapper">
   
   <insert id = "join" parameterType="Member">
-    insert into Members(MEM_ID, MEM_PW, MEM_NAME, MEM_BIRTHDATE, MEM_GENDER, MEM_PHONE, MEM_EMAIL) 
-values(#{id},#{pw},#{name},#{birthdate},#{gender},#{phone} ,#{email})
+    insert into Members(MEM_ID, MEM_PW, MEM_NAME, MEM_BIRTHDATE, MEM_GENDER,MEM_PHONE,MEM_EMAIL) 
+    values(#{id},#{pw},#{name},#{birthdate},#{gender},#{phone},#{email})
   </insert>
   
   <select id = "Login" parameterType="Member" resultType="Member">
     select * from web_memeber where id=#{id} and pw=#{pw} 
   </select>
   
-  <update id="update" parameterType = "Member">
+  <update id="update" parameterType ="Member">
     update web_member set pw=#{pw}, phone=#{phone}
   	where id=#{id}
   </update>
