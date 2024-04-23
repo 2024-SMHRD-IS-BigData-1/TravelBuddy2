@@ -4,8 +4,8 @@
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.smhrd.db.MemberMapper">
   
-  <insert id = "join" parameterType="com.smhrd.model.Member">
-    insert into Member values(#{id}, #{pw}, #{name},#{birthdate},#{gender},#{email},#{phone})
+  <insert id = "join" parameterType="Member">
+    insert into Member values(#{id},#{pw},#{name},#{birthdate},#{gender},#{email},#{phone})
   </insert>
   
   <select id = "Login" parameterMap="Member" resultType="com.smhrd.model.Member">

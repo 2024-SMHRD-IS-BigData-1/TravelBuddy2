@@ -31,10 +31,8 @@ public class JoinService extends HttpServlet {
 		int cnt = new MemberDAO().join(member);
 		
 		if(cnt > 0) {
-			
-			response.sendRedirect("JoinSuccess.jsp");
+			response.sendRedirect("Login.jsp");
 		}else {
-			System.out.println("회원가입 실패!");
 			response.sendRedirect("Join.jsp");
 		}
 	}
