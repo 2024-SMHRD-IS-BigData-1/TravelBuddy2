@@ -10,13 +10,6 @@
 	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700&display=swap">
 <link rel="stylesheet" href="css/post.css">
 <style>
-<
-style
->
-@import
-	url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700&display=swap')
-	;
-
 * {
 	box-sizing: border-box;
 	outline: none;
@@ -118,11 +111,6 @@ th {
 	width: 100%;
 	margin-bottom: 20px;
 }
-
-#countrySelect {
-	width: 200px;
-}
-</style>
 </style>
 </head>
 <body class="box-body">
@@ -130,8 +118,14 @@ th {
 		<div id="wrap">
 			<h2>게시글 작성</h2>
 			<form action="BuddyFindingService" method="post">
-				<input type="hidden" value="board_write" name="command">
-				<input type="hidden" name="mem_id" value="<%= mem_id %>">
+				<%
+				// 로그인이 성공한 상황이라고 가정하고 mem_id를 "han"으로 설정
+				String mem_id = "han";
+				%>
+
+				<input type="hidden" value="board_write" name="command"> <input
+					type="hidden" name="mem_id" value="<%=mem_id%>">
+
 				<table>
 					<tr>
 						<th>제목</th>
@@ -141,7 +135,6 @@ th {
 						<th>여행날짜</th>
 						<td><input type="date" name="travel_dt"></td>
 					</tr>
-
 					<tr>
 						<th>내용</th>
 						<td><textarea cols="50" rows="15" name="content"></textarea></td>
@@ -159,8 +152,8 @@ th {
 							<div id="map" style="width: 100%; height: 400px;"></div>
 							<div id="selectedLocation">
 								선택한 위치: <span id="address"></span>
-							</div> <input type="hidden" id="latInput" name="latitude"> <input
-							type="hidden" id="lngInput" name="longitude">
+							</div> <input type="hidden" id="latInput" name="lat"> <input
+							type="hidden" id="lngInput" name="lng">
 						</td>
 					</tr>
 					<tr>
@@ -174,17 +167,7 @@ th {
 			</form>
 		</div>
 	</div>
-
 	<script>
-		function populateCountrySelect(data) {
-			var select = document.getElementById('countrySelect');
-			data.forEach(function(country) {
-				var option = document.createElement('option');
-				option.text = country;
-				select.add(option);
-			});
-		}
-
 		var map;
 		var marker = null;
 
@@ -196,18 +179,13 @@ th {
 					lng : 126.9780
 				}
 			});
-
 			map.addListener('click', function(event) {
 				placeMarker(event.latLng);
 				getAddress(event.latLng);
-
 				var lat = event.latLng.lat();
 				var lng = event.latLng.lng();
-
 				document.getElementById('latInput').value = lat;
 				document.getElementById('lngInput').value = lng;
-
-				// 선택한 위치의 주소를 가져와서 여행장소 입력란에 넣기
 				getPlaceName(event.latLng);
 			});
 		}
@@ -245,7 +223,6 @@ th {
 		function searchLocation() {
 			var geocoder = new google.maps.Geocoder();
 			var address = document.getElementById('searchInput').value;
-
 			geocoder.geocode({
 				'address' : address
 			}, function(results, status) {
@@ -253,14 +230,10 @@ th {
 					map.setCenter(results[0].geometry.location);
 					placeMarker(results[0].geometry.location);
 					getAddress(results[0].geometry.location);
-
 					var lat = results[0].geometry.location.lat();
 					var lng = results[0].geometry.location.lng();
-
 					document.getElementById('latInput').value = lat;
 					document.getElementById('lngInput').value = lng;
-
-					// 선택한 위치의 주소를 가져와서 여행장소 입력란에 넣기
 					getPlaceName(results[0].geometry.location);
 				} else {
 					alert('위치를 입력해주세요.');
@@ -268,7 +241,6 @@ th {
 			});
 		}
 
-		// 선택한 위치의 주소를 가져와서 여행장소 입력란에 넣는 함수
 		function getPlaceName(latLng) {
 			var geocoder = new google.maps.Geocoder();
 			geocoder
