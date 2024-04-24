@@ -17,6 +17,9 @@ import com.smhrd.model.Member;
 @WebServlet("/AddCommentServlet")
 public class AddCommentServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // 요청 파라미터의 인코딩 설정
+        request.setCharacterEncoding("UTF-8");
+        
         // 로그인 상태 확인
         HttpSession session = request.getSession();
         Member loginMember = (Member) session.getAttribute("loginMember");
