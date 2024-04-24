@@ -6,9 +6,6 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import com.smhrd.db.SqlSessionManager;
 
 public class ChattingDAO {
-	
-	SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSession();
 
-	public void insertchatting(chatting) {
-		SqlSession session = sqlSessionFactory.openSession(true);
-}}
+	
+}

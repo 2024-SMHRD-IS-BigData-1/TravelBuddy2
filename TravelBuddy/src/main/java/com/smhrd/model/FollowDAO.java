@@ -16,15 +16,15 @@ public class FollowDAO {
     }
 
     public void insertFollow(Follow follow) {
-        try (Connection conn = getConnection();
-             PreparedStatement pstmt = conn.prepareStatement("INSERT INTO follow (my_id, follow_id) VALUES (?, ?)")) {
-
-            pstmt.setString(1, follow.getMy_id());
-            pstmt.setString(2, follow.getFollow_id());
-            pstmt.executeUpdate();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+//        try (Connection conn = getConnection();
+//             PreparedStatement pstmt = conn.prepareStatement("INSERT INTO follow (my_id, follow_id) VALUES (?, ?)")) {
+//
+//            pstmt.setString(1, follow.getMy_id());
+//            pstmt.setString(2, follow.getFollow_id());
+//            pstmt.executeUpdate();
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        }
     }
 
     public static void main(String[] args) {

@@ -35,11 +35,7 @@ public class LoginService extends HttpServlet {
 			System.out.println("로그인 실패..");
 		}
 
-<<<<<<< HEAD
-		
-=======
-		response.sendRedirect("Main.jsp");
->>>>>>> branch 'master' of https://github.com/2024-SMHRD-IS-BigData-1/TravelBuddy2
+//		response.sendRedirect("Main.jsp");
 
 		
 	}
