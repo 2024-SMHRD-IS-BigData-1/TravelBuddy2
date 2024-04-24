@@ -34,7 +34,7 @@
 		resultType="com.smhrd.model.BuddyFinding">
 		SELECT *
 		FROM finding_buddy
-		WHERE buddy_idx = #{buddy_idx} ORDER BY created_at DESC;
+		WHERE buddy_idx = #{buddy_idx} ORDER BY created_at DESC
 	</select>
 
 
