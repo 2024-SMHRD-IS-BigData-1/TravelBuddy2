@@ -3,18 +3,35 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.smhrd.db.BuddyFindingMapper">
-  
-  <insert id="insertBF" parameterType="BuddyFinding">
-  	INSERT INTO finding_buddy (buddy_idx, place_name, lat, lng, title, content, travel_dt,
-		mem_id, created_at)
-		VALUES (buddy_idx_seq.nextval, #{place_name}, #{lat}, #{lng}, #{title}, #{content}, #{travel_dt},
-		#{mem_id}, sysdate)
-  </insert>
-  
-  <delete id="deleteBF">
-  	delete from finding_buddy where buddy_idx=#{buddy_idx}
-  </delete>
-  
 
-  
+	<insert id="insertBF" parameterType="BuddyFinding">
+		INSERT INTO finding_buddy
+		(buddy_idx, place_name, lat, lng, title, content,
+		travel_dt,
+		mem_id,
+		created_at)
+		VALUES (buddy_idx_seq.nextval,
+		#{place_name}, #{lat},
+		#{lng}, #{title}, #{content}, #{travel_dt},
+		#{mem_id}, sysdate)
+	</insert>
+
+	<delete id="deleteBF">
+		delete from finding_buddy where
+		buddy_idx=#{buddy_idx}
+	</delete>
+	<select id="selectByMemId" parameterType="String"
+		resultType="com.smhrd.model.BuddyFinding">
+		SELECT buddy_idx, place_name, lat, lng, title, content,
+		travel_dt, mem_id
+		FROM finding_buddy WHERE mem_id = #{mem_id}
+	</select>
+	<select id="showBoard" resultType="com.smhrd.model.BuddyFinding">
+		SELECT *
+		FROM finding_buddy
+	</select>
+
+
+
+
 </mapper>
