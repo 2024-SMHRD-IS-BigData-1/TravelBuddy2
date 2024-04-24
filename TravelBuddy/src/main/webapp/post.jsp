@@ -262,7 +262,35 @@ th {
                 %>
             </div>
 
-            <!-- 댓글 목록 -->
+             <div id="comments">
+                <h3>댓글 목록</h3>
+                <%-- 댓글 목록 출력하는 부분 --%>
+                <%
+                // CommentDAO 인스턴스 생성
+                CommentDAO commentDAO = new CommentDAO();
+
+                // 댓글 목록 가져오기
+                List<Comment> comments = commentDAO.getCommentsByBuddyIdx(buddy_idx);
+
+                if (comments != null && !comments.isEmpty()) {
+                    // 댓글이 있을 경우 출력
+                    for (Comment comment : comments) {
+                %>
+                <div class="comment">
+                    <strong><%=comment.getMem_id()%></strong>
+                    <p><%=comment.getComment_content()%></p>
+                    <p><%=comment.getComment_date()%></p>
+                </div>
+                <%
+                }
+                } else {
+                // 댓글이 없을 경우 메시지 출력
+                %>
+                <p>댓글이 없습니다.</p>
+                <%
+                }
+                %>
+            </div>
            
             <div class="button">
                 <!-- 게시물 목록 페이지로 이동하는 링크 -->
