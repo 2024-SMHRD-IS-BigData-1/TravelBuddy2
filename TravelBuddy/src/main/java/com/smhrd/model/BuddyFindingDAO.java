@@ -38,5 +38,5 @@ public class BuddyFindingDAO {
 		return boardList;
 	}
     
-    
+
 }
