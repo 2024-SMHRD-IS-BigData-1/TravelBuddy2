@@ -576,14 +576,18 @@
 
   </head>
   <body>
+  
+
+
+  
     <nav class="navbar">
-      <img src="images/bg23412.jpg" alt="Background Image">
+      <a href="Main.jsp"><img src="images/bg23412.jpg" alt="Background Image"></a>
       <ul class="nav_menu">
-          <li><a href="#"><b>메인화면</b></a></li>
-          <li><a href="#"><b>버디매칭</b></a></li>
-          <li><a href="#"><b>버디찾기</b></a></li>
-          <li><a href="#"><b>커뮤니티</b></a></li>
-          <li><a href="#"><b>프로필</b></a></li>
+          <li><a href="Main.jsp"><b>메인화면</b></a></li>
+          <li><a href="Matching.jsp"><b>버디매칭</b></a></li>
+          <li><a href="Finding_Buddy.jsp"><b>버디찾기</b></a></li>
+          <li><a href="Community.jsp"><b>커뮤니티</b></a></li>
+          <li><a href="Profile.jsp"><b>프로필</b></a></li>
       </ul>
     </nav>
     <main>
@@ -591,7 +595,7 @@
         <div class="header-grid">
           <div class="profile-pic">
             <img src="images/07.jpg" />
-            <button class="primary">프로필 수정</button>
+            <a href="#"><button class="primary">프로필 수정</button></a>
           </div>
           <div class="profile-info">
             <div class="title row">
