@@ -27,13 +27,14 @@ public class LoginService extends HttpServlet {
 
 		if (loginMember != null) {
 			System.out.println("로그인 성공!");
+			System.out.println(id+pw);
 			HttpSession session = request.getSession();
 			session.setAttribute("loginMember", loginMember);
 		} else {
 			System.out.println("로그인 실패..");
 		}
 
-		response.sendRedirect("Join.jsp");
+		response.sendRedirect("Main.jsp");
 
 		
 	}

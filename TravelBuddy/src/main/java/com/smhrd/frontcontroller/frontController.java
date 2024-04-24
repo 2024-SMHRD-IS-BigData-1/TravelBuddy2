@@ -1,33 +1,12 @@
 package com.smhrd.frontcontroller;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-
-import com.oreilly.servlet.MultipartRequest;
-import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
-import com.smhrd.controller.BoardDelete;
-import com.smhrd.controller.BoardService;
-import com.smhrd.controller.DeleteMessage;
-import com.smhrd.controller.DeleteService;
-import com.smhrd.controller.EmailCheck;
-import com.smhrd.controller.JoinService;
-import com.smhrd.controller.LoginService;
-import com.smhrd.controller.LogoutService;
-import com.smhrd.controller.MessageService;
-import com.smhrd.controller.UpdateService;
-import com.smhrd.model.Board;
-import com.smhrd.model.BoardDAO;
-import com.smhrd.model.Member;
-import com.smhrd.model.MemberDAO;
-import com.smhrd.model.Message;
-import com.smhrd.model.MessageDAO;
 
 @WebServlet("*.do")
 public class frontController extends HttpServlet {
@@ -56,32 +35,32 @@ public class frontController extends HttpServlet {
 		
 		Command service = null;
 		
-		if(resultURL.equals("LoginService.do")) {
-			service = new LoginService();
-		}else if(resultURL.equals("JoinService.do")) {
-			service = new JoinService();
-		}else if(resultURL.equals("BoardDelete.do")) {
-			service = new BoardDelete();
-		}else if(resultURL.equals("BoardService.do")) {
-			service = new BoardService();
-		}else if(resultURL.equals("DeleteMessage.do")) {
-			service = new DeleteMessage();
-		}else if(resultURL.equals("EmailCheck.do")) {
-			service = new EmailCheck();
-		}else if(resultURL.equals("LogoutService.do")) {
-			service = new LogoutService();
-		}else if(resultURL.equals("MessageService.do")) {
-			service = new MessageService();
-		}else if(resultURL.equals("UpdateService.do")) {
-			service = new UpdateService();
-		}else if(resultURL.equals("DeleteService.do")) {
-			service =  new DeleteService();
-		}
-		String moveURL = service.execute(request, response);
-		
-		if(moveURL != null) {
-			response.sendRedirect(moveURL);
-		}
+//		if(resultURL.equals("LoginService.do")) {
+//			service = new LoginService();
+//		}else if(resultURL.equals("JoinService.do")) {
+//			service = new JoinService();
+//		}else if(resultURL.equals("BoardDelete.do")) {
+//			service = new BoardDelete();
+//		}else if(resultURL.equals("BoardService.do")) {
+//			service = new BoardService();
+//		}else if(resultURL.equals("DeleteMessage.do")) {
+//			service = new DeleteMessage();
+//		}else if(resultURL.equals("EmailCheck.do")) {
+//			service = new EmailCheck();
+//		}else if(resultURL.equals("LogoutService.do")) {
+//			service = new LogoutService();
+//		}else if(resultURL.equals("MessageService.do")) {
+//			service = new MessageService();
+//		}else if(resultURL.equals("UpdateService.do")) {
+//			service = new UpdateService();
+//		}else if(resultURL.equals("DeleteService.do")) {
+//			service =  new DeleteService();
+//		}
+//		String moveURL = service.execute(request, response);
+//		
+//		if(moveURL != null) {
+//			response.sendRedirect(moveURL);
+//		}
 		
 		
 		
