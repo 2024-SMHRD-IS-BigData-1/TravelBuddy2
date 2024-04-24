@@ -41,6 +41,7 @@ public class BuddyFindingService extends HttpServlet {
 
 		if (cnt > 0) {
 			System.out.println("게시글 등록 성공");
+			response.sendRedirect("Finding_Buddy.jsp");
 		} else {
 			System.out.println("게시글 등록 실패");
 		}

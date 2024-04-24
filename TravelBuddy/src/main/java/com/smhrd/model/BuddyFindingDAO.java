@@ -37,5 +37,6 @@ public class BuddyFindingDAO {
 		session.close();
 		return boardList;
 	}
+    
 
 }

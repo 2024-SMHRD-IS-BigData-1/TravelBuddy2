@@ -196,7 +196,7 @@ th {
 					<strong>내용</strong>:
 					<%=buddyFinding.getContent()%>
 				</p>
-				<!-- Google Maps API를 사용하여 위치를 표시합니다. -->
+				
 				<div id="map" style="width: 100%; height: 400px;"></div>
 				<p>
 					<strong>선택한 위치</strong>:
@@ -218,7 +218,7 @@ th {
 			</div>
 			<div class="button">
 				<!-- 게시물 목록 페이지로 이동하는 링크 -->
-				<a href="board_list.jsp">게시물 목록으로 돌아가기</a>
+				<a href="Finding_Buddy.jsp">게시물 목록으로 돌아가기</a>
 			</div>
 		</div>
 	</div>

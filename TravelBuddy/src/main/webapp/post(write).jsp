@@ -118,13 +118,18 @@ th {
 		<div id="wrap">
 			<h2>게시글 작성</h2>
 			<form action="BuddyFindingService" method="post">
-				<%
-				// 로그인이 성공한 상황이라고 가정하고 mem_id를 "han"으로 설정
-				String mem_id = "han";
-				%>
+			<%@ page import="com.smhrd.model.Member" %>
+			
+				<% 
+                    Member loginMember = (Member) session.getAttribute("loginMember");
+                    String mem_id = "";
+                    if (loginMember != null) {
+                        mem_id = loginMember.getMem_id(); 
+                    }
+                %>
 
-				<input type="hidden" value="board_write" name="command"> <input
-					type="hidden" name="mem_id" value="<%=mem_id%>">
+                <input type="hidden" value="board_write" name="command">
+                <input type="hidden" name="mem_id" value="<%=mem_id%>">
 
 				<table>
 					<tr>

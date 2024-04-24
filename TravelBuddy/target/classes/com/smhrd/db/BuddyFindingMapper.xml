@@ -30,6 +30,13 @@
 		SELECT *
 		FROM finding_buddy
 	</select>
+	<select id="selectByBuddyIdx" parameterType="int"
+		resultType="com.smhrd.model.BuddyFinding">
+		SELECT *
+		FROM finding_buddy
+		WHERE buddy_idx = #{buddy_idx}
+	</select>
+
 
 
 
