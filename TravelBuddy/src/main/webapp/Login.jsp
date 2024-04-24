@@ -50,19 +50,19 @@
               </p>
             </div>
             <div class="login-wrap p-4 p-md-5">
-              <form action="#" class="signin-form" method="post">
+              <form action="LoginService" class="signin-form" method="post">
                 <div class="form-group mb-3">
-                  <label class="label" for="name" style="color: black;">아이디</label>
-                  <input type="text" class="form-control">
+                  <label class="label" for="name"  style="color: black;">아이디</label>
+                  <input type="text" name="mem_id" class="form-control">
                 </div>
                 <div class="form-group mb-3">
                   <label class="label" for="password" style="color: black;">비밀번호</label>
-                  <input type="password" class="form-control">
+                  <input type="password" name = "mem_pw" class="form-control">
                 </div>
-                </form>
                 <div class="form-group">
                   <button type="submit" class="form-control btn btn-primary rounded submit px-3">로그인</button>
                 </div>
+                </form>
                 <div class="form-group d-md-flex">
                   <div class="w-50 text-left">
                     <label class="checkbox-wrap checkbox-primary mb-0">사용자 정보 기억
@@ -74,7 +74,7 @@
                     <a href="#" style="color: black;">비밀번호를 모르겠어요</a>
                   </div>
                 </div>
-              </form>
+             
               <p class="text-center" style="color: black;">처음 오시나요? <a data-toggle="tab" href="Join.jsp">&nbsp;회원가입</a></p>
             </div>
           </div>
