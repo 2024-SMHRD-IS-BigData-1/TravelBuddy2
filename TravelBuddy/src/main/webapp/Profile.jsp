@@ -576,47 +576,9 @@
 
   </head>
   <body>
-  <%
-    Importing necessary Java classes and DAO
-    Connection conn = null;
-    PreparedStatement pstmt = null;
-    ResultSet rs = null;
-    FollowDAO followDAO = new FollowDAO(); // FollowDAO 객체 생성
+  
 
-    try {
-        // Setting up database connection
-        Class.forName("oracle.jdbc.driver.OracleDriver");
-        String url = "jdbc:oracle:thin:@project-db-campus.smhrd.com:1524:xe";
-        
-        String id = "campus_24IS_BIG3_P2_5";
-        String pw = "smhrd5";
-        
-        
-        conn = DriverManager.getConnection(url, id, pw);
 
-        // Getting post index from request parameter
-        int b_idx = Integer.parseInt(request.getParameter("b_idx"));
-        
-        // Query to retrieve post information and writer's profile
-        String sqlQuery = "SELECT c.b_content, m.* FROM S_COMUNITY c JOIN S_MEMBERS m ON c.mem_id = m.mem_id WHERE c.b_idx = ?";
-        
-        
-        pstmt = conn.prepareStatement(sqlQuery);
-        pstmt.setInt(1, b_idx);
-        rs = pstmt.executeQuery();
-  
-        if (rs.next()) {
-            String b_content = rs.getString("b_content");
-            String mem_id = rs.getString("mem_id");
-            String mem_name = rs.getString("mem_name");
-            String mem_nick = rs.getString("mem_nick");
-            String mem_birthdate = rs.getString("mem_birthdate");
-            String mem_gender = rs.getString("mem_gender");
-            String mem_phone = rs.getString("mem_phone");
-            String mem_email = rs.getString("mem_email");
-  
-        %>
-  
   
     <nav class="navbar">
       <a href="Main.jsp"><img src="images/bg23412.jpg" alt="Background Image"></a>
