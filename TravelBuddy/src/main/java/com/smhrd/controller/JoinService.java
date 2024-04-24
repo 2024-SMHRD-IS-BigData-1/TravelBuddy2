@@ -16,15 +16,16 @@ public class JoinService extends HttpServlet {
 		// 회원가입 서비스
 		request.setCharacterEncoding("UTF-8");
 		
-		String id = request.getParameter("id");
-		String pw = request.getParameter("pw");
-		String name = request.getParameter("name");
+		String id = request.getParameter("mem_id");
+		String pw = request.getParameter("mem_pw");
+		String name = request.getParameter("mem_name");
 		String year = request.getParameter("year");
 		String month = request.getParameter("month");
 		String date = request.getParameter("date");
-		String gender = request.getParameter("gender");
-		String email = request.getParameter("email");
-		String phone = request.getParameter("phone");
+//		String birthdate = request.getParameter("mem_birthdate");
+		String gender = request.getParameter("mem_gender");
+		String email = request.getParameter("mem_email");
+		String phone = request.getParameter("mem_phone");
 		
 		String birthdate = year + month + date;
 		

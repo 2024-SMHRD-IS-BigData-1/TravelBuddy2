@@ -5,29 +5,29 @@
 <mapper namespace="com.smhrd.db.MemberMapper">
   
   <insert id = "join" parameterType="Member">
-    insert into members(MEM_ID, MEM_PW, MEM_NAME, MEM_BIRTHDATE, MEM_GENDER, MEM_PHONE, MEM_EMAIL) 
-    values(#{id},#{pw},#{name},#{birthdate},#{gender},#{phone},#{email})
+    insert into members(mem_id, mem_pw, mem_name, mem_birthdate, mem_gender, mem_email, mem_phone) 
+    values(#{mem_id},#{mem_pw},#{mem_name},#{mem_birthdate},#{mem_gender},#{mem_email},#{mem_phone})
   </insert>
   
   <select id = "Login" parameterType="Member" resultType="Member">
-    select * from members where id=#{id} and pw=#{pw} 
+    select * from members where mem_id=#{mem_id} and mem_pw=#{mem_pw} 
   </select>
   
   <update id="update" parameterType ="Member">
-    update members set pw=#{pw}, phone=#{phone}
-  	where id=#{id}
+    update members set mem_pw=#{mem_pw}, mem_phone=#{mem_phone}
+  	where mem_id=#{id}
   </update>
   
 <!--   <select id="memberList" resultType="Member">
-	select * from members where not(id='admin')
+	select * from members where not(mem_id='admin')
   </select> -->
   
   <delete id = "deleteMember" parameterType="String" >
-     delete from members where id=#{id}
+     delete from members where mem_id=#{mem_id}
   </delete>
   
   <select id = "idCheck" parameterType="String" resultType="Member">
-     select * from members where mem_id=#{id}
+     select * from members where mem_id=#{mem_id}
   </select>
   
   </mapper>

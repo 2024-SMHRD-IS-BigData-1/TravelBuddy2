@@ -1,1 +1,1 @@
-select * from TRAVEL_TENDENCY_RESULT;
+select * from MEMBERS;

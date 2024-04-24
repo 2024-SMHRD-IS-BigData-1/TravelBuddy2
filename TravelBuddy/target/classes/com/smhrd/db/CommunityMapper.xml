@@ -7,7 +7,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 	<insert id="insertCommunity" parameterType="Community">
 		insert into web_board values(
-		num_board.nextval, #{content},#{date},#{id},#{category});
+		num_board.nextval, #{b_category},#{B_content},#{created_at},#{mem_id});
 	
 	</insert>
 </mapper>	

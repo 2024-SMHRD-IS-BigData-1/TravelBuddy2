@@ -186,14 +186,14 @@ option {
             <div class="field">
                 <b>아이디</b>
                 <div class="id-input">
-                    <input type="text"  name ="id" id="inputE" placeholder="아이디 입력 (6~20자)">
+                    <input type="text"  name ="mem_id" id="inputE" placeholder="아이디 입력 (6~20자)">
                     <input type="button" value="중복확인" onclick="checkE()">
                     <span id="checkE"></span>
                 </div>
             </div>
             <div class="field">
                 <b>비밀번호</b>
-                <input class="userpw" name ="pw" type="password" placeholder= "비밀번호 입력 (문자,숫자 포함 8~20자)">
+                <input class="userpw" name ="mem_pw" type="password" placeholder= "비밀번호 입력 (문자,숫자 포함 8~20자)">
             </div>
             <div class="field">
                 <b>비밀번호 재확인</b>
@@ -201,7 +201,7 @@ option {
             </div>
             <div class="field">
                 <b>이름</b>
-                <input type="text" name ="name" placeholder= "이름을 입력해주세요">
+                <input type="text" name ="mem_name" placeholder= "이름을 입력해주세요">
             </div>
 
             <div class="field birth">
@@ -230,8 +230,8 @@ option {
             <div class="field gender">
                 <b>성별</b>
                 <div>
-                    <label><input type="radio" name="gender" value="M">남자</label>
-                    <label><input type="radio" name="gender" value="F">여자</label>
+                    <label><input type="radio" name="mem_gender" value="M">남자</label>
+                    <label><input type="radio" name="mem_gender" value="F">여자</label>
                 </div>
             </div>
 
@@ -240,7 +240,7 @@ option {
             <div class="field">
                 <b>본인 확인 이메일</b>
                 <div class="email-input">
-                    <input class="box" id="domain-txt" type="text" name = "email" placeholder="이메일 입력"/>
+                    <input class="box" id="domain-txt" type="text" name = "mem_email" placeholder="이메일 입력"/>
                     <select class="box" id="domain-list">
                         <option value="naver.com">naver.com</option>
                         <option value="google.com">google.com</option>
@@ -252,7 +252,7 @@ option {
             </div>
                 <b>휴대전화</b>
                 <div>
-                    <input type="tel" name ="phone"  placeholder="전화번호 입력">
+                    <input type="tel" name ="mem_phone"  placeholder="전화번호 입력">
                     <input type="button" value="인증번호 받기">
                 </div>
                 <input type="number" placeholder="인증번호를 입력하세요">
@@ -290,9 +290,9 @@ option {
 					// 성공했을 때 / 실패했을 때 어떻게 처리할건지
 					success : function(data){
 						if(data=='true'){
-							$('#checkE').html('사용 가능한 이메일입니다~')
+							$('#checkE').html('사용 가능한 아이디입니다~')
 						}else{
-							$('#checkE').html('사용 불가능한 이메일입니다~')
+							$('#checkE').html('사용 불가능한 아이디입니다~')
 						}
 					},
 					error : function(){

@@ -21,16 +21,8 @@ public class Member {
 	private String mem_name;
 	private String mem_birthdate;
 	private String mem_gender;
-	private String mem_phone;
 	private String mem_email;
-	
-
-//	public Member idCheck(String inputE) {
-//		return null;
-//	}
-//	public Member login(Member member) {
-//		return null;
-//	}
+	private String mem_phone;
 	
 	}
 	
