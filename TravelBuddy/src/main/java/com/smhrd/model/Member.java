@@ -14,28 +14,23 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-
-
 public class Member {
 	
-	@NonNull
-	private String id;
-	@NonNull
-	private String pw;
-	private String name;
-	private String birthdate;
-	private String gender;
-	private String email;
-	private String phone;
-	
+	@NonNull private String mem_id;
+	@NonNull private String mem_pw;
+	private String mem_name;
+	private String mem_birthdate;
+	private String mem_gender;
+	private String mem_phone;
+	private String mem_email;
 	
 
-	public Member idCheck(String inputE) {
-		return null;
-	}
-	public Member login(Member member) {
-		return null;
-	}
+//	public Member idCheck(String inputE) {
+//		return null;
+//	}
+//	public Member login(Member member) {
+//		return null;
+//	}
 	
 	}
 	

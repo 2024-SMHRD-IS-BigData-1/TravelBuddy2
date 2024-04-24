@@ -14,13 +14,13 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-
 public class Community {
 	
-	private String content;
-	private String date;
-	@NonNull String id;
-	private String category;
+	private int B_idx;
+	private String b_category;
+	private String B_content;
+	private String created_at;
+	@NonNull private String mem_id;
 	
 
 }

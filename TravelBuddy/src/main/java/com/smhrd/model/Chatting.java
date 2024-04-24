@@ -14,12 +14,14 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-
 public class Chatting {
 	
-	@NonNull String nick;
-	private String date;
-	private String content;
+	private int chat_idx;
+	@NonNull private String chatter;
+	private String chat;
+	private String emotion;
+	private String chated_at;
+	private String room_idx;
 	
 
 }

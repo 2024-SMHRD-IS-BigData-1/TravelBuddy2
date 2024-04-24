@@ -14,7 +14,6 @@ import lombok.ToString;
 @Setter
 @ToString
 @RequiredArgsConstructor
-
 public class Profile {
 	@NonNull String proid;
 	private String introduce;
