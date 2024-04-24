@@ -9,7 +9,7 @@
     values(#{mem_id},#{mem_pw},#{mem_name},#{mem_birthdate},#{mem_gender},#{mem_email},#{mem_phone})
   </insert>
   
-  <select id = "Login" parameterType="Member" resultType="Member">
+  <select id ="login" parameterType="Member" resultType="Member">
     select * from members where mem_id=#{mem_id} and mem_pw=#{mem_pw} 
   </select>
   

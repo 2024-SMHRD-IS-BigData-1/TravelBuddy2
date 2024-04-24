@@ -1,23 +1,27 @@
 package com.smhrd.controller;
 
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.smhrd.frontcontroller.Command;
 import com.smhrd.model.Member;
 import com.smhrd.model.MemberDAO;
 
-public class LoginService implements Command{
-
-	public String execute(HttpServletRequest request, HttpServletResponse response) {
+@WebServlet("/LoginService")
+public class LoginService extends HttpServlet {
+	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// 로그인 기능
-		String email = request.getParameter("email");
-		String pw = request.getParameter("pw");
+		request.setCharacterEncoding("UTF-8");
+		String id = request.getParameter("mem_id");
+		String pw = request.getParameter("mem_pw");
 
 		// System.out.println(email + pw);
 
-		Member member = new Member(email, pw);
+		Member member = new Member(id, pw);
 
 		Member loginMember = new MemberDAO().login(member);
 
@@ -29,9 +33,9 @@ public class LoginService implements Command{
 			System.out.println("로그인 실패..");
 		}
 
-	//	response.sendRedirect("Main.jsp");
+		response.sendRedirect("Join.jsp");
 
-		return "Main.jsp";
+		
 	}
 
 }
