@@ -27,6 +27,7 @@ public class LoginService extends HttpServlet {
 
 		if (loginMember != null) {
 			System.out.println("로그인 성공!");
+			System.out.println(id+pw);
 			HttpSession session = request.getSession();
 			session.setAttribute("loginMember", loginMember);
 			response.sendRedirect("Finding_Buddy.jsp");
@@ -34,7 +35,11 @@ public class LoginService extends HttpServlet {
 			System.out.println("로그인 실패..");
 		}
 
+<<<<<<< HEAD
 		
+=======
+		response.sendRedirect("Main.jsp");
+>>>>>>> branch 'master' of https://github.com/2024-SMHRD-IS-BigData-1/TravelBuddy2
 
 		
 	}
