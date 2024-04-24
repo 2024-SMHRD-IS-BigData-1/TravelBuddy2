@@ -14,10 +14,13 @@ import lombok.ToString;
 @Setter
 @ToString
 @RequiredArgsConstructor
-public class Profile {
-	@NonNull String proid;
-	private String introduce;
-	private String profilepicture;
+	
+	public class Profile {
+	@NonNull String profile_idx;
+	private String mem_id;
+	private String mem_info;
+
+	private int buddy_point;
 	
 
 }

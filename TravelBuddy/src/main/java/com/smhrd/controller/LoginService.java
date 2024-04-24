@@ -30,12 +30,11 @@ public class LoginService extends HttpServlet {
 			System.out.println(id+pw);
 			HttpSession session = request.getSession();
 			session.setAttribute("loginMember", loginMember);
-			response.sendRedirect("Finding_Buddy.jsp");
 		} else {
 			System.out.println("로그인 실패..");
 		}
 
-//		response.sendRedirect("Main.jsp");
+		response.sendRedirect("Main.jsp");
 
 		
 	}
