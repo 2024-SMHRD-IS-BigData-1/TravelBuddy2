@@ -209,10 +209,30 @@ th {
 					buddy_idx = Integer.parseInt(buddy_idx_param);
 				}
 
-				if (buddy_idx_param != null) {
-					BuddyFinding buddyFinding = new BuddyFindingDAO().getBuddyFindingByBuddyIdx(buddy_idx);
-					if (buddyFinding != null) {
-				%>
+                if (buddy_idx_param != null) {
+                    BuddyFinding buddyFinding = new BuddyFindingDAO().getBuddyFindingByBuddyIdx(buddy_idx);
+                    if (buddyFinding != null) {
+                %>
+                <p>
+                    <strong>게시물 제목</strong>:
+                    <%=buddyFinding.getTitle()%>
+                </p>
+                <p>
+                    <strong>여행날짜</strong>:
+                    <%=buddyFinding.getTravel_dt()%>
+                </p>
+                <p>
+                    <strong>여행국가</strong>:
+                    <%=buddyFinding.getPlace_name()%>
+                </p>
+               <p>
+                    <strong>작성자 닉네임</strong>:
+                    <a href="Profile.jsp?buddy_idx"<%=buddy_idx%>><%=buddyFinding.getMem_id()%></a>
+                </p>
+                <p>
+                    <strong>내용</strong>:
+                    <%=buddyFinding.getContent()%>
+                </p>
 				<p>
 					<strong>게시물 제목</strong>:
 					<%=buddyFinding.getTitle()%>
@@ -390,7 +410,10 @@ th {
         }
     </script>
 
+<<<<<<< HEAD
+=======
 	<!-- Google Maps API -->
+>>>>>>> branch 'master' of https://github.com/2024-SMHRD-IS-BigData-1/TravelBuddy2
 
 
 

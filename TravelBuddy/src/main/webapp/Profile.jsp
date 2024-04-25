@@ -1,3 +1,6 @@
+<%@page import="com.smhrd.model.Member"%>
+<%@page import="java.io.PrintWriter"%>
+<%@page import="java.sql.SQLException"%>
 <%@page import="com.smhrd.model.FollowDAO"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.PreparedStatement"%>
@@ -582,7 +585,107 @@
   </head>
   <body>
   
+  <% 
+ // Importing necessary Java classes and DAO
+    Connection conn = null;
+    PreparedStatement pstmt = null;
+    ResultSet rs = null;
+    FollowDAO followDAO = new FollowDAO(); // FollowDAO 객체 생성
 
+    try {
+        // Setting up database connection
+        Class.forName("oracle.jdbc.driver.OracleDriver");
+        String url = "jdbc:oracle:thin:@project-db-campus.smhrd.com:1524:xe";
+        
+        String id = "campus_24IS_BIG3_P2_5";
+        String pw = "smhrd5";
+        
+        
+        conn = DriverManager.getConnection(url, id, pw);
+
+        // Getting post index from request parameter
+        int b_idx = Integer.parseInt(request.getParameter("buddy_idx"));
+        
+        // Query to retrieve post information and writer's profile
+        String sqlQuery = "SELECT f.content, m.mem_id, m.name mp.mem_info, mp.profile_photo " +
+                "FROM Finding_Buddy f " +
+                "JOIN Members m ON f.mem_id = m.mem_id " +
+                "JOIN member_profile mp ON m.mem_id = mp.mem_id " +
+                "WHERE f.Buddy_idx = ?";
+        
+        pstmt = conn.prepareStatement(sqlQuery);
+        pstmt.setInt(1, b_idx);
+        rs = pstmt.executeQuery();
+
+        if (rs.next()) {
+            String content = rs.getString("content");
+            String mem_info = rs.getString("mem_info");
+            String profile_photo = rs.getString("profile_photo");
+            String mem_id = rs.getString("mem_id");
+            String mem_name = rs.getString("mem_name");
+
+            // Displaying writer's profile
+%>
+
+<%
+		boolean isFollowed = false;
+
+      // 팔로우 상태 확인
+      String loginId = null; // loginId 변수를 블록 외부에 선언하고 초기화합니다.
+      if (session != null) {
+          // 세션에서 로그인된 사용자의 아이디 가져오기
+       Member loginMember = (Member) session.getAttribute("loginMember");
+    
+       if (loginMember != null) {
+        // loginMember 객체에서 ID 값 추출
+        loginId = loginMember.getMem_id(); // loginId 변수에 값을 할당합니다.
+        System.out.println("로그인된 ID: " + loginId);
+       
+       } else {
+        System.out.println("로그인되지 않은 상태입니다.");
+    }
+}
+
+      // 팔로우 상태 확인
+      if (loginId != null) {
+      isFollowed = followDAO.FollowCheck(loginId, mem_id);
+          // 이후의 로직 계속...
+      } else {
+                System.out.println("로그인되지 않은 상태입니다.");
+            }
+        
+    
+         String stat_follow = "follow";
+         String stat_following = "following";
+         
+         %>
+         
+           <div>
+               <form id="followForm" action="FolloweSerivce" method="post">
+                   <input type="hidden" name="Follower" value="<%= loginId %>">
+                   <input type="hidden" name="Followee" value="<%= mem_id %>">
+                   <input type="hidden" name="isFollowed" value="<%= isFollowed %>">
+                   <input id="followBtn" type="button" value="<%= isFollowed ? stat_following : stat_follow %>" onclick="followBtnClick()">
+               </form>
+               <script>
+                       function followBtnClick() {
+                            if (document.getElementById("followBtn").value === "following") {
+                                // 이미 팔로우 중인 경우, alert 표시
+                                alert("이미 팔로우 상태입니다.");
+                                return false;
+                                
+                            } else {
+                                // 팔로우 상태가 아닌 경우, 팔로우 service() submit
+                               document.getElementById("followForm").submit();
+                                return true; 
+                            }
+                       }
+                       
+                   </script>
+           
+           </div>
+    
+  
   
     <nav class="navbar">
       <a href="Main.jsp"><img src="images/bg23412.jpg" alt="Background Image"></a>
@@ -597,6 +700,8 @@
     </nav>
     <main>
       <header>
+      
+<hr>
         <div class="header-grid">
           <div class="profile-pic">
             <img src="images/07.jpg" />
@@ -604,7 +709,7 @@
           </div>
           <div class="profile-info">
             <div class="title row">
-              <h1>방구뽕햄찌</h1>
+              <h1><%=mem_name %></h1>
               <span class="verified-icon"></span>
               <button class="primary">팔로우</button>
             </div>
@@ -618,9 +723,7 @@
               </div>
               <div class="description row last">
                 <span>
-                  난작고소중한햄찌
-                  <br />
-                  오늘도 집사의 안전은 내가 지킨다!
+                  <%=mem_info %>
                 </span>
               </div>
             </div>
@@ -783,6 +886,23 @@
         });
       });
     </script>
+    
+           <%
+         
+        }   
+    } catch (Exception e) {
+        e.printStackTrace();
+    } finally {
+        // Closing database resources
+        try {
+            if (rs != null) rs.close();
+            if (pstmt != null) pstmt.close();
+            if (conn != null) conn.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+%>
+  
   </body>
 </html>
-
