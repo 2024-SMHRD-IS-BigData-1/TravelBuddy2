@@ -26,20 +26,20 @@ public class FollowService extends HttpServlet {
 
         // 가지고 오는 건 태그의 name 으로 가져옴
         // 실제 가지고 오는 값은 태그의 value 값
-        String my_id = request.getParameter("my_id");
-        String follow_id = request.getParameter("follow_id");
+        String Follower = request.getParameter("Follower");
+        String Followee = request.getParameter("Followee");
         String strIsFollowed = request.getParameter("isFollowed");
         
         boolean isFollowed = Boolean.parseBoolean(strIsFollowed);
         
         
         System.out.println("팔로우 상태 : " + isFollowed);
-        System.out.println("입력받은 값" + "사용자 아이디 : " + my_id + " 팔로우 할 아이디 : " + follow_id);
+        System.out.println("입력받은 값" + "사용자 아이디 : " + Follower + " 팔로우 할 아이디 : " + Followee);
         
         String alertScript;
         
         if(!isFollowed) {	
-        	Follow follow = new Follow(follower, followee);
+        	Follow followVo = new Follow(Follower, Followee);
             FollowDAO dao = new FollowDAO();
             
             // 중복된 행이 없는지 다시 확인

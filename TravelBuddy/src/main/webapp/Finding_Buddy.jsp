@@ -284,6 +284,7 @@ a {
           <li><a href="Finding_Buddy.jsp"><b>버디찾기</b></a></li>
           <li><a href="Community.jsp"><b>커뮤니티</b></a></li>
           <li><a href="Profile.jsp"><b>프로필</b></a></li>
+          <li><a href="LogoutService"><b>로그아웃</b></a></li>
       </ul>
     </nav>
     <div class="container">

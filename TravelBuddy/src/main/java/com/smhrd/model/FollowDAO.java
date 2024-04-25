@@ -25,7 +25,7 @@ public class FollowDAO {
 	   
 	   
 	
-	   public boolean FollowCheck(String userId, String otherId) {
+	   public boolean FollowCheck(String Follower, String Followee) {
 		   	boolean res = false;
 			   
 		      connection();
@@ -43,8 +43,8 @@ public class FollowDAO {
 		      
 		         
 		         // 변수 설정
-		         psmt.setString(1, userId);
-		         psmt.setString(2, otherId);
+		         psmt.setString(1, Follower);
+		         psmt.setString(2, Followee);
 		         
 		         
 		         rs = psmt.executeQuery();

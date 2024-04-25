@@ -582,113 +582,7 @@
   </head>
   <body>
   
-  <%
-    // Importing necessary Java classes and DAO
-    Connection conn = null;
-    PreparedStatement pstmt = null;
-    ResultSet rs = null;
-    FollowDAO followDAO = new FollowDAO(); // FollowDAO 객체 생성
 
-    try {
-        // Setting up database connection
-        Class.forName("oracle.jdbc.driver.OracleDriver");
-        String url = "jdbc:oracle:thin:@project-db-campus.smhrd.com:1524:xe";
-        
-        String id = "campus_24IS_BIG3_P2_5";
-        String pw = "smhrd5";
-        
-        
-        conn = DriverManager.getConnection(url, id, pw);
-
-        // Getting post index from request parameter
-        int b_idx = Integer.parseInt(request.getParameter("b_idx"));
-        
-        // Query to retrieve post information and writer's profile
-        String sqlQuery = "SELECT c.b_content, m.* FROM S_COMUNITY c JOIN S_MEMBERS m ON c.mem_id = m.mem_id WHERE c.b_idx = ?";
-        
-        
-        pstmt = conn.prepareStatement(sqlQuery);
-        pstmt.setInt(1, b_idx);
-        rs = pstmt.executeQuery();
-
-        if (rs.next()) {
-            String b_content = rs.getString("b_content");
-            String mem_id = rs.getString("mem_id");
-            String mem_name = rs.getString("mem_name");
-            String mem_nick = rs.getString("mem_nick");
-            String mem_birthdate = rs.getString("mem_birthdate");
-            String mem_gender = rs.getString("mem_gender");
-            String mem_phone = rs.getString("mem_phone");
-            String mem_email = rs.getString("mem_email");
-
-            // Displaying writer's profile
-%>
-<div>
-    <h2><%= mem_name %> (<%= mem_nick %>)</h2>
-    <p><strong>Birthdate:</strong> <%= mem_birthdate %></p>
-    <p><strong>Gender:</strong> <%= mem_gender %></p>
-    <p><strong>Phone:</strong> <%= mem_phone %></p>
-    <p><strong>Email:</strong> <%= mem_email %></p>
-</div>
-<hr>
-<div>
-    <h3>Content</h3>
-    <p><%= b_content %></p>
-</div>
-
-
-<%
-				
-            // 팔로우 상태 확인
-            String loginId = %><%=mem_id %><%
-			boolean isFollowed = followDAO.FollowCheck(loginId, mem_id);
-
-			String stat_follow = "follow";
-			String stat_following = "following";
-			
-			%>
-        	<div>
-        	    <form id="followForm" action="follow" method="post">
-        	        <input type="hidden" name="Follower" value="<%= loginId %>">
-        	        <input type="hidden" name="Followee" value="<%= mem_id %>">
-        	        <input type="hidden" name="isFollowed" value="<%= isFollowed %>">
-        	        <input id="followBtn" type="button" value="<%= isFollowed ? stat_following : stat_follow %>" onclick="followBtnClick()">
-        	    </form>
-        	    <script>
-            	        function followBtnClick() {
-                            if (document.getElementById("followBtn").value === "following") {
-                                // 이미 팔로우 중인 경우, alert 표시
-                                alert("이미 팔로우 상태입니다.");
-                                return false;
-                                
-                            } else {
-                                // 팔로우 상태가 아닌 경우, 팔로우 service() submit
-                            	document.getElementById("followForm").submit();
-                                return true; 
-                            }
-            	        }
-            	        
-            	    </script>
-        	
-        	</div>
-        	<%
-			
-        }
-    } catch (Exception e) {
-        e.printStackTrace();
-    } finally {
-        // Closing database resources
-        try {
-            if (rs != null) rs.close();
-            if (pstmt != null) pstmt.close();
-            if (conn != null) conn.close();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
-%>
-  
-  
   
     <nav class="navbar">
       <a href="Main.jsp"><img src="images/bg23412.jpg" alt="Background Image"></a>
@@ -698,6 +592,7 @@
           <li><a href="Finding_Buddy.jsp"><b>버디찾기</b></a></li>
           <li><a href="Community.jsp"><b>커뮤니티</b></a></li>
           <li><a href="Profile.jsp"><b>프로필</b></a></li>
+          <li><a href="LogoutService"><b>로그아웃</b></a></li>
       </ul>
     </nav>
     <main>
