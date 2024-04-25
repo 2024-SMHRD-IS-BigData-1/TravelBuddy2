@@ -25,7 +25,6 @@ public class LoginService extends HttpServlet {
 
         Member loginMember = new MemberDAO().login(member);
 
-<<<<<<< HEAD
 		if (loginMember != null) {
 			System.out.println("로그인 성공!");
 			System.out.println(id+pw);
@@ -34,28 +33,8 @@ public class LoginService extends HttpServlet {
 		} else {
 			System.out.println("로그인 실패..");
 		}
-=======
-        if (loginMember != null) {
-            System.out.println("로그인 성공!");
-            System.out.println(id + pw);
-            HttpSession session = request.getSession();
-            session.setAttribute("loginMember", loginMember);
->>>>>>> branch 'master' of https://github.com/2024-SMHRD-IS-BigData-1/TravelBuddy2
 
-<<<<<<< HEAD
-		response.sendRedirect("Main.jsp");
-=======
-            // 로그인 성공 시 세션에 로그인 상태를 저장합니다.
-            session.setAttribute("isLoggedIn", true);
->>>>>>> branch 'master' of https://github.com/2024-SMHRD-IS-BigData-1/TravelBuddy2
+		response.sendRedirect("Finding_Buddy.jsp");
 
-            response.sendRedirect("Finding_Buddy.jsp");
-        } else {
-            System.out.println("로그인 실패..");
-
-            // 로그인 실패 시 처리할 로직을 추가할 수 있습니다.
-            // 예를 들어 로그인 실패 메시지를 사용자에게 보여줄 수 있습니다.
-            response.sendRedirect("Login.jsp?loginFailed=true");
-        }
     }
 }

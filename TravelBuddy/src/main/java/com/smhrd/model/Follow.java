@@ -9,16 +9,23 @@ import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
+@AllArgsConstructor
+@RequiredArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
 @ToString
 public class Follow {
 	
-	@NonNull private int follow_idx;
-	private String follower;
-	private String followee;
+	private int follow_idx;
+	@NonNull private String follower;
+	@NonNull private String followee;
 	private String followed_at;
 	
+	
+	public void follow (String follower, String followee) {
+		this.follower = follower;
+		this.followee = followee;
+	}
 	
 }
