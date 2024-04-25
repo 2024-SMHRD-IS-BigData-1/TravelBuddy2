@@ -14,18 +14,4 @@ public class CommunityDAO {
             return cnt;
         }
     }
-
-    public int insertFile(File file) {
-        try (SqlSession session = sqlSessionFactory.openSession(true)) {
-            int cnt = session.insert("com.smhrd.db.CommunityMapper.insertFile", file);
-            return cnt;
-        }
-    }
-
-    public int update(Community community) {
-        try (SqlSession session = sqlSessionFactory.openSession(true)) {
-            Member community1 = session.selectOne("com.smhrd.db.CommunityMapper.update", community);
-            return 0;
-        }
-    }
 }

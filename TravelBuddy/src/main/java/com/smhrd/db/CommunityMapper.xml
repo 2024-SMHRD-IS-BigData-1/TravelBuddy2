@@ -5,10 +5,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="com.smhrd.db.CommunityMapper">
 
-	<insert id="insertCommunity" parameterType="Community">
-		insert into web_board values(
-		num_board.nextval, #{b_category},#{B_content},#{created_at},#{mem_id});
-	
-	</insert>
-</mapper>	
-	
+    <insert id="insertCommunity" parameterType="Community">
+        INSERT INTO web_board (B_IDX, B_CATEGORY, B_CONTENT, CREATED_AT, MEM_ID)
+        VALUES (num_board.nextval, #{bCategory}, #{bContent}, #{createdAt}, #{memId})
+    </insert>
+
+</mapper>
