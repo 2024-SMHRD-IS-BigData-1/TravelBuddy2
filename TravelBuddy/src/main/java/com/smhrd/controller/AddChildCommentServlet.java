@@ -32,6 +32,7 @@ public class AddChildCommentServlet extends HttpServlet {
         // 요청 파라미터에서 댓글 내용과 부모 댓글 ID 가져오기
         String commentContent = request.getParameter("comment-content");
         int parentCommentId = Integer.parseInt(request.getParameter("parent_comment_id"));
+        int buddyIdx = Integer.parseInt(request.getParameter("buddy_idx"));
         
         // 현재 시간을 형식화하여 댓글 작성일자로 설정
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
@@ -43,6 +44,7 @@ public class AddChildCommentServlet extends HttpServlet {
         comment.setComment_content(commentContent); // 댓글 내용 설정
         comment.setComment_date(commentDate); // 현재 날짜 및 시간으로 설정
         comment.setParent_comment_id(parentCommentId); // 부모 댓글 ID 설정
+        comment.setBuddy_idx(buddyIdx); // 게시글 인덱스 설정
 
         // 대댓글 추가하기
         CommentDAO commentDAO = new CommentDAO();
