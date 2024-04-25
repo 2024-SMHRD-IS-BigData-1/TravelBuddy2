@@ -35,3 +35,4 @@ public class LoginService extends HttpServlet {
       response.sendRedirect("Finding_Buddy.jsp");
 
     }
+}
