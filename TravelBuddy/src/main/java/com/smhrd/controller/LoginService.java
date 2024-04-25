@@ -25,15 +25,14 @@ public class LoginService extends HttpServlet {
 
         Member loginMember = new MemberDAO().login(member);
 
-      if (loginMember != null) {
-         System.out.println("로그인 성공!");
-         System.out.println(id+pw);
-         HttpSession session = request.getSession();
-         session.setAttribute("loginMember", loginMember);
-      } else {
-         System.out.println("로그인 실패..");
-      }
-
+		if (loginMember != null) {
+			System.out.println("로그인 성공!");
+			System.out.println(id+pw);
+			HttpSession session = request.getSession();
+			session.setAttribute("loginMember", loginMember);
+		} else {
+			System.out.println("로그인 실패..");
+		}
       response.sendRedirect("Finding_Buddy.jsp");
 
     }
