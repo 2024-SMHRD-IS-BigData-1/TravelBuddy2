@@ -625,7 +625,6 @@
 
         request.setCharacterEncoding("UTF-8");
 
-        System.out.println("테스트 : " + 1);
 
         String sqlQuery = "SELECT f.content, m.mem_id, m.mem_name, mp.mem_info, mp.profile_photo " +
         "FROM Finding_Buddy f " + // f와 JOIN 키워드 사이에 공백 추가
@@ -638,14 +637,12 @@
         pstmt.setInt(1, b_idx);
         rs = pstmt.executeQuery();
 
-        System.out.println("테스트 : " + 2);
         if (rs.next()) {
         String content = rs.getString("content");
         String mem_info = rs.getString("mem_info");
         String profile_photo = rs.getString("profile_photo");
         String mem_id = rs.getString("mem_id");
         String mem_name = rs.getString("mem_name");
-        System.out.println("테스트 : " + 3);
         %>
 
 <%
@@ -653,40 +650,30 @@
 
         // 팔로우 상태 확인
         String loginId = null; // loginId 변수를 블록 외부에 선언하고 초기화합니다.
-        System.out.println("테스트 : " + 4);
         if (session != null) {
         // 세션에서 로그인된 사용자의 아이디 가져오기
         Member loginMember = (Member) session.getAttribute("loginMember");
-        System.out.println("테스트 : " + 5);
         if (loginMember != null) {
-        System.out.println("테스트 : " + 6);
         // loginMember 객체에서 ID 값 추출
         loginId = loginMember.getMem_id(); // loginId 변수에 값을 할당합니다.
         System.out.println("로그인된 ID: " + loginId);
         
         } else {
-        System.out.println("테스트 : " + 7);
         System.out.println("로그인되지 않은 상태입니다.");
         }
         }
-        System.out.println("테스트 : " + 8);
         // 팔로우 상태 확인
         if (loginId != null) {
-        System.out.println("테스트 : " + 9);
         isFollowed = followDAO.FollowCheck(loginId, mem_id);
-        System.out.println("테스트 : " + 10);
         // 이후의 로직 계속...
         } else {
-        System.out.println("테스트 : " + 11);
         System.out.println("로그인되지 않은 상태입니다.");
         }
 
-        System.out.println("테스트 : " + 12);
 
         String stat_follow = "follow";
         String stat_following = "following";
 
-        System.out.println("테스트 : " + 13);
         %>
 
 <div>
@@ -734,7 +721,7 @@
 <div class="header-grid">
 <div class="profile-pic">
 <img src="images/07.jpg" />
-<a href="#"><button class="primary">프로필 수정</button></a>
+<a href="ReProfile.jsp"><button class="primary">프로필 수정</button></a>
 </div>
 <div class="profile-info">
 <div class="title row">
