@@ -2,9 +2,7 @@ package com.smhrd.model;
 
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
-
 import com.smhrd.db.SqlSessionManager;
-
 import java.util.List;
 
 public class CommentDAO {
@@ -14,6 +12,14 @@ public class CommentDAO {
     public int insertComment(Comment comment) {
         try (SqlSession session = sqlSessionFactory.openSession(true)) {
             int cnt = session.insert("com.smhrd.model.CommentMapper.insertComment", comment);
+            return cnt;
+        }
+    }
+
+    // 대댓글 추가
+    public int insertChildComment(Comment comment) {
+        try (SqlSession session = sqlSessionFactory.openSession(true)) {
+            int cnt = session.insert("com.smhrd.model.CommentMapper.insertChildComment", comment);
             return cnt;
         }
     }
@@ -29,6 +35,13 @@ public class CommentDAO {
     public List<Comment> getCommentsByBuddyIdx(int buddyIdx) {
         try (SqlSession session = sqlSessionFactory.openSession()) {
             return session.selectList("com.smhrd.model.CommentMapper.getCommentsByBuddyIdx", buddyIdx);
+        }
+    }
+
+    // 특정 부모 댓글에 대한 대댓글 목록 가져오기
+    public List<Comment> getChildCommentsByParentCommentId(int parentCommentId) {
+        try (SqlSession session = sqlSessionFactory.openSession()) {
+            return session.selectList("com.smhrd.model.CommentMapper.getChildCommentsByParentCommentId", parentCommentId);
         }
     }
 }
