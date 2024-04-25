@@ -375,5 +375,38 @@ th {
             }
         }
     </script>
+
+    <!-- Google Maps API -->
+    AIzaSyA5z9o0mEWFw3Gfsty4lUKD-ytifSz2Pbs
+
+
+
+
+<script>
+        // Google Maps API를 사용하여 지도를 초기화합니다.
+        function initMap() {
+            var lat = parseFloat(document.getElementById('lat').textContent);
+            var lng = parseFloat(document.getElementById('lng').textContent);
+
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom : 10,
+                center : {
+                    lat : lat,
+                    lng : lng
+                }
+            });
+
+            var marker = new google.maps.Marker({
+                position : {
+                    lat : lat,
+                    lng : lng
+                },
+                map : map
+            });
+        }
+    </script>
+    <!-- Google Maps API 스크립트 -->
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5z9o0mEWFw3Gfsty4lUKD-ytifSz2Pbs&callback=initMap"></script>
 </body>
 </html>
