@@ -225,9 +225,9 @@ th {
                     <strong>여행국가</strong>:
                     <%=buddyFinding.getPlace_name()%>
                 </p>
-                <p>
+               <p>
                     <strong>작성자 닉네임</strong>:
-                    <%=buddyFinding.getMem_id()%>
+                    <a href="Profile.jsp?buddy_idx"<%=buddy_idx%>><%=buddyFinding.getMem_id()%></a>
                 </p>
                 <p>
                     <strong>내용</strong>:
@@ -376,8 +376,6 @@ th {
         }
     </script>
 
-    <!-- Google Maps API -->
-    AIzaSyA5z9o0mEWFw3Gfsty4lUKD-ytifSz2Pbs
 
 
 
