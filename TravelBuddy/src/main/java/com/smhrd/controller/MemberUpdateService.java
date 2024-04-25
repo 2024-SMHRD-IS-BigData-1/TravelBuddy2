@@ -18,15 +18,17 @@ public class MemberUpdateService extends HttpServlet {
 		
 		request.setCharacterEncoding("UTF-8");
 		
-		String id = request.getParameter("id");
-		String pw = request.getParameter("pw");
-		String name = request.getParameter("name");
-		String birthdate = request.getParameter("birthdate");
-		String gender = request.getParameter("gender");
-		String email = request.getParameter("email");
-		String phone= request.getParameter("phone");
+		String id = request.getParameter("mem_id");
+		String pw = request.getParameter("mem_pw");
+		String name = request.getParameter("mem_name");
+		String year = request.getParameter("year");
+		String month = request.getParameter("month");
+		String date = request.getParameter("date");
+		String gender = request.getParameter("mem_gender");
+		String email = request.getParameter("mem_email");
+		String phone= request.getParameter("mem_phone");
 		
-		
+		String birthdate = year + month + date ;
 		
 		Member member = new Member(id, pw, name,birthdate,gender,email,phone);
 		System.out.println(member.toString());

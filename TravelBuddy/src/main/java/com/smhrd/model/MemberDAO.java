@@ -47,10 +47,7 @@ SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSession();
 		return member;
 	}
 
-	public int deleteMember(String id) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
+	
 
 
 	
