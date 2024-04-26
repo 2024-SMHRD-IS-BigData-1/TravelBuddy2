@@ -731,21 +731,28 @@
 </form>
 
 <%
-String sqlQuery2 = "SELECT (SELECT COUNT(*) FROM community WHERE mem_id = ?) (SELECT COUNT(*) FROM finding_buddy WHERE mem_id = ?) AS total_count FROM dual";
+		String sqlQuery2 = "SELECT (SELECT COUNT(*) FROM Following WHERE follower = ?) AS follower_count, "
+        + "(SELECT COUNT(*) FROM Following WHERE followee = ?) AS followee_count, "
+        + "((SELECT COUNT(*) FROM community WHERE mem_id = ?) + (SELECT COUNT(*) FROM finding_buddy WHERE mem_id = ?)) AS total_count "
+        + "FROM dual";  
 
         pstmt = conn.prepareStatement(sqlQuery2);
-        pstmt.setInt(1, b_idx);
+        pstmt.setString(1, mem_id);
+        pstmt.setString(2, mem_id);
+        pstmt.setString(3, mem_id);
+        pstmt.setString(4, mem_id);
+        
+        String  followerCnt = "";
+		String  followeeCnt = "";
+		String  postCnt = "";
+        
         rs = pstmt.executeQuery();
         
-        if (rs.next()) {
-        String content = rs.getString("content");
-        String mem_info = rs.getString("mem_info");
-        String mem_pic = rs.getString("mem_pic");
-        String mem_id = rs.getString("mem_id");
-        String mem_nick = rs.getString("mem_nick");
-        
-        System.out.print(content+mem_info+mem_pic+mem_id+mem_nick);
-        
+		if (rs.next()) {
+		followerCnt = rs.getString("follower_count");
+		followeeCnt = rs.getString("followee_count");
+		postCnt = rs.getString("total_count");
+		
         }
  %>
 
@@ -753,9 +760,9 @@ String sqlQuery2 = "SELECT (SELECT COUNT(*) FROM community WHERE mem_id = ?) (SE
 <div class="desktop-only">
 <div class="details row">
 <ul>
-<li><span>722</span> 게시물</li> 
-<li><span>25.1m</span> 팔로워</li>
-<li><span>6</span> 팔로잉</li>
+<li><span><%=postCnt %></span> 게시물</li> 
+<li><span><%=followerCnt %></span> 팔로워</li>
+<li><span><%=followeeCnt %></span> 팔로잉</li> 
 </ul>
 </div>
 <div class="description row last">

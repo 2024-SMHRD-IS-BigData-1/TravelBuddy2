@@ -230,11 +230,11 @@ a {
 </head>
 <body>
     <nav class="navbar">
-                              <img src="images/bg23412.jpg" alt="Background Image">
+       <img src="images/bg23412.jpg" alt="Background Image">
         <ul class="nav_menu">
             <li><a href="Main.jsp"><b>메인화면</b></a></li>
             <li><a href="Matching.jsp"><b>버디매칭</b></a></li>
-            <li><a href="Finding_Buddy.jsp"><b>버디찾기</b></a></li>
+            <li><a href="Finding_Buddy2.jsp"><b>버디찾기</b></a></li>
             <li><a href="Community.jsp"><b>커뮤니티</b></a></li>
             <li><a href="Profile.jsp"><b>프로필</b></a></li>
             <li><a href="LogoutService"><b>로그아웃</b></a></li>
@@ -286,7 +286,7 @@ a {
             <div class="w3-quarter 여행후기">
                 <div class="image-container">
                     <img src="images/9.jpg" alt="여행후기" style="width:100%">
-                    <h3>붕버빵바라기야옹이</h3>
+                    <h3>붕어빵바라기야옹이</h3>
                     <p>여행후기 : ~</p>
                 </div>
             </div>

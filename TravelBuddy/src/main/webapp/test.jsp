@@ -162,11 +162,20 @@ button:hover {
 	<nav class="navbar">
 		<img src="images/bg23412.jpg" alt="Background Image">
 		<ul class="nav_menu">
-			<li><a href="#"><b>메인화면</b></a></li>
-			<li><a href="#"><b>버디매칭</b></a></li>
-			<li><a href="#"><b>버디찾기</b></a></li>
-			<li><a href="#"><b>커뮤니티</b></a></li>
-			<li><a href="#"><b>프로필</b></a></li>
+			<li><a href="Main.jsp"><b>메인화면</b></a></li>
+<<<<<<< HEAD
+			<li><a href="Matching.jsp"><b>버디매칭</b></a></li>
+			<li><a href="Finding_Buddy2.jsp"><b>버디찾기</b></a></li>
+			<li><a href="Community.jsp"><b>커뮤니티</b></a></li>
+			<li><a href="Profile.jsp"><b>프로필</b></a></li>
+			<li><a href="LogoutService.jsp"><b>로그아웃</b></a></li>
+			<li><a href="MemberUpdate.jsp"><b>회원정보수정</b></a></li>
+=======
+			<li><a href="test.jsp"><b>버디매칭</b></a></li>
+			<li><a href="Find_Buddy.jsp"><b>버디찾기</b></a></li>
+			<li><a href="Community.jsp"><b>커뮤니티</b></a></li>
+			<li><a href="Profile.jsp"><b>프로필</b></a></li>
+>>>>>>> branch 'master' of https://github.com/2024-SMHRD-IS-BigData-1/TravelBuddy2
 		</ul>
 	</nav>
 	<div class="container">
@@ -232,3 +241,4 @@ button:hover {
 </body>
 
 </html>
+>>>>>>> branch 'master' of https://github.com/2024-SMHRD-IS-BigData-1/TravelBuddy2
