@@ -4,12 +4,6 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
-<!DOCTYPE html>
-<html>
-<head>
 <title>W3.CSS Template</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -63,8 +57,8 @@ a {
     display: flex;
     justify-content: space-between;
     list-style: none;
-    padding-right: 500px; 
-    margin: 0 20px;
+    padding-right: 0px; 
+    margin: 0px;
 }
 
 .nav_menu li {
@@ -72,8 +66,8 @@ a {
 }
 
 .nav_menu li a {
-    font-size: 22px;
-    padding: 0 50px; 
+    font-size: 25px;
+    padding:  50px; 
 }
 
 .nav_menu li a:hover {
@@ -229,20 +223,22 @@ a {
 
 @media (max-width: 750px) {
     .w3-row-padding .w3-quarter {
-        width: 100%; 
+        width: 150%; 
     }
 }
 </style>
 </head>
 <body>
     <nav class="navbar">
-        <img src="images/bg23412.jpg" alt="Background Image">
+                              <img src="images/bg23412.jpg" alt="Background Image">
         <ul class="nav_menu">
-            <li><a href="#"><b>메인화면</b></a></li>
-            <li><a href="#"><b>버디매칭</b></a></li>
-            <li><a href="#"><b>버디찾기</b></a></li>
-            <li><a href="#"><b>커뮤니티</b></a></li>
-            <li><a href="#"><b>프로필</b></a></li>
+            <li><a href="Main.jsp"><b>메인화면</b></a></li>
+            <li><a href="Matching.jsp"><b>버디매칭</b></a></li>
+            <li><a href="Finding_Buddy.jsp"><b>버디찾기</b></a></li>
+            <li><a href="Community.jsp"><b>커뮤니티</b></a></li>
+            <li><a href="Profile.jsp"><b>프로필</b></a></li>
+            <li><a href="LogoutService"><b>로그아웃</b></a></li>
+            <li><a href="MemberUpdate.jsp"><b>회원정보수정</b></a></li>
         </ul>
     </nav>
     <div class="category-tabs">
