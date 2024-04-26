@@ -730,6 +730,24 @@
 <button class="primary" value="<%= isFollowed ? stat_following : stat_follow %>" onclick="followBtnClick()">팔로우</button>
 </form>
 
+<%
+String sqlQuery2 = "SELECT (SELECT COUNT(*) FROM community WHERE mem_id = ?) (SELECT COUNT(*) FROM finding_buddy WHERE mem_id = ?) AS total_count FROM dual";
+
+        pstmt = conn.prepareStatement(sqlQuery2);
+        pstmt.setInt(1, b_idx);
+        rs = pstmt.executeQuery();
+        
+        if (rs.next()) {
+        String content = rs.getString("content");
+        String mem_info = rs.getString("mem_info");
+        String mem_pic = rs.getString("mem_pic");
+        String mem_id = rs.getString("mem_id");
+        String mem_nick = rs.getString("mem_nick");
+        
+        System.out.print(content+mem_info+mem_pic+mem_id+mem_nick);
+        
+        }
+ %>
 
 </div>
 <div class="desktop-only">
