@@ -731,21 +731,23 @@
 </form>
 
 <%
-String sqlQuery2 = "SELECT (SELECT COUNT(*) FROM community WHERE mem_id = ?) (SELECT COUNT(*) FROM finding_buddy WHERE mem_id = ?) AS total_count FROM dual";
+String sqlQuery2 = "SELECT (SELECT COUNT(*) FROM Following WHERE follower = ?) AS follower_count, "
+        + "(SELECT COUNT(*) FROM Following WHERE followee = ?) AS followee_count, "
+        + "((SELECT COUNT(*) FROM community WHERE mem_id = ?) + (SELECT COUNT(*) FROM finding_buddy WHERE mem_id = ?)) AS total_count "
+        + "FROM dual"; 
 
         pstmt = conn.prepareStatement(sqlQuery2);
-        pstmt.setInt(1, b_idx);
+        pstmt.setString(1, mem_id);
+        pstmt.setString(2, mem_id);
+        pstmt.setString(3, mem_id);
         rs = pstmt.executeQuery();
         
-        if (rs.next()) {
-        String content = rs.getString("content");
-        String mem_info = rs.getString("mem_info");
-        String mem_pic = rs.getString("mem_pic");
-        String mem_id = rs.getString("mem_id");
-        String mem_nick = rs.getString("mem_nick");
-        
-        System.out.print(content+mem_info+mem_pic+mem_id+mem_nick);
-        
+		if (rs.next()) {
+		String  followerCnt = rs.getString("follower_count");
+		String  followeeCnt = rs.getString("followee_count");
+		String  postCnt = rs.getString("total_count");
+		
+		 System.out.println("결과 : " + "wer" + followerCnt  + " , wee " + followeeCnt + ", post " + postCnt);
         }
  %>
 
