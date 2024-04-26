@@ -209,7 +209,7 @@ a {
     justify-content: space-between;
     align-items: center;
     background-color: white;
-    padding: 8px 12px;
+    padding: 8px 50px;
     margin-top: 0px;
 }
 
@@ -224,9 +224,9 @@ a {
 .nav_menu {
     display: flex;
     list-style: none;
-    justify-content: center;
-    padding-right: 550px;
-    margin: 0;
+    justify-content:space-between ;
+    padding-right: 0px;
+    margin: 0px;
 }
 
 .nav_menu li {
@@ -234,7 +234,7 @@ a {
 }
 
 .nav_menu li a {
-    font-size: 22px;
+    font-size: 25px;
     display: inline-block;
     padding: 0 40px;
 }
