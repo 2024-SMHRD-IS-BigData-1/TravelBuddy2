@@ -14,7 +14,8 @@ import com.smhrd.model.MemberDAO;
 @WebServlet("/LoginService")
 public class LoginService extends HttpServlet {
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // 로그인 기능
+      
+    	// 로그인 기능
         request.setCharacterEncoding("UTF-8");
         String id = request.getParameter("mem_id");
         String pw = request.getParameter("mem_pw");
