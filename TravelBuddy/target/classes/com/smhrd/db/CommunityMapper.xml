@@ -3,12 +3,14 @@
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
+<!-- CommunityMapper.xml -->
+
 <mapper namespace="com.smhrd.db.CommunityMapper">
 
-	<insert id="insertCommunity" parameterType="Community">
-		insert into web_board values(
-		num_board.nextval, #{b_category},#{B_content},#{created_at},#{mem_id});
-	
-	</insert>
-</mapper>	
-	
+    <!-- insertCommunity 쿼리 -->
+    <insert id="insertCommunity" parameterType="com.smhrd.model.Community">
+        INSERT INTO community (title, category, content, createdAt, memId)
+        VALUES (#{bTitle}, #{bCategory}, #{bContent}, #{createdAt}, #{memId})
+    </insert>
+
+</mapper>

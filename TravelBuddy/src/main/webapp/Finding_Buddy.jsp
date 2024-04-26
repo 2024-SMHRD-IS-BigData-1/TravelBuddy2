@@ -280,7 +280,7 @@ a {
          <a href="Main.jsp"><img src="images/bg23412.jpg" alt="Background Image"></a>
       <ul class="nav_menu">
           <li><a href="Main.jsp"><b>메인화면</b></a></li>
-          <li><a href="Matching.jsp"><b>버디매칭</b></a></li>
+          <li><a href="test.jsp"><b>버디매칭</b></a></li>
           <li><a href="Finding_Buddy.jsp"><b>버디찾기</b></a></li>
           <li><a href="Community.jsp"><b>커뮤니티</b></a></li>
           <li><a href="Profile.jsp"><b>프로필</b></a></li>
