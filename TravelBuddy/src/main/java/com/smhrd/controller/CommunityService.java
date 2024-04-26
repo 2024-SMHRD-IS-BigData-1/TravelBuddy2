@@ -2,6 +2,7 @@ package com.smhrd.controller;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Enumeration;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -23,31 +24,45 @@ public class CommunityService extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
 
         String uploadPath = getServletContext().getRealPath("/img");
-        String path = uploadPath + "/img"; // "/TravelBuddy/src/main/webapp/img" 경로
-
-        int maxSize = 10 * 1024 * 1024;
+        int maxSize = 10 * 1024 * 1024; // 최대 업로드 파일 크기 10MB로 제한
         String encoding = "UTF-8";
         DefaultFileRenamePolicy rename = new DefaultFileRenamePolicy();
 
-        MultipartRequest multi = new MultipartRequest(request, path, maxSize, encoding, rename);
+        MultipartRequest multi = new MultipartRequest(request, uploadPath, maxSize, encoding, rename);
 
+        String title = multi.getParameter("title");
         String content = multi.getParameter("content");
-        String date = multi.getParameter("date");
-        String id = multi.getParameter("id");
         String category = multi.getParameter("category");
+        String id = multi.getParameter("MEM_ID"); // 사용자 아이디 정보를 어떻게 받아올 지에 따라 수정 필요
 
-        String fileName = multi.getOriginalFileName("file"); // 파일 이름 가져오기
-        String fileSize = String.valueOf(multi.getFile("file").length()); // 파일 크기 가져오기
-        String fileExt = fileName.substring(fileName.lastIndexOf(".") + 1); // 파일 확장자 가져오기
-        String uploadedAt = date; // 업로드 날짜는 게시글 작성 날짜와 같음
-
-        File file = new File(fileName, fileSize, fileExt, uploadedAt, 0); // 게시글 식별자는 일단 0으로 설정
         List<File> files = new ArrayList<>();
-        files.add(file);
 
-        Community community = new Community(0, category, content, date, id, files);
+        // 파일 업로드 처리
+        Enumeration<?> fileNames = multi.getFileNames();
+        while (fileNames.hasMoreElements()) {
+            String paramName = (String) fileNames.nextElement();
+            String fileName = multi.getFilesystemName(paramName); // 변경된 파일 이름 가져오기
+            String originalFileName = multi.getOriginalFileName(paramName); // 원본 파일 이름 가져오기
+            String fileType = multi.getContentType(paramName); // 파일 타입 가져오기
+            System.out.println("fileName: " + fileName);
+            System.out.println("originalFileName: " + originalFileName);
+            System.out.println("fileType: " + fileType);
 
-        int cnt = new CommunityDAO().insertCommunity(community);
+            File file = new File(fileName, originalFileName, fileType); // 생성자 확인
+            files.add(file);
+        }
+
+        System.out.println("title: " + title);
+        System.out.println("content: " + content);
+        System.out.println("category: " + category);
+        System.out.println("id: " + id);
+
+        // Community 객체 생성
+        Community community = new Community(0, category, content, null, id, title, files);
+
+        // CommunityDAO를 사용하여 데이터베이스에 게시글 정보 저장
+        CommunityDAO communityDAO = new CommunityDAO();
+        int cnt = communityDAO.insertCommunity(community);
 
         if (cnt > 0) {
             System.out.println("게시글 업로드 성공");

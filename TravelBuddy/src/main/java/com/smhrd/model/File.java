@@ -1,19 +1,23 @@
 package com.smhrd.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
+@Data
+@AllArgsConstructor
 public class File {
     private String fileName;
-    private String fileSize;
+    private long fileSize; // 파일 크기를 저장할 수 있도록 변경
     private String fileExt;
-    private String uploadedAt;
-    private int bIdx; // 해당 파일이 속한 게시글의 식별자
+    private String uploadedAt; // 파일 업로드 시간을 저장할 수 있도록 변경
+    private int bIdx;
 
-    public File(String fileName, String fileSize, String fileExt, String uploadedAt, int bIdx) {
-        this.fileName = fileName;
-        this.fileSize = fileSize;
-        this.fileExt = fileExt;
-        this.uploadedAt = uploadedAt;
-        this.bIdx = bIdx;
+    // 생성자 오버로딩을 통해 기본 생성자 추가
+    public File() {
+        this.fileName = "";
+        this.fileSize = 0;
+        this.fileExt = "";
+        this.uploadedAt = "";
+        this.bIdx = 0;
     }
-
-    // Getter 및 Setter 메서드는 생략했습니다.
 }
