@@ -13,6 +13,23 @@
 <meta charset="UTF-8">
 <title>게시물 보기</title>
 <style>
+
+@font-face {
+    font-family: 'Freesentation-9Black';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2404@1.0/Freesentation-9Black.woff2') format('woff2');
+    font-weight: 900;
+    font-style: normal;
+}
+body {
+   font-family: 'Freesentation-9Black';
+    margin-top: 20px;
+    background-color: #eee;
+}
+
+button{
+   font-family: 'Freesentation-9Black';
+}
+
 #comments {
    margin-top: 20px;
 }
@@ -51,6 +68,7 @@
 }
 
 .comment-form button {
+   font-family: 'Freesentation-9Black';
    background-color: #2D2F7A;
    color: #fff;
    border: none;
@@ -59,12 +77,9 @@
 }
 
 .comment-form button:hover {
+   font-family: 'Freesentation-9Black';
    background-color: #1e1f5e;
 }
-
-@import
-   url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700&display=swap')
-   ;
 
 * {
    box-sizing: border-box;
@@ -72,7 +87,7 @@
 }
 
 body {
-   font-family: 'Noto Sans KR', sans-serif;
+   font-family: 'Freesentation-9Black';
    background-color: #f2f2f2;
 }
 
@@ -82,13 +97,14 @@ textarea#title {
 
 textarea#content {
    height: 150px;
+   
 }
 
 .container {
+   color: gray;
    margin: 0 auto;
    max-width: 800px;
    padding: 20px 15px;
-   text-align: center;
 }
 
 .btn {
@@ -146,7 +162,7 @@ th {
    border: 1px solid #d9d6d6;
    color: #383838;
    background-color: #ffffff;
-   font-family: 'Noto Sans KR', sans-serif;
+   font-family: 'Freesentation-9Black';
 }
 
 .option {
@@ -168,24 +184,60 @@ th {
 
 .child-comment {
    margin-left: 20px; /* 들여쓰기 */
-   border-left: 2px solid #ccc; /* 구분선 */
    padding-left: 10px; /* 내용과의 간격 조절 */
 }
 
 .action-buttons {
+   font-family: 'Freesentation-9Black';
    margin-top: 10px;
 }
 
 .action-buttons button {
+   font-family: 'Freesentation-9Black';
    margin-right: 10px;
 }
+
+#footer>#search-area {
+            display: flex;
+            width: 500px;
+            height: 40px;
+            justify-content: space-between;
+            align-items: center;
+            margin: 20px auto;
+            border: 1px solid lightgray;
+            border-radius: 20px;
+            padding: 0 14px;
+        }
+
+#text-area>input {
+            width: 350px;
+            border: 0;
+            outline: 0;
+        }
+
+#text-area>div>button {
+            padding: 0 8px;
+        }
+        
+#main2>#text-area {
+            display: flex;
+            width: 500px;
+            height: 40px;
+            justify-content: space-between;
+            align-items: left;
+            margin: 20px auto;
+            border: 1px solid lightgray;
+            border-radius: 20px;
+            padding: 0 14px;
+        }
+
 </style>
 <link rel="stylesheet" href="css/post(write).css">
 </head>
 <body>
    <div class="container">
       <div id="wrap" class="box">
-         <h2>작성글</h2>
+          <div id="header">
          <div id="post">
             <%
             // 세션에서 로그인된 사용자 정보를 가져옵니다.
@@ -209,36 +261,35 @@ th {
                buddy_idx = Integer.parseInt(buddy_idx_param);
             }
 
-                if (buddy_idx_param != null) {
-                    BuddyFinding buddyFinding = new BuddyFindingDAO().getBuddyFindingByBuddyIdx(buddy_idx);
-                    if (buddyFinding != null) {
-                %>
-                <p>
-                    <strong>게시물 제목</strong>:
-                    <%=buddyFinding.getTitle()%>
-                </p>
-                <p>
-                    <strong>여행날짜</strong>:
-                    <%=buddyFinding.getTravel_dt()%>
-                </p>
-                <p>
-                    <strong>여행국가</strong>:
-                    <%=buddyFinding.getPlace_name()%>
-                </p>
-               <p>
-                    <strong>작성자 닉네임</strong>:
-                    <a href="Profile.jsp?buddy_idx=<%=buddy_idx%>"><%=buddyFinding.getMem_id()%></a>
-                </p>
-                <p>
-                    <strong>내용</strong>:
-                    <%=buddyFinding.getContent()%>
-                </p>
-
-            <div id="map" style="width: 100%; height: 400px;"></div>
+            if (buddy_idx_param != null) {
+               BuddyFinding buddyFinding = new BuddyFindingDAO().getBuddyFindingByBuddyIdx(buddy_idx);
+               if (buddyFinding != null) {
+            %>
+         </div>
+            <div id="content">
+            <p style="font-size: 200%; color: black;">
+               <%=buddyFinding.getTitle()%> <br> <!-- 제목 -->
+            </p>
             <p>
-               <strong>선택한 위치</strong>:
-               <%=buddyFinding.getPlace_name()%>
-               (<span id="lat"><%=buddyFinding.getLat()%></span>, <span id="lng"><%=buddyFinding.getLng()%></span>)
+            <strong>여행일정</strong>
+            </p>
+            <p class="comment child-comment" style="margin-left: 0;">
+               <%=buddyFinding.getTravel_dt()%> <br> <!-- 여행날짜 -->
+               <%=buddyFinding.getPlace_name()%> <br> <!-- 여행국가 -->
+               <%=buddyFinding.getMem_id()%> <br> <!-- 작성자 닉네임 -->
+            </p>
+            <p>
+            <strong>여행소개</strong>
+            </p>
+            <p>
+               <%=buddyFinding.getContent()%> <br> <!-- 내용 -->
+            </p>
+            </div>
+            
+            <div>
+            <div id="map" style="width: 50%; height: 200px;"></div>
+            <p style="display:none;">
+               <span id="lat"><%=buddyFinding.getLat()%></span>, <span id="lng"><%=buddyFinding.getLng()%></span>
             </p>
             <%
             } else {
@@ -252,18 +303,38 @@ th {
             <%
             }
             %>
+            </div>
          </div>
          <div id="comment-form">
             <%
             // mem_id가 로그인되어 있을 때만 댓글을 작성할 수 있도록 함
             if (loginMember != null) {
             %>
+            <div id=comment(1)><h3>댓글</h3></div>
+            <div id="main2">
+            <div id="text-area">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input id="text-input" type="text" name="text-input" >
+                <input type="hidden" id="buddy_idx" name="buddy_idx"
+                  value="<%=buddy_idx%>">
+                <div>
+                	<button type="submit">댓글 작성</button>
+                </div>
+            </div>
+        	</div>
+        	
+            <div id="footer">
             <form action="AddCommentServlet" method="post">
-               <textarea id="comment-content" name="comment-content"
-                  placeholder="댓글을 입력하세요" required></textarea>
+            <div id="text-area">
+               <input type="text" name="comment-content">
+            </div>   
+               <!-- <textarea id="comment-content" name="comment-content"
+                  placeholder="댓글을 입력하세요" required></textarea> -->
                <input type="hidden" id="buddy_idx" name="buddy_idx"
                   value="<%=buddy_idx%>">
+               <div>
                <button type="submit">댓글 작성</button>
+               </div>
             </form>
             <%
             } else {
@@ -365,6 +436,7 @@ th {
             }
             %>
          </div>
+         </div>
 
 
 
@@ -373,7 +445,8 @@ th {
 
          <div class="button">
             <!-- 게시물 목록 페이지로 이동하는 링크 -->
-            <a href="Finding_Buddy.jsp">게시물 목록으로 돌아가기</a>
+            <button type="button" class="btn btn-danger my-3" onclick="deletePost(this)" font-family="Freesentation-9Black">삭제</button>
+            <a href="Finding_Buddy.jsp"><button>돌아가기</button></a>
          </div>
       </div>
    </div>

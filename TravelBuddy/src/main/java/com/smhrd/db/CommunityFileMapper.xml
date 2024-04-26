@@ -9,8 +9,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
     <!-- insertCommunity 쿼리 -->
     <insert id="insertCommunity" parameterType="com.smhrd.model.Community">
-        INSERT INTO community (b_category, b_content, created_at, mem_id, title)
-        VALUES (#{b_category}, #{b_content}, #{created_at}, #{mem_id}, #{b_title})
+        INSERT INTO community_file (file_name, file_size, file_ext, uploaded_at)
+        VALUES (#{file_name}, #{file_size}, #{file_ext}, #{uploaded_at})
     </insert>
 
 </mapper>

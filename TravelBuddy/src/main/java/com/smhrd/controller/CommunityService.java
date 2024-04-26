@@ -16,6 +16,8 @@ import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 import com.smhrd.model.Community;
 import com.smhrd.model.CommunityDAO;
+import com.smhrd.model.CommunityFile;
+import com.smhrd.model.CommunityFileDAO;
 
 @WebServlet("/CommunityService")
 public class CommunityService extends HttpServlet {
@@ -48,39 +50,25 @@ public class CommunityService extends HttpServlet {
         int maxSize = 10 * 1024 * 1024; // 최대 업로드 파일 크기 10MB로 제한
         String encoding = "UTF-8";
         DefaultFileRenamePolicy rename = new DefaultFileRenamePolicy();
-
         MultipartRequest multi = new MultipartRequest(request, path, maxSize, encoding, rename);
 
-        String name = multi.getParameter("file_name");
-        String size = multi.getParameter("file_size");
-        String category = multi.getParameter("category");
-        String id = multi.getParameter("mem_id"); // 사용자 아이디 정보를 어떻게 받아올 지에 따라 수정 필요
+        String Fname = multi.getParameter("file_name");
+        int Fsize = Integer.parseInt(multi.getParameter("file_size")); 
+        String Fext = multi.getParameter("file_ext");
+        String Fdate = multi.getParameter("uploaded_at");
 
-
-        // 파일 업로드 처리
-        Enumeration<?> fileNames = multi.getFileNames();
-        while (fileNames.hasMoreElements()) {
-            String paramName = (String) fileNames.nextElement();
-            String fileName = multi.getFilesystemName(paramName); // 변경된 파일 이름 가져오기
-            String originalFileName = multi.getOriginalFileName(paramName); // 원본 파일 이름 가져오기
-            String fileType = multi.getContentType(paramName); // 파일 타입 가져오기
-            System.out.println("fileName: " + fileName);
-            System.out.println("originalFileName: " + originalFileName);
-            System.out.println("fileType: " + fileType);
-
-            if (fileName != null) { // 파일이 선택되었는지 확인
-                File file = new File(fileName, originalFileName, fileType); // 생성자 확인
-                files.add(file);
-            }
-        }
-
+        
+        
         System.out.println("title: " + title);
         System.out.println("content: " + content);
         System.out.println("category: " + category);
         System.out.println("id: " + id);
 
         // Community 객체 생성
-        Community community = new Community(0, category, content, null, id, title, files);
+        Community community = new Community(title, id, content, category);
+
+        CommunityFile communityFile = new CommunityFile(Fname, Fsize, Fext, Fdate);
+        
 
         // CommunityDAO를 사용하여 데이터베이스에 게시글 정보 저장
         CommunityDAO communityDAO = new CommunityDAO();
@@ -90,6 +78,15 @@ public class CommunityService extends HttpServlet {
             System.out.println("게시글 업로드 성공");
         } else {
             System.out.println("게시글 업로드 실패");
+        }
+        
+        CommunityFileDAO communityFileDAO = new CommunityFileDAO();
+        int Fcnt = communityFileDAO.insertCommunityFile(communityFile);
+        
+        if (cnt > 0) {
+            System.out.println("이미지 업로드 성공");
+        } else {
+            System.out.println("이미지 업로드 실패");
         }
     }
 }

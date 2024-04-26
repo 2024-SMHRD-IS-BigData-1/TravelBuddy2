@@ -168,7 +168,7 @@ th {
                                 <!-- 선택된 이미지 미리보기를 여기에 표시합니다. -->
                             </div>
                             <div id="selected-images"></div> <!-- 선택된 이미지 목록을 여기에 표시합니다. -->
-                            <input type="file" id="file" name="file" multiple>
+                            <input name="filename" type="file" style="float: left;">
                         </td>
                     </tr>
                 </table>
@@ -179,12 +179,22 @@ th {
         </div>
     </div>
 
-    <script>
-    function previewImages(event) {
+    <script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/skel.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+	<script src="assets/js/main.js"></script>
+	<script>
+    function previewImage(event) {
         var fileList = event.target.files;
-        var imageContainer = document.querySelector('.image-container');
-        var selectedImagesContainer = document.getElementById('selected-images');
+        var imageContainer = document.getElementById('image-container');
 
+        // 기존에 추가된 이미지 삭제
+        imageContainer.innerHTML = '';
+
+        // 선택된 이미지를 프리뷰로 추가
         for (var i = 0; i < fileList.length; i++) {
             var reader = new FileReader();
             reader.onload = function(event) {
@@ -192,16 +202,12 @@ th {
                 imagePreview.src = event.target.result;
                 imagePreview.classList.add('image-preview');
                 imageContainer.appendChild(imagePreview);
-
-                var selectedImageName = document.createElement('p');
-                selectedImageName.textContent = '선택된 이미지: ' + fileList[i].name;
-                selectedImagesContainer.appendChild(selectedImageName);
             }
             reader.readAsDataURL(fileList[i]);
         }
     }
 
-    document.getElementById('file').addEventListener('change', previewImages);
-    </script>
+    // 파일 입력 요소에 change 이벤트 리스너 추가
+    document.getElementById('filename').addEventListener('change', previewImage);
 </body>
 </html>

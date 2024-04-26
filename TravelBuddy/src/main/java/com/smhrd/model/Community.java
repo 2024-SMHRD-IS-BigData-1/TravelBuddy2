@@ -4,16 +4,19 @@ import java.util.List; // List import 구문 추가
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
 
 @Data
 @AllArgsConstructor
+@RequiredArgsConstructor
 public class Community {
     private int b_idx;
-    private String b_category;
-    private String b_content;
+    @NonNull private String b_category;
+    @NonNull private String b_content;
     private String created_at;
-    private String mem_id;
-    private String title;
+    @NonNull private String mem_id;
+    @NonNull private String title;
 
     // 기본 생성자
     public Community() {}
