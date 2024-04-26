@@ -137,6 +137,15 @@ th {
         <div id="wrap">
             <h2>커뮤니티 작성</h2>
             <form action="CommunityService" method="post" enctype="multipart/form-data">
+            <%@ page import="com.smhrd.model.Member" %>
+            
+            <%
+	            Member loginMember = (Member) session.getAttribute("loginMember");
+	            String mem_id = "";
+	            if (loginMember != null) {
+	                mem_id = loginMember.getMem_id(); 
+	            }
+            %>
                 <table>
                     <tr>
                         <th>제목</th>
@@ -171,29 +180,28 @@ th {
     </div>
 
     <script>
-        function previewImages(event) {
-            var fileList = event.target.files;
-            var imageContainer = document.querySelector('.image-container');
-            var selectedImagesContainer = document.getElementById('selected-images');
-        
-            for (var i = 0; i < fileList.length; i++) {
-                var reader = new FileReader();
-                reader.onload = function(event) {
-                    var imagePreview = document.createElement('img');
-                    imagePreview.src = event.target.result;
-                    imagePreview.classList.add('image-preview');
-                    imageContainer.appendChild(imagePreview);
-                }
-                reader.readAsDataURL(fileList[i]);
-            }
-            for (var j = 0; j < fileList.length; j++) {
+    function previewImages(event) {
+        var fileList = event.target.files;
+        var imageContainer = document.querySelector('.image-container');
+        var selectedImagesContainer = document.getElementById('selected-images');
+
+        for (var i = 0; i < fileList.length; i++) {
+            var reader = new FileReader();
+            reader.onload = function(event) {
+                var imagePreview = document.createElement('img');
+                imagePreview.src = event.target.result;
+                imagePreview.classList.add('image-preview');
+                imageContainer.appendChild(imagePreview);
+
                 var selectedImageName = document.createElement('p');
-                selectedImageName.textContent = '선택된 이미지: ' + fileList[j].name;
+                selectedImageName.textContent = '선택된 이미지: ' + fileList[i].name;
                 selectedImagesContainer.appendChild(selectedImageName);
             }
+            reader.readAsDataURL(fileList[i]);
         }
+    }
 
-        document.getElementById('file').addEventListener('change', previewImages);
+    document.getElementById('file').addEventListener('change', previewImages);
     </script>
 </body>
 </html>

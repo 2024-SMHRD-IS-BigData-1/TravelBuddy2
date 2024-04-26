@@ -1,1 +1,1 @@
-select * from FINDING_BUDDY;
+select * from COMMUNITY_FILE;

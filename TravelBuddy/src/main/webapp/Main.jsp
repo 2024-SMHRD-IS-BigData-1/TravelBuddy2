@@ -8,44 +8,78 @@
 </head>
 <body>
 
-<input type="text" name="nick" placeholder="nickname를 입력하세요"><br>
- 
-<div class="chat-container">
-    <div class="chat-messages" id="chat-messages">
-        <!-- 채팅 메시지가 여기에 나타납니다. -->
-    </div>
-    <input type="text" class="chat-input" id="chat-input" placeholder="메시지 입력...">
-    <button onclick="sendMessage()">전송</button>
-</div>
-
-<script>
-    function sendMessage() {
-        var messageInput = document.getElementById("chat-input");
-        var message = messageInput.value;
-        if (message.trim() !== "") {
-            var chatMessages = document.getElementById("chat-messages");
-            var messageElement = document.createElement("div");
-            messageElement.textContent = message;
-            chatMessages.appendChild(messageElement);
-            messageInput.value = "";
-            chatMessages.scrollTop = chatMessages.scrollHeight;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            margin: 0; 
+            padding: 20px; 
+            background-color: white; 
+            text-align: center;
+        } 
+        .navbar {
+            display: flex;
+            align-items: center;
+            background-color: white;
+            padding: 12px;
+            margin-top: -25px;
         }
-    }
-</script>
+        .navbar img {
+            margin-left: 275px;
+        }
+        .nav_menu {
+            display: flex;
+            list-style: none;
+            justify-content: center;
+            padding-right: 0;
+            margin: 10px;
+            margin-top: 0px;
+        }
+        .nav_menu li {
+            margin: 22px;
+        }
+        .nav_menu li a {
+            font-size: 22px; 
+            display: inline-block; 
+            text-decoration: none;
+            padding: 0 25px; 
+            color: #2D2F7A; 
+        }
+        .nav_menu li a:hover {
+            color: #1e1f5e;
+        }
+
+        .image-container {
+            margin-top: 150px; 
+        }
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
 <body>
-    <h2>프로필 폼</h2>
-    <form action="submit_profile.php" method="post" enctype="multipart/form-data">
-        <label for="member_id">회원 아이디:</label><br>
-        <input type="text" id="member_id" name="member_id"><br><br>
-        
-        <label for="introduction">자기 소개:</label><br>
-        <textarea id="introduction" name="introduction" rows="4" cols="50"></textarea><br><br>
-        
-        <label for="profile_picture">프로필 사진:</label><br>
-        <input type="file" id="profile_picture" name="profile_picture"><br><br>
-         
-       
-    </form>
+    <nav class="navbar">
+        <img src="images/bg23412.jpg" alt="Background Image">
+        <ul class="nav_menu">
+            <li><a href="Main.jsp"><b>메인화면</b></a></li>
+            <li><a href="Matching.jsp"><b>버디매칭</b></a></li>
+            <li><a href="Finding_Buddy.jsp"><b>버디찾기</b></a></li>
+            <li><a href="Community.jsp"><b>커뮤니티</b></a></li>
+            <li><a href="Profile.jsp"><b>프로필</b></a></li>
+        </ul>
+    </nav>
+    <div class="image-container">
+        <img src="images/main.jpg" alt="gif">
+    </div>
+</body>
+</html>
+
     </body>
 
 
