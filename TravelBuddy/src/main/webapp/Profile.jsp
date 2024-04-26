@@ -677,7 +677,7 @@
         %>
 
 <div>
-<form id="followForm" action="FolloweSerivce" method="post">
+<form id="followForm" action="FollowSerivce" method="post">
 <input type="hidden" name="Follower" value="<%= loginId %>">
 <input type="hidden" name="Followee" value="<%= mem_id %>">
 <input type="hidden" name="isFollowed" value="<%= isFollowed %>">
