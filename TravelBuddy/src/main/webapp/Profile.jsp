@@ -731,23 +731,28 @@
 </form>
 
 <%
-String sqlQuery2 = "SELECT (SELECT COUNT(*) FROM Following WHERE follower = ?) AS follower_count, "
+		String sqlQuery2 = "SELECT (SELECT COUNT(*) FROM Following WHERE follower = ?) AS follower_count, "
         + "(SELECT COUNT(*) FROM Following WHERE followee = ?) AS followee_count, "
         + "((SELECT COUNT(*) FROM community WHERE mem_id = ?) + (SELECT COUNT(*) FROM finding_buddy WHERE mem_id = ?)) AS total_count "
-        + "FROM dual"; 
+        + "FROM dual";  
 
         pstmt = conn.prepareStatement(sqlQuery2);
         pstmt.setString(1, mem_id);
         pstmt.setString(2, mem_id);
         pstmt.setString(3, mem_id);
+        pstmt.setString(4, mem_id);
+        
+        String  followerCnt = "";
+		String  followeeCnt = "";
+		String  postCnt = "";
+        
         rs = pstmt.executeQuery();
         
 		if (rs.next()) {
-		String  followerCnt = rs.getString("follower_count");
-		String  followeeCnt = rs.getString("followee_count");
-		String  postCnt = rs.getString("total_count");
+		followerCnt = rs.getString("follower_count");
+		followeeCnt = rs.getString("followee_count");
+		postCnt = rs.getString("total_count");
 		
-		 System.out.println("결과 : " + "wer" + followerCnt  + " , wee " + followeeCnt + ", post " + postCnt);
         }
  %>
 
@@ -755,9 +760,9 @@ String sqlQuery2 = "SELECT (SELECT COUNT(*) FROM Following WHERE follower = ?) A
 <div class="desktop-only">
 <div class="details row">
 <ul>
-<li><span>722</span> 게시물</li> 
-<li><span>25.1m</span> 팔로워</li>
-<li><span>6</span> 팔로잉</li>
+<li><span><%=postCnt %></span> 게시물</li> 
+<li><span><%=followerCnt %></span> 팔로워</li>
+<li><span><%=followeeCnt %></span> 팔로잉</li> 
 </ul>
 </div>
 <div class="description row last">

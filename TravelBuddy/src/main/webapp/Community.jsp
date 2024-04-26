@@ -238,10 +238,7 @@ a {
             <li><a href="Community.jsp"><b>커뮤니티</b></a></li>
             <li><a href="Profile.jsp"><b>프로필</b></a></li>
             <li><a href="LogoutService"><b>로그아웃</b></a></li>
-<<<<<<< HEAD
             <li><a href="MemberUpdate.jsp"><b>회원정보수정</b></a></li>
-=======
->>>>>>> branch 'master' of https://github.com/2024-SMHRD-IS-BigData-1/TravelBuddy2
         </ul>
     </nav>
     <div class="category-tabs">
@@ -289,7 +286,7 @@ a {
             <div class="w3-quarter 여행후기">
                 <div class="image-container">
                     <img src="images/9.jpg" alt="여행후기" style="width:100%">
-                    <h3>붕버빵바라기야옹이</h3>
+                    <h3>붕어빵바라기야옹이</h3>
                     <p>여행후기 : ~</p>
                 </div>
             </div>
