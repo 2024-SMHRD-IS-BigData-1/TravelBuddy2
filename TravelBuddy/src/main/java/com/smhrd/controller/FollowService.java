@@ -13,13 +13,16 @@ import javax.servlet.http.HttpServletResponse;
 import com.smhrd.model.FollowDAO;
 import com.smhrd.model.Follow;
 
-@WebServlet("/follow")
+@WebServlet("/FollowService")
 public class FollowService extends HttpServlet {
 
     @Override
     protected void service(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
     	
+    	System.out.println("FollowService 진입!");
+    	
+    	request.setCharacterEncoding("UTF-8");
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
 

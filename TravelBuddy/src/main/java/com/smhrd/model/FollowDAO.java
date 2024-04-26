@@ -15,7 +15,7 @@ public class FollowDAO {
 	   Connection conn = null;
 	   
 	   
-	   String TABLE_NAME = "S_FOLLOWING";
+	   String TABLE_NAME = "Following";
 	   
 	   String COLUMN_IDX = "FOLLOW_IDX";
 	   String COLUMN_WER = "FOLLOWER";
@@ -92,12 +92,12 @@ public class FollowDAO {
 			      
 			      try {
 			    	// false : insert 가능
-			    		 String sql = "insert into " + TABLE_NAME + " ("+ COLUMN_IDX +" ," + COLUMN_WER +", " + COLUMN_WEE + ") values(FOLLOWING_SEQ.nextval, ?, ?)";
-				         psmt = conn.prepareStatement(sql);
-				      
-				         
-				         psmt.setString(1, vo.getFollower());
-				         psmt.setString(2, vo.getFollowee());
+			    	  String sql = "INSERT INTO " + TABLE_NAME + " (" + COLUMN_IDX + ", " + COLUMN_WER + ", " + COLUMN_WEE + ", FOLLOWED_AT) VALUES (FOLLOWING_SEQ.nextval, ?, ?, SYSDATE)";
+			    	  psmt = conn.prepareStatement(sql);
+
+			    	  psmt.setString(1, vo.getFollower());
+			    	  psmt.setString(2, vo.getFollowee());
+
 				         
 				         
 				         cnt = psmt.executeUpdate();

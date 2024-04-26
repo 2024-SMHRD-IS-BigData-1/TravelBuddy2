@@ -626,10 +626,9 @@
         request.setCharacterEncoding("UTF-8");
 
 
-        String sqlQuery = "SELECT f.content, m.mem_id, m.mem_name, mp.mem_info, mp.profile_photo " +
+        String sqlQuery = "SELECT f.content, m.mem_id, m.mem_nick, m.mem_info, m.mem_pic " +
         "FROM Finding_Buddy f " + // f와 JOIN 키워드 사이에 공백 추가
         "JOIN Members m ON f.mem_id = m.mem_id " + // m과 JOIN 키워드 사이에 공백 추가
-        "JOIN member_profile mp ON m.mem_id = mp.mem_id " + // mp와 JOIN 키워드 사이에 공백 추가
         "WHERE f.Buddy_idx = ?";
 
 
@@ -640,9 +639,12 @@
         if (rs.next()) {
         String content = rs.getString("content");
         String mem_info = rs.getString("mem_info");
-        String profile_photo = rs.getString("profile_photo");
+        String mem_pic = rs.getString("mem_pic");
         String mem_id = rs.getString("mem_id");
-        String mem_name = rs.getString("mem_name");
+        String mem_nick = rs.getString("mem_nick");
+        
+        System.out.print(content+mem_info+mem_pic+mem_id+mem_nick);
+        
         %>
 
 <%
@@ -676,13 +678,7 @@
 
         %>
 
-<div>
-<form id="followForm" action="FollowSerivce" method="post">
-<input type="hidden" name="Follower" value="<%= loginId %>">
-<input type="hidden" name="Followee" value="<%= mem_id %>">
-<input type="hidden" name="isFollowed" value="<%= isFollowed %>">
-<input id="followBtn" type="button" value="<%= isFollowed ? stat_following : stat_follow %>" onclick="followBtnClick()">
-</form>
+
 <script>
                        function followBtnClick() {
                                if (document.getElementById("followBtn").value === "following") {
@@ -725,14 +721,21 @@
 </div>
 <div class="profile-info">
 <div class="title row">
-<h1><%=mem_name %></h1>
+<h1><%=mem_nick %></h1>
 <span class="verified-icon"></span>
-<button class="primary">팔로우</button>
+<form id="followForm" action="FollowService" method="post">
+<input type="hidden" name="Follower" value="<%= loginId %>">
+<input type="hidden" name="Followee" value="<%= mem_id %>">
+<input type="hidden" name="isFollowed" value="<%= isFollowed %>">
+<button class="primary" value="<%= isFollowed ? stat_following : stat_follow %>" onclick="followBtnClick()">팔로우</button>
+</form>
+
+
 </div>
 <div class="desktop-only">
 <div class="details row">
 <ul>
-<li><span>722</span> 게시물</li>
+<li><span>722</span> 게시물</li> 
 <li><span>25.1m</span> 팔로워</li>
 <li><span>6</span> 팔로잉</li>
 </ul>
