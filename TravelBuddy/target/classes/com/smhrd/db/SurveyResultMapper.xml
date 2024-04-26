@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.smhrd.db.SurveyResultMapper">
+    
+    <insert id="insertSurveyResult" parameterType="com.smhrd.model.SurveyResult">
+        INSERT INTO travel_tendency_result (mem_id, tendency_result, created_at)
+        VALUES (#{mem_id}, #{tendency_result}, SYSDATE)
+    </insert>
+    
+    <select id="getSurveyResultByMemId" resultType="com.smhrd.model.SurveyResult">
+        SELECT * FROM travel_tendency_result
+        WHERE mem_id = #{mem_id}
+    </select>
+    
+</mapper>

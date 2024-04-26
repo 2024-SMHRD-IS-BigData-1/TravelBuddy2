@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
-   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-   xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
                         http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
-   version="3.1">
+	version="3.1">
 
-   <display-name>Archetype Created Web Application</display-name>
+	<display-name>Archetype Created Web Application</display-name>
 
-   <!-- BoardDelete Servlet -->
-   <servlet>
-      <servlet-name>BoardDelete</servlet-name>
-      <servlet-class>com.smhrd.controller.BoardDelete</servlet-class>
-   </servlet>
-   <servlet-mapping>
-      <servlet-name>BoardDelete</servlet-name>
-      <url-pattern>/BoardDelete</url-pattern>
-   </servlet-mapping>
+	<!-- BoardDelete Servlet -->
+	<servlet>
+		<servlet-name>BoardDelete</servlet-name>
+		<servlet-class>com.smhrd.controller.BoardDelete</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>BoardDelete</servlet-name>
+		<url-pattern>/BoardDelete</url-pattern>
+	</servlet-mapping>
 
-   <!-- BuddyFindingService Servlet -->
-   <servlet>
-      <servlet-name>BuddyFindingService</servlet-name>
-      <servlet-class>com.smhrd.controller.BuddyFindingService</servlet-class>
-   </servlet>
-   <servlet-mapping>
-      <servlet-name>BuddyFindingService</servlet-name>
-      <url-pattern>/BuddyFindingService</url-pattern>
-   </servlet-mapping>
-
+	<!-- BuddyFindingService Servlet -->
+	<servlet>
+		<servlet-name>BuddyFindingService</servlet-name>
+		<servlet-class>com.smhrd.controller.BuddyFindingService</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>BuddyFindingService</servlet-name>
+		<url-pattern>/BuddyFindingService</url-pattern>
+	</servlet-mapping>
+	
 </web-app>

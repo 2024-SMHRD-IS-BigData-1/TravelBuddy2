@@ -234,26 +234,6 @@ th {
                     <%=buddyFinding.getContent()%>
                 </p>
 				<p>
-					<strong>게시물 제목</strong>:
-					<%=buddyFinding.getTitle()%>
-				</p>
-				<p>
-					<strong>여행날짜</strong>:
-					<%=buddyFinding.getTravel_dt()%>
-				</p>
-				<p>
-					<strong>여행국가</strong>:
-					<%=buddyFinding.getPlace_name()%>
-				</p>
-				<p>
-					<strong>작성자 닉네임</strong>:
-					<%=buddyFinding.getMem_id()%>
-				</p>
-				<p>
-					<strong>내용</strong>:
-					<%=buddyFinding.getContent()%>
-				</p>
-
 				<div id="map" style="width: 100%; height: 400px;"></div>
 				<p>
 					<strong>선택한 위치</strong>:
@@ -410,10 +390,7 @@ th {
         }
     </script>
 
-<<<<<<< HEAD
-=======
 	<!-- Google Maps API -->
->>>>>>> branch 'master' of https://github.com/2024-SMHRD-IS-BigData-1/TravelBuddy2
 
 
 
