@@ -227,7 +227,7 @@ th {
                 </p>
                <p>
                     <strong>작성자 닉네임</strong>:
-                    <a href="Profile.jsp?buddy_idx"<%=buddy_idx%>><%=buddyFinding.getMem_id()%></a>
+                    <a href="Profile.jsp?buddy_idx=<%=buddy_idx%>"><%=buddyFinding.getMem_id()%></a>
                 </p>
                 <p>
                     <strong>내용</strong>:

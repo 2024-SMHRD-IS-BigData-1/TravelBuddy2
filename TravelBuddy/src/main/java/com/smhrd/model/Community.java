@@ -1,26 +1,21 @@
 package com.smhrd.model;
 
+import java.util.List; // List import 구문 추가
+
 import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.Data;
 
+@Data
 @AllArgsConstructor
-@RequiredArgsConstructor
-@NoArgsConstructor
-@Getter
-@Setter
-@ToString
 public class Community {
-	
-	private int B_idx;
-	private String b_category;
-	private String B_content;
-	private String created_at;
-	@NonNull private String mem_id;
-	
+    private int bIdx;
+    private String bCategory;
+    private String bContent;
+    private String createdAt;
+    private String memId;
+    private String bTitle;
+    private List<File> files;
 
+    // 기본 생성자
+    public Community() {}
 }
