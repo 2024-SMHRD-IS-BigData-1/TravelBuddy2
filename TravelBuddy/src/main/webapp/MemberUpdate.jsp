@@ -183,14 +183,17 @@ option {
         <div class="member">
             <br>
         <form action="MemberUpdateService" method="post">
-            <!--<div class="field">
-                <b>아이디</b>
-                <div class="id-input">
-                    <input type="text"  name ="mem_id" id="inputE" placeholder="아이디 입력 (6~20자)">
-                    <input type="button" value="중복확인" onclick="checkE()">
-                    <span id="checkE"></span>
-                </div>
-            </div>-->
+            <%@ page import="com.smhrd.model.Member"%>
+
+			<%
+			Member loginMember = (Member) session.getAttribute("loginMember");
+			String mem_id = "";
+			if (loginMember != null) {
+				mem_id = loginMember.getMem_id();
+			}
+			%>
+			<input type="hidden" value="board_write" name="command"> <input
+				type="hidden" name="mem_id" value="<%=mem_id%>">
             <div class="field">
                 <b>비밀번호</b>
                 <input class="userpw" name ="mem_pw" type="password" placeholder= "비밀번호 입력 (문자,숫자 포함 8~20자)">

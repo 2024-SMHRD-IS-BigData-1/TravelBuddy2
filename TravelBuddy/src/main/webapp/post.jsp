@@ -11,7 +11,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>게시물 보기</title>
+<title>TravelBuddy</title>
 <style>
 #comments {
 	margin-top: 20px;

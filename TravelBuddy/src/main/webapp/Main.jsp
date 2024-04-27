@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>TravelBuddy</title>
 </head>
 <body>
 
@@ -64,6 +64,17 @@
     </style>
 </head>
 <body>
+<%@ page import="com.smhrd.model.Member"%>
+
+			<%
+			Member loginMember = (Member) session.getAttribute("loginMember");
+			String mem_id = "";
+			if (loginMember != null) {
+				mem_id = loginMember.getMem_id();
+			}
+			%>
+			<input type="hidden" value="board_write" name="command"> <input
+				type="hidden" name="mem_id" value="<%=mem_id%>">
     <nav class="navbar">
         <img src="images/bg23412.jpg" alt="Background Image">
         <ul class="nav_menu">
@@ -72,7 +83,9 @@
             <li><a href="Finding_Buddy2.jsp"><b>버디찾기</b></a></li>
             <li><a href="Community.jsp"><b>커뮤니티</b></a></li>
             <li><a href="Profile.jsp"><b>프로필</b></a></li>
+            <li><a href="Login.jsp"><b>로그인</b></a></li>
             <li><a href="LogoutService.jsp"><b>로그아웃</b></a></li>
+            
             <li><a href="MemberUpdate.jsp"><b>회원정보수정</b></a></li>
         </ul>
     </nav>

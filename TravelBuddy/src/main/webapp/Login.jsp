@@ -47,7 +47,7 @@
             <div class="logo-container">
               <img src="images/bg.jpg" alt="배경 이미지"> <!-- 수정: alt 속성 추가 -->
               <p>TravelBuddy는 해외여행동반 사이트입니다
-                <div class="br" style="color: black;">설명: 어쩌고 저쩌고</div>
+                <div class="br" style="color: black;">당신의 여행 버디를 찾아보세요~</div>
               </p>
             </div>
             <div class="login-wrap p-4 p-md-5">
