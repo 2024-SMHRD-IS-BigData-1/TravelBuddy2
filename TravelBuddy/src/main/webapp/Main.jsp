@@ -82,7 +82,7 @@
             <li><a href="test.jsp"><b>버디매칭</b></a></li>
             <li><a href="Finding_Buddy2.jsp"><b>버디찾기</b></a></li>
             <li><a href="Community.jsp"><b>커뮤니티</b></a></li>
-            <li><a href="Profile.jsp"><b>프로필</b></a></li>
+            <li><a href="MyProfile.jsp?mem_id=<%= mem_id%>"><b>프로필</b></a></li>
             <li><a href="Login.jsp"><b>로그인</b></a></li>
             <li><a href="LogoutService.jsp"><b>로그아웃</b></a></li>
             

@@ -5,8 +5,8 @@
 <mapper namespace="com.smhrd.db.MemberMapper">
   
   <insert id = "join" parameterType="Member">
-    insert into members(mem_id, mem_pw, mem_name, mem_birthdate, mem_gender, mem_email, mem_phone) 
-    values(#{mem_id},#{mem_pw},#{mem_name},#{mem_birthdate},#{mem_gender},#{mem_email},#{mem_phone})
+    insert into members(mem_id, mem_pw, mem_name, mem_birthdate, mem_gender, mem_email, mem_phone, mem_nick, mem_info, mem_pic) 
+    values(#{mem_id},#{mem_pw},#{mem_name},#{mem_birthdate},#{mem_gender},#{mem_email},#{mem_phone}, #{mem_nick}, #{mem_info}, #{mem_pic})
   </insert>
   
   <select id ="login" parameterType="Member" resultType="Member">

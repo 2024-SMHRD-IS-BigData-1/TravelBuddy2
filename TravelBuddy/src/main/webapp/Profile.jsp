@@ -577,6 +577,25 @@ a {
 </style>
 
 </head>
+<script>
+    window.addEventListener('pageshow', function(event) {
+    	
+        if (event.persisted) {
+            // 페이지가 BFCache에서 복원될 때 팔로우 버튼 상태 업데이트 로직 수행
+            updateFollowButton();
+            
+        }else{
+        	 console.log("로드");
+        }
+    });
+
+    function updateFollowButton() {
+        // 팔로우 버튼의 상태 업데이트 로직 작성
+        // 예: 팔로우 상태인 경우 버튼 텍스트를 "팔로우중"으로 변경
+        console.log("여기");
+        location.reload();
+    }
+</script>
 <body>
 
 
@@ -600,6 +619,7 @@ a {
 		}
 	} else {
 		System.out.println("조건문 else : " + null);
+		
 	}
 
 	System.out.println("b_idx 값 : " + b_idx);
@@ -631,6 +651,11 @@ a {
 			String mem_nick = rs.getString("mem_nick");
 
 			System.out.print(content + mem_info + mem_pic + mem_id + mem_nick);
+			
+			if(mem_pic == null || mem_pic.isBlank() || mem_pic.isEmpty() || mem_pic.equalsIgnoreCase("null")){
+				// pic 없는 경우 기본 사진 띄워줌
+				mem_pic = "imgPic/pic_null.png";
+			}
 	%>
 
 	<%
@@ -654,16 +679,19 @@ a {
 	if (loginId != null) {
 		isFollowed = followDAO.FollowCheck(loginId, mem_id);
 		// 이후의 로직 계속...
+		
 	} else {
 		System.out.println("로그인되지 않은 상태입니다.");
 	}
 
 	String stat_follow = "follow";
 	String stat_following = "following";
+	String btnStyle = "background-color: green;";
 	%>
 
 
 	<script>
+	
 		function followBtnClick() {
 			if (document.getElementById("followBtn").value === "following") {
 				// 이미 팔로우 중인 경우, alert 표시
@@ -677,8 +705,6 @@ a {
 			}
 		}
 	</script>
-
-	</div>
 
 
 
@@ -700,7 +726,7 @@ a {
 			<hr>
 			<div class="header-grid">
 				<div class="profile-pic">
-					<img src="images/07.jpg" /> <a href="ReProfile.jsp"><button
+					<img src="<%=mem_pic %>" /> <a href="ReProfile.jsp"><button
 							class="primary">프로필 수정</button></a>
 				</div>
 				<div class="profile-info">
@@ -711,9 +737,9 @@ a {
 							<input type="hidden" name="Follower" value="<%=loginId%>">
 							<input type="hidden" name="Followee" value="<%=mem_id%>">
 							<input type="hidden" name="isFollowed" value="<%=isFollowed%>">
-							<button class="primary"
-								value="<%=isFollowed ? stat_following : stat_follow%>"
-								onclick="followBtnClick()">팔로우</button>
+							<button class="primary" value="<%=isFollowed ? stat_following : stat_follow%>"
+							 	style="<%=isFollowed?btnStyle : null%>"
+								onclick="followBtnClick()"><%=isFollowed?"팔로우중":"팔로우"%></button>
 						</form>
 
 						<%
@@ -857,6 +883,9 @@ a {
 		</div>
 	</main>
 	<script>
+	
+
+	
 		document.addEventListener("DOMContentLoaded", function() {
 			const followButton = document
 					.querySelector(".title button.primary");
@@ -870,8 +899,7 @@ a {
 					followButton.textContent = "✓ 팔로우중";
 					followButton.style.backgroundColor = "green";
 				} else {
-					followButton.textContent = "팔로우";
-					followButton.style.backgroundColor = "";
+					
 				}
 			});
 		});
