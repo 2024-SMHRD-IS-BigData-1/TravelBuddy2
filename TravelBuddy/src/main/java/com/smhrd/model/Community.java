@@ -17,7 +17,6 @@ public class Community {
     private String created_at;
     @NonNull private String mem_id;
     @NonNull private String title;
+    private String filename;
 
-    // 기본 생성자
-    public Community() {}
 }

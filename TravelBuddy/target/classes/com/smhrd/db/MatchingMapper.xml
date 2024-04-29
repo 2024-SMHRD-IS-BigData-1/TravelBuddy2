@@ -4,5 +4,23 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.smhrd.db.MatchingMapper">
+<!-- 매칭 관련 쿼리 -->
+<select id="selectTendencyResultByMemId" parameterType="string" resultType="string">
+    SELECT TENDENCY_RESULT
+    FROM travel_tendency_result
+    WHERE MEM_ID = #{memId}
+</select>
+
+<select id="selectMatchingMembers" parameterType="string" resultType="com.smhrd.model.Member">
+    SELECT MEM_ID, TENDENCY_RESULT
+    FROM travel_tendency_result
+    WHERE MEM_ID != #{memId} AND TENDENCY_RESULT = #{tendencyResult}
+</select>
+<!-- MatchingMapper.xml -->
+<select id="selectAllTendencyResults" resultType="String">
+    SELECT TENDENCY_RESULT
+    FROM travel_tendency_result
+</select>
+
 
 </mapper>

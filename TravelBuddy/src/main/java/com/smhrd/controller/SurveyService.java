@@ -14,18 +14,17 @@ import com.smhrd.model.SurveyResultDAO;
 public class SurveyService extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        System.out.println("[SurveyService]");
-        // 클라이언트로부터의 데이터 인코딩 설정
+   
         request.setCharacterEncoding("UTF-8");
 
-        // 클라이언트로부터 데이터 가져오기
+
         String mem_id = request.getParameter("mem_id");
 
-        // SurveyResultDAO를 통해 해당 사용자의 설문조사 결과 조회
+        
         SurveyResultDAO surveyResultDAO = new SurveyResultDAO();
         SurveyResult existingSurveyResult = surveyResultDAO.getSurveyResultByMemId(mem_id);
 
-        // 이미 설문조사를 한 사용자인 경우
+        
         if (existingSurveyResult != null) {
             System.out.println("해당 사용자는 이미 설문조사를 완료했습니다.");
             response.sendRedirect("test(fail).jsp"); // 이미 설문조사를 한 경우의 페이지 경로에 맞게 수정

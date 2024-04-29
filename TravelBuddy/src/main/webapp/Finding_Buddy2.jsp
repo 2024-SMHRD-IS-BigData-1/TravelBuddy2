@@ -2,266 +2,264 @@
 <%@page import="java.util.List"%>
 <%@page import="com.smhrd.model.BuddyFindingDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        body {
-            margin-top: 20px;
-            background-color: #eee;
-            margin: 0;
-            font-family: 'Montserrat', sans-serif;
-        }
-        
-        textarea[name="title"] {
-            height: 25px; 
-        }
-        
-        textarea[name="name"] {
-            height: 50px; 
-        }
-        
-        a {
-            text-decoration: none;
-            color: var(--text-color);
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>버디찾기게시판</title>
+<style>
+body {
+	margin-top: 20px;
+	background-color: #eee;
+	margin: 0;
+	font-family: 'Montserrat', sans-serif;
+}
 
-        .navbar {
-            display: flex;
-            align-items: center;
-            background-color: white;
-            padding: 12px;
-            margin-top: 0px;
-        }
+textarea[name="title"] {
+	height: 25px;
+}
 
-        .navbar img {
-            margin-left: 275px;
-        }
-        
-        .nav_logo i {
-            color: var(--accent-color);
-        }
-        
-        .nav_logo span {
-            color: var(--accent-color);
-        }
-        
-        .nav_menu {
-            display: flex;
-            list-style: none;
-            justify-content: center;
-            padding-right: 0; /* Adjusted padding */
-            margin: 10px;
-            margin-top: 0px;
-        }
+textarea[name="name"] {
+	height: 50px;
+}
 
-        .nav_menu li {
-            margin: 22px;
-            color: #2D2F7A;
-        }
+a {
+	text-decoration: none;
+	color: var(--text-color);
+}
 
-        .nav_menu li a {
-            font-size: 22px; 
-            display: inline-block; 
-            padding: 0 25px; /* Adjusted padding */
-        }
-        
-        .nav_menu li a:hover {
-            color: var(--background-color);
-        }
-        
-        .nav_icons {
-            display: flex;
-            color: #7dc0ff;
-            list-style: none;
-            padding-left: 0;
-        }
-        
-        .nav_icons li {
-            padding: 8px 5px;
-        }
-        
-        @media (max-width: 768px) {
-            .nav_menu {
-                display: none;
-            }
-            
-            .nav_icons {
-                display: none;
-            }
-            
-            .navbar_toggleBtn {
-                display: block;
-            }
-        }
-        
-        .col-md-8 {
-            margin-top: 20px;
-        }
+.navbar {
+	display: flex;
+	align-items: center;
+	background-color: white;
+	padding: 12px;
+	margin-top: 0px;
+}
 
-        .text-right {
-            text-align: right;
-        }
+.navbar img {
+	margin-left: 275px;
+}
 
-        .job-box {
-            background: #ffffff;
-            display: inline-block;
-            max-width: 500px; 
-            width: 400px;
-            height: 100px;
-            padding: 0 100px 40px 500px; /* 조정된 padding */
-            border: 1px solid #e8eef1;
-            margin-left: 25%; /* 수정된 margin */
-        }
+.nav_logo i {
+	color: var(--accent-color);
+}
 
-        .job-box-filter {
-            text-align: center;
-        }
+.nav_logo span {
+	color: var(--accent-color);
+}
 
-        .job-box-filter a.filtsec {
-            margin-top: 8px;
-            display: inline-block;
-            margin-right: 0px;
-            padding: 8px px;
-            font-family: 'Quicksand', sans-serif;
-            background: #edf0f3;
-            border-radius: 0px;
-            font-size: 15px;
-            color: #81a0b1;
-            border: 1px solid #e2e8ef;
-        }
+.nav_menu {
+	display: flex;
+	list-style: none;
+	justify-content: center;
+	padding-right: 0; /* Adjusted padding */
+	margin: 10px;
+	margin-top: 0px;
+}
 
-        .job-box-filter a.filtsec.active {
-            color: #ffffff;
-            background: #16262c;
-            border-color: #16262c;
-        }
+.nav_menu li {
+	margin: 22px;
+	color: #2D2F7A;
+}
 
-        .job-box-filter a.filtsec:hover,
-        .job-box-filter a.filtsec:focus {
-            color: #ffffff;
-            background: #07b107;
-            border-color: #07b107;
-        }
+.nav_menu li a {
+	font-size: 22px;
+	display: inline-block;
+	padding: 0 25px; /* Adjusted padding */
+}
 
-        .inbox-message ul {
-            padding: 0;
-            margin: 0;
-        }
-        
-        .inbox-message ul li {
-            list-style: none;
-            position: relative;
-            padding: 15px 20px;
-            border-bottom: 1px solid #e8eef1;
-            margin-left: -475px;
-        }
+.nav_menu li a:hover {
+	color: var(--background-color);
+}
 
-        .inbox-message ul li:hover,
-        .inbox-message ul li:focus {
-            background: #eff6f9;
-        }
+.nav_icons {
+	display: flex;
+	color: #7dc0ff;
+	list-style: none;
+	padding-left: 0;
+}
 
-        .inbox-message .message-avatar {
-            position: absolute;
-            left: 30px;
-            top: 50%;
-            transform: translateY(-50%);
-        }
+.nav_icons li {
+	padding: 8px 5px;
+}
 
-        .message-avatar img {
-            display: inline-block;
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-        }
+@media ( max-width : 768px) {
+	.nav_menu {
+		display: none;
+	}
+	.nav_icons {
+		display: none;
+	}
+	.navbar_toggleBtn {
+		display: block;
+	}
+}
 
-        .inbox-message .message-body {
-            margin-left: 125px;
-            font-size: 17px;
-            color: #4c2d94;
-        }
+.col-md-8 {
+	margin-top: 20px;
+}
 
-        .message-body-heading h5 {
-            font-weight: 600;
-            display: inline-block;
-            color: #2D2F7A;
-            margin: 0 0 7px 0;
-            padding: 0;
-        }
+.text-right {
+	text-align: right;
+}
 
-        .message-body h5 span {
-            border-radius: 50px;
-            line-height: 14px;
-            font-size: 12px;
-            color: #3523A9;
-            font-style: normal;
-            padding: 4px 10px;
-            margin-right: 15px;
-            margin-top: 0px;
-        }
+.job-box {
+	background: #ffffff;
+	display: inline-block;
+	max-width: 500px;
+	width: 400px;
+	height: 100px;
+	padding: 0 100px 40px 500px; /* 조정된 padding */
+	border: 1px solid #e8eef1;
+	margin-left: 25%; /* 수정된 margin */
+}
 
-        .message-body h5 span.unread {
-            background: #07b107;
-        }
+.job-box-filter {
+	text-align: center;
+}
 
-        .message-body h5 span.important {
-            background: #dd2027;
-        }
+.job-box-filter a.filtsec {
+	margin-top: 8px;
+	display: inline-block;
+	margin-right: 0px;
+	padding: 8px px;
+	font-family: 'Quicksand', sans-serif;
+	background: #edf0f3;
+	border-radius: 0px;
+	font-size: 15px;
+	color: #81a0b1;
+	border: 1px solid #e2e8ef;
+}
 
-        .message-body h5 span.pending {
-            background: #2196f3;
-        }
+.job-box-filter a.filtsec.active {
+	color: #ffffff;
+	background: #16262c;
+	border-color: #16262c;
+}
 
-        .message-body-heading span {
-            float: right;
-            color: #62748F;
-            font-size: 15px;
-        }
+.job-box-filter a.filtsec:hover, .job-box-filter a.filtsec:focus {
+	color: #ffffff;
+	background: #07b107;
+	border-color: #07b107;
+}
 
-        a.navbar:hover {
-            text-decoration: none;
-        }
+.inbox-message ul {
+	padding: 0;
+	margin: 0;
+}
 
-        .w3-bar {
-            display: flex;
-            justify-content: center;
-            margin-left: -450px;
-            margin-top: -20px;
-        }
+.inbox-message ul li {
+	list-style: none;
+	position: relative;
+	padding: 15px 20px;
+	border-bottom: 1px solid #e8eef1;
+	margin-left: -475px;
+}
 
-        .w3-bar-item {
-            padding: 8px 16px;
-            text-decoration: none;
-            color: #2D2F7A;
-        }
+.inbox-message ul li:hover, .inbox-message ul li:focus {
+	background: #eff6f9;
+}
 
-        .container {
-            justify-content: center;
-        }
+.inbox-message .message-avatar {
+	position: absolute;
+	left: 30px;
+	top: 50%;
+	transform: translateY(-50%);
+}
 
-        .w3-button {
-            background-color: white;
-            border: 1px solid #2D2F7A;
-            margin: 0 6px;
-            cursor: pointer;
-        }
+.message-avatar img {
+	display: inline-block;
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+}
 
-        .w3-black {
-            background-color: #2D2F7A;
-            color: white;
-        }
+.inbox-message .message-body {
+	margin-left: 125px;
+	font-size: 17px;
+	color: #4c2d94;
+}
 
-        .w3-hover-black:hover {
-            background-color: #2D2F7A;
-            color: white;
-        }
-    </style>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+.message-body-heading h5 {
+	font-weight: 600;
+	display: inline-block;
+	color: #2D2F7A;
+	margin: 0 0 7px 0;
+	padding: 0;
+}
+
+.message-body h5 span {
+	border-radius: 50px;
+	line-height: 14px;
+	font-size: 12px;
+	color: #3523A9;
+	font-style: normal;
+	padding: 4px 10px;
+	margin-right: 15px;
+	margin-top: 0px;
+}
+
+.message-body h5 span.unread {
+	background: #07b107;
+}
+
+.message-body h5 span.important {
+	background: #dd2027;
+}
+
+.message-body h5 span.pending {
+	background: #2196f3;
+}
+
+.message-body-heading span {
+	float: right;
+	color: #62748F;
+	font-size: 15px;
+}
+
+a.navbar:hover {
+	text-decoration: none;
+}
+
+.w3-bar {
+	display: flex;
+	justify-content: center;
+	margin-left: -450px;
+	margin-top: -20px;
+}
+
+.w3-bar-item {
+	padding: 8px 16px;
+	text-decoration: none;
+	color: #2D2F7A;
+}
+
+.container {
+	justify-content: center;
+}
+
+.w3-button {
+	background-color: white;
+	border: 1px solid #2D2F7A;
+	margin: 0 6px;
+	cursor: pointer;
+}
+
+.w3-black {
+	background-color: #2D2F7A;
+	color: white;
+}
+
+.w3-hover-black:hover {
+	background-color: #2D2F7A;
+	color: white;
+}
+</style>
+<link
+	href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+	rel="stylesheet">
 </head>
 <body>
    <%
@@ -343,7 +341,7 @@
                     </div>
                     <div class="text-center">
                     <a href="post(write).jsp" class="btn btn-primary" style="background-color: gray;">게시글 작성</a>
-                     </div>
+                    </div>
                     <br><br>
                     <div class="w3-center w3-padding-32">
                         <div class="w3-bar">

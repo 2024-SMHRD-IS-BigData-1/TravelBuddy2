@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>게시글 작성</title>
+<title>글쓰기</title>
 <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700&display=swap">
 <link rel="stylesheet" href="css/post.css">
@@ -209,5 +209,8 @@ th {
 
     // 파일 입력 요소에 change 이벤트 리스너 추가
     document.getElementById('filename').addEventListener('change', previewImage);
+    <input type="file" onchange="previewImage(this,'previewId')">
+    <div id='previewId'
+        style='width: 50px; height: 50px; color: black; font-size: 9pt; border: 2px solid black; position: absolute; left: 300px; top: 200px;'>
 </body>
 </html>

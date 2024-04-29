@@ -11,6 +11,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
@@ -23,12 +24,15 @@ import com.smhrd.model.CommunityFileDAO;
 public class CommunityService extends HttpServlet {
     protected void service(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+    	
         request.setCharacterEncoding("UTF-8");
 
-        String title = request.getParameter("title");
+        int idx = Integer.parseInt(request.getParameter("b_idx"));
         String category = request.getParameter("b_category");
         String content = request.getParameter("b_content");
         String id = request.getParameter("mem_id");
+        String title = request.getParameter("title");
+        
         
         String path = "C:\\Users\\Smhrd\\git\\TravelBuddy6\\TravelBuddy\\src\\main\\webapp\\img\\"+id; //폴더 경로
     	File Folder = new File(path);
@@ -52,23 +56,10 @@ public class CommunityService extends HttpServlet {
         DefaultFileRenamePolicy rename = new DefaultFileRenamePolicy();
         MultipartRequest multi = new MultipartRequest(request, path, maxSize, encoding, rename);
 
-        String Fname = multi.getParameter("file_name");
-        int Fsize = Integer.parseInt(multi.getParameter("file_size")); 
-        String Fext = multi.getParameter("file_ext");
-        String Fdate = multi.getParameter("uploaded_at");
-
-        
-        
-        System.out.println("title: " + title);
-        System.out.println("content: " + content);
-        System.out.println("category: " + category);
-        System.out.println("id: " + id);
+        String filename = multi.getParameter("filename");
 
         // Community 객체 생성
-        Community community = new Community(title, id, content, category);
-
-        CommunityFile communityFile = new CommunityFile(Fname, Fsize, Fext, Fdate);
-        
+        Community community = new Community(idx, title, id, category, content, filename, filename);
 
         // CommunityDAO를 사용하여 데이터베이스에 게시글 정보 저장
         CommunityDAO communityDAO = new CommunityDAO();
@@ -80,13 +71,5 @@ public class CommunityService extends HttpServlet {
             System.out.println("게시글 업로드 실패");
         }
         
-        CommunityFileDAO communityFileDAO = new CommunityFileDAO();
-        int Fcnt = communityFileDAO.insertCommunityFile(communityFile);
-        
-        if (cnt > 0) {
-            System.out.println("이미지 업로드 성공");
-        } else {
-            System.out.println("이미지 업로드 실패");
-        }
     }
 }

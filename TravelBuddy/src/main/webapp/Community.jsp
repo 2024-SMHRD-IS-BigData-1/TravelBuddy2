@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>W3.CSS Template</title>
+<title>커뮤니티</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
@@ -229,6 +229,17 @@ a {
 </style>
 </head>
 <body>
+<%@ page import="com.smhrd.model.Member"%>
+
+			<%
+			Member loginMember = (Member) session.getAttribute("loginMember");
+			String mem_id = "";
+			if (loginMember != null) {
+				mem_id = loginMember.getMem_id();
+			}
+			%>
+			<input type="hidden" value="board_write" name="command"> <input
+				type="hidden" name="mem_id" value="<%=mem_id%>">
     <nav class="navbar">
        <img src="images/bg23412.jpg" alt="Background Image">
         <ul class="nav_menu">
@@ -259,7 +270,6 @@ a {
                 <div class="image-container">
                     <img src="images/5.jpg" alt="여행후기" style="width:100%">
                     <h3>귀챠니즘야옹이</h3>
-                    <p>여행후기 : ~</p>
                 </div>
             </div>
             <div class="w3-quarter 여행정보">
@@ -291,7 +301,10 @@ a {
                 </div>
             </div>
         </div>
-        <div class="w3-center w3-padding-32">
+        	<div class="text-center">
+            	<a href="community(write).jsp" class="btn btn-primary" style="background-color: gray;"><button>게시글 작성</button></a>
+            </div>
+            <br>
             <div class="w3-bar">
                 <a href="#page1" class="w3-bar-item w3-button w3-hover-black">«</a>
                 <a href="#page1" class="w3-bar-item w3-black w3-button">1</a>
