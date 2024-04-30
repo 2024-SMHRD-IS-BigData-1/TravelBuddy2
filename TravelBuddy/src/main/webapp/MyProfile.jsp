@@ -81,7 +81,7 @@ button {
 }
 
 button.primary {
-	background: #1e1f5e;
+	background: green;
 	color: white;
 	-webkit-text-fill-color: white;
 }
@@ -668,7 +668,7 @@ a {
 							
 							<button class="primary"
 								value=""
-								>팔로우</button>
+								>My Profile</button>
 						</form>
 
 						<%
