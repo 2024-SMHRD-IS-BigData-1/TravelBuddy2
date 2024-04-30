@@ -153,14 +153,14 @@ th {
                     </tr>
                     <tr>
                         <th>카테고리</th>
-                        <td><select name="category" class="select-box">
+                        <td><select name="b_category" class="select-box">
                                 <option value="후기">후기</option>
                                 <option value="정보공유">정보공유</option>
                         </select></td>
                     </tr>
                     <tr>
                         <th>내용</th>
-                        <td><textarea cols="50" rows="15" name="content"></textarea></td>
+                        <td><textarea cols="50" rows="15" name="b_content"></textarea></td>
                     </tr>
                     <tr>
                         <td colspan="2">
@@ -186,31 +186,5 @@ th {
 	<script src="assets/js/util.js"></script>
 	<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 	<script src="assets/js/main.js"></script>
-	<script>
-    function previewImage(event) {
-        var fileList = event.target.files;
-        var imageContainer = document.getElementById('image-container');
-
-        // 기존에 추가된 이미지 삭제
-        imageContainer.innerHTML = '';
-
-        // 선택된 이미지를 프리뷰로 추가
-        for (var i = 0; i < fileList.length; i++) {
-            var reader = new FileReader();
-            reader.onload = function(event) {
-                var imagePreview = document.createElement('img');
-                imagePreview.src = event.target.result;
-                imagePreview.classList.add('image-preview');
-                imageContainer.appendChild(imagePreview);
-            }
-            reader.readAsDataURL(fileList[i]);
-        }
-    }
-
-    // 파일 입력 요소에 change 이벤트 리스너 추가
-    document.getElementById('filename').addEventListener('change', previewImage);
-    <input type="file" onchange="previewImage(this,'previewId')">
-    <div id='previewId'
-        style='width: 50px; height: 50px; color: black; font-size: 9pt; border: 2px solid black; position: absolute; left: 300px; top: 200px;'>
 </body>
 </html>

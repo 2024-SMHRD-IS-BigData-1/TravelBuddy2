@@ -9,8 +9,6 @@
 			alias="BuddyFinding" />
 		<typeAlias type="com.smhrd.model.Community"
 			alias="Community" />
-		<typeAlias type="com.smhrd.model.CommunityFile"
-			alias="CommunityFile" />
 		<typeAlias type="com.smhrd.model.Profile" alias="Profile" />
 		<typeAlias type="com.smhrd.model.Matching" alias="Matching" />
 		<typeAlias type="com.smhrd.model.Comment" alias="Comment" />
@@ -36,7 +34,6 @@
 		<mapper resource="com/smhrd/db/SurveyResultMapper.xml" />
 		<mapper resource="com/smhrd/db/BuddyFindingMapper.xml" />
 		<mapper resource="com/smhrd/db/CommunityMapper.xml" />
-		<mapper resource="com/smhrd/db/CommunityFileMapper.xml" />
 		<mapper resource="com/smhrd/db/ProfileMapper.xml" />
 		<mapper resource="com/smhrd/db/MatchingMapper.xml" />
 		<mapper resource="com/smhrd/db/CommentMapper.xml" />

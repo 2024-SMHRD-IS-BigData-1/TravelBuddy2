@@ -302,7 +302,7 @@ a {
             </div>
         </div>
         	<div class="text-center">
-            	<a href="community(write).jsp" class="btn btn-primary" style="background-color: gray;"><button>게시글 작성</button></a>
+            	<a href="community(write).jsp" class="btn btn-primary" style="background-color: gray; float: center;"><button>게시글 작성</button></a>
             </div>
             <br>
             <div class="w3-bar">

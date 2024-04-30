@@ -8,9 +8,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="com.smhrd.db.CommunityMapper">
 
     <!-- insertCommunity 쿼리 -->
-    <insert id="insertCommunity" parameterType="com.smhrd.model.Community">
-        INSERT INTO community (b_category, b_content, created_at, mem_id, title)
-        VALUES (#{b_category}, #{b_content}, #{created_at}, #{mem_id}, #{b_title})
+    <insert id="insertCommunity" parameterType="Community">
+        INSERT INTO community (b_category, b_content, created_at, mem_id, title, filename)
+        VALUES (#{b_category}, #{b_content}, sysdate, #{mem_id}, #{title} ,#{filename})
     </insert>
+    
+    <select id="detailCommunity" resultType="Community">
+		select * from community where b_idx=#{b_idx}
+	</select>
 
 </mapper>

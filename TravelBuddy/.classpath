@@ -38,7 +38,7 @@
 			<attribute name="optional" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/shmrd/git/TravelBuddy1/TravelBuddy/src/main/webapp/WEB-INF/lib/json-simple-1.1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Smhrd/git/TravelBuddy6/TravelBuddy/src/main/webapp/WEB-INF/lib/json-simple-1.1.1.jar"/>
 	<classpathentry kind="src" path="target/generated-sources/annotations">
 		<attributes>
 			<attribute name="optional" value="true"/>
@@ -50,13 +50,13 @@
 			<attribute name="optional" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="con" path="org.eclipse.jst.server.core.container/org.eclipse.jst.server.tomcat.runtimeTarget/Apache Tomcat v9.0">
+	<classpathentry kind="con" path="org.eclipse.jst.server.core.container/org.eclipse.jst.server.tomcat.runtimeTarget/Apache Tomcat v9.0 (2)">
 		<attributes>
 			<attribute name="owner.project.facets" value="jst.web"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/shmrd/git/TravelBuddy1/TravelBuddy/src/main/webapp/WEB-INF/lib/javaSDK-2.2.jar"/>
-	<classpathentry kind="lib" path="C:/Users/shmrd/Desktop/Web(Server)/Ex06MVC/src/main/webapp/WEB-INF/lib/ojdbc11.jar"/>
-	<classpathentry kind="lib" path="C:/Users/shmrd/Desktop/Web(Server)/lombok.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Smhrd/Desktop/sqldeveloper/jdbc/lib/ojdbc11.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Smhrd/Desktop/eclipse/lombok.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Smhrd/git/TravelBuddy6/TravelBuddy/src/main/webapp/WEB-INF/lib/javaSDK-2.2.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

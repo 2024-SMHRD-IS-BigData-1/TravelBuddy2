@@ -30,6 +30,7 @@ public class LoginService extends HttpServlet {
          HttpSession session = request.getSession();
          session.setAttribute("loginMember", loginMember);
       } else {
+    	 response.sendRedirect("Login.jsp");
          System.out.println("로그인 실패..");
       }
 
