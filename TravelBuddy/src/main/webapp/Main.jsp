@@ -87,7 +87,7 @@
             // 사용자의 로그인 상태를 확인하여 메뉴를 동적으로 변경
             var loginMember = <%= session.getAttribute("loginMember") %>;
             var menu = document.getElementById("menu");
-            if (loginMember) {
+            if (loginMember != null) {
                 // 로그인된 상태일 때
                 menu.innerHTML = `
                     <li><a href="Main.jsp"><b>메인화면</b></a></li>
