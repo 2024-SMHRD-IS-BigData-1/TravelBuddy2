@@ -110,7 +110,7 @@ button:hover {
 		<div class="message">
 			<p>매칭만 하시면됩니다!</p>
 		</div>
-		<form action="MatchingService" method="post">
+	
 			<%@ page import="com.smhrd.model.Member"%>
 
 			<%
@@ -123,9 +123,10 @@ button:hover {
 			<input type="hidden" value="board_write" name="command"> <input
 				type="hidden" name="mem_id" value="<%=mem_id%>">
 			<div class="button-container">
-				<button onclick="startMatching()">매칭 시작하기</button>
+				<button onclick="window.location.href = 'Matched.jsp'">매칭 시작하기</button>
+
 			</div>
-		</form>
+		
 	</div>
 </body>
 </html>

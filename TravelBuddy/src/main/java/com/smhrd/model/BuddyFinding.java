@@ -20,5 +20,7 @@ public class BuddyFinding {
 	private String content;
 	private String travel_dt;
 	private String mem_id;
+	
 
 }
+

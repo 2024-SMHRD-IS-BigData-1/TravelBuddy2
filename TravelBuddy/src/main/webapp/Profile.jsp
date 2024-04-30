@@ -716,7 +716,7 @@ a {
 			<li><a href="test.jsp"><b>버디매칭</b></a></li>
 			<li><a href="Finding_Buddy2.jsp"><b>버디찾기</b></a></li>
 			<li><a href="Communuity.jsp"><b>커뮤니티</b></a></li>
-			<li><a href="Profile.jsp"><b>프로필</b></a></li>
+			<li><a href="MyProfile.jsp?mem_id=<%= mem_id%>"><b>프로필</b></a></li>
 			<li><a href="LogoutService"><b>로그아웃</b></a></li>
 		</ul>
 	</nav>
@@ -726,8 +726,7 @@ a {
 			<hr>
 			<div class="header-grid">
 				<div class="profile-pic">
-					<img src="<%=mem_pic %>" /> <a href="ReProfile.jsp"><button
-							class="primary">프로필 수정</button></a>
+					<img src="<%=mem_pic %>" /> <a href="ReProfile.jsp">
 				</div>
 				<div class="profile-info">
 					<div class="title row">
