@@ -88,7 +88,7 @@ body {
 	</ul>
 </nav>
 
-<div class="image-container">r
+<div class="image-container">
 	<img src="images/main.jpg" alt="gif">
 </div>
 
