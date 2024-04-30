@@ -283,8 +283,6 @@ th {
                      <%
                      }
                      %>
-                     <button onclick="showReplyForm(<%=comment.getComment_id()%>)">대댓글
-                        작성</button>
                   </div>
                </div>
                <div id="reply-form-<%=comment.getComment_id()%>"

@@ -269,6 +269,7 @@ a {
           for (Community community : CommunityList) {
          %>
          </ul>
+         	<a href="community(read).jsp?b_idx=<%=community.getB_idx()%>">
             <div class=<%=community.getB_category() %>>
                 <div class="image-container">
                     <img src="./img/<%=loginMember.getMem_id() %>/<%=community.getFilename() %>" style="width:100%">
@@ -276,6 +277,7 @@ a {
                     <p><%=community.getB_category() %></p>
                 </div>
             </div>
+            </a>
             <%
              }
             %>

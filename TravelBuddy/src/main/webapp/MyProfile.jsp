@@ -587,7 +587,6 @@ a {
 	PreparedStatement pstmt = null;
 	ResultSet rs = null;
 	
-
 	String mem_id = request.getParameter("mem_id");
 
 	if (mem_id != null && !mem_id.isEmpty()) {
@@ -811,26 +810,6 @@ a {
 			</div>
 		</div>
 	</main>
-	<script>
-		document.addEventListener("DOMContentLoaded", function() {
-			const followButton = document
-					.querySelector(".title button.primary");
-
-			followButton.addEventListener("mouseenter", function() {
-				followButton.style.cursor = "pointer";
-			});
-
-			followButton.addEventListener("click", function() {
-				if (followButton.textContent === "팔로우") {
-					followButton.textContent = "✓ 팔로우중";
-					followButton.style.backgroundColor = "green";
-				} else {
-					followButton.textContent = "팔로우";
-					followButton.style.backgroundColor = "";
-				}
-			});
-		});
-	</script>
 
 	<%
 	}
