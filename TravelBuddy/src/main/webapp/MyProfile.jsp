@@ -15,12 +15,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>프로필 설정</title>
-<style>
+<title>프로필 설정</title><style>
 :root {
-	--accent-color: #BAD7E9;
-	--text-color: #2D2F7A;
-	--background-color: #5e63f5;
+    --accent-color: #BAD7E9;
+    --text-color: #2D2F7A;
+    --background-color: #5e63f5;
 }
 
 body {
@@ -30,16 +29,74 @@ body {
 	margin: 0;
 }
 
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 8px 12px;
+    margin-top: 0px;
+    margin-bottom: 25px;
+}
+
+.nav_logo i {
+    color: var(--accent-color);
+}
+
+.nav_logo span {
+    color: var(--accent-color);
+}
+
+.nav_menu {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    padding-right: 300px; 
+    margin: 0px;
+    margin-right: 50px;
+}
+
+.nav_menu li {
+    margin: 0px;
+}
+
+.nav_menu li a {
+    font-size: 22px;
+    padding:  50px; 
+}
+
+.nav_menu li a:hover {
+    color: var(--background-color);
+}
+
+.nav_icons {
+    display: flex;
+    color: #7dc0ff;
+    list-style: none;
+    padding-left: 0;
+}
+
+.nav_icons li {
+    padding: 8px 5px;
+}
+
+.navbar img {
+    margin-left: 185px;
+    display: block;
+}
+
 main {
 	max-width: 935px;
 	margin: 0 auto;
 	padding: 30px 20px 0px 20px;
 }
 
-@media only screen and (max-width: 735px) {
-	main {
-		padding: 0;
-	}
+.img {
+    margin-right: 50px; 
+}
+
+.image-container {
+	margin-top: 150px;
 }
 
 .search-icon {
@@ -95,28 +152,14 @@ button.primary {
 	display: block;
 }
 
-/* Utils */
 .mobile-only {
 	display: none;
-}
-
-@media only screen and (max-width: 735px) {
-	.mobile-only {
-		display: block;
-	}
-	.desktop-only {
-		display: none;
-	}
 }
 
 @import url("./reset.css");
 
 @import url("./common.css");
 
-/* Navigation */
-nav .logo {
-	height: 29px;
-}
 
 .search-guide .search-placeholder {
 	color: hsl(0, 0%, 56%);
@@ -135,55 +178,17 @@ nav .logo {
 	border: 1px solid hsl(0, 0%, 86%);
 }
 
-.nav-content {
-	max-width: 935px;
-	margin: 0 auto;
-	display: flex;
-	justify-content: space-between;
-	height: 54px;
-	align-items: center;
-}
 
-@media only screen and (max-width: 735px) {
-	.nav-content {
-		padding: 0 20px;
-	}
-}
 
-nav .fixed {
-	background: white;
-	position: fixed;
-	z-index: 1;
-	width: 100%;
-	border-bottom: 1px solid hsl(0, 0%, 86%);
-}
-
-nav .mock {
-	height: 54px;
-}
-
-/* Header */
 header {
 	margin-bottom: 44px;
 }
 
-@media only screen and (max-width: 735px) {
-	header {
-		margin-bottom: 0px;
-	}
-}
 
 .header-grid {
 	display: grid;
 	grid-template-columns: auto auto;
 	grid-gap: 20px;
-}
-
-@media only screen and (max-width: 735px) {
-	.header-grid {
-		display: flex;
-		padding: 14px;
-	}
 }
 
 .header-grid .profile-pic {
@@ -200,17 +205,6 @@ header {
 	border: 1px solid hsl(0, 0%, 86%);
 }
 
-@media only screen and (max-width: 735px) {
-	.header-grid .profile-pic {
-		width: 77px;
-		height: 77px;
-		margin-right: 28px;
-	}
-	.header-grid .profile-pic img {
-		width: 100%;
-		height: 100%;
-	}
-}
 
 .profile-info .title h2 {
 	font-size: 28px;
@@ -230,22 +224,6 @@ header {
 	margin-left: 20px;
 }
 
-@media only screen and (max-width: 735px) {
-	.profile-info .title {
-		display: block;
-	}
-	.profile-info .title h2 {
-		display: inline-block;
-		margin-bottom: 12px;
-	}
-	.profile-info .title span {
-		display: inline-block;
-	}
-	.profile-info .title button {
-		display: block;
-		margin-left: 0px;
-	}
-}
 
 .profile-info .details li {
 	font-size: 16px;
@@ -275,20 +253,6 @@ header {
 	color: hsl(209, 100%, 21%);
 }
 
-@media only screen and (max-width: 735px) {
-	.profile-info .description h1 {
-		line-height: 20px;
-	}
-	.profile-info .description span {
-		line-height: 20px;
-	}
-	.profile-info .description {
-		font-size: 14px;
-		padding-left: 16px;
-		padding-bottom: 21px;
-		margin-bottom: 0px !important;
-	}
-}
 
 .profile-info .row {
 	margin-bottom: 20px;
@@ -298,7 +262,6 @@ header {
 	margin-bottom: 0px;
 }
 
-/* Story */
 .story-item {
 	display: flex;
 	flex-direction: column;
@@ -306,24 +269,12 @@ header {
 	padding: 10px 15px;
 }
 
-@media only screen and (max-width: 735px) {
-	.story-item {
-		padding: 0px 5px;
-	}
-}
 
 .story-item .image img {
 	width: 77px;
 	height: 77px;
 	border-radius: 1000px;
 	display: block;
-}
-
-@media only screen and (max-width: 735px) {
-	.story-item .image img {
-		width: 56px;
-		height: 56px;
-	}
 }
 
 .story-item .image {
@@ -343,14 +294,6 @@ header {
 	text-overflow: ellipsis;
 }
 
-@media only screen and (max-width: 735px) {
-	.story-item .title {
-		font-size: 12px;
-		font-weight: 400;
-		width: 65px;
-		padding-top: 8px;
-	}
-}
 
 .stories {
 	display: flex;
@@ -360,12 +303,6 @@ header {
 	margin-bottom: 44px;
 }
 
-@media only screen and (max-width: 735px) {
-	.stories {
-		padding: 0px;
-		margin-bottom: 21px;
-	}
-}
 
 .slider-button-next {
 	position: sticky;
@@ -374,7 +311,6 @@ header {
 	align-items: center;
 }
 
-/* Tabs */
 .tab-item span {
 	font-size: 12px;
 	font-weight: 600;
@@ -436,7 +372,6 @@ header {
 	border-top: 1px solid rgb(219, 219, 219);
 }
 
-/* Gallery */
 .gallery-item img {
 	width: 100%;
 	display: block;
@@ -459,12 +394,6 @@ header {
 	gap: 28px;
 }
 
-@media only screen and (max-width: 735px) {
-	.gallery {
-		gap: 3px;
-	}
-}
-
 textarea[name="title"] {
 	height: 25px;
 }
@@ -476,72 +405,6 @@ textarea[name="name"] {
 a {
 	text-decoration: none;
 	color: var(--text-color);
-}
-
-.navbar {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	background-color: white;
-	padding: 8px 12px;
-	margin-top: 0px;
-}
-
-.nav_logo i {
-	color: var(--accent-color);
-}
-
-.nav_logo span {
-	color: var(--accent-color);
-}
-
-.nav_menu {
-	display: flex;
-	list-style: none;
-	justify-content: center;
-	padding-right: 550px;
-	margin: 0px;
-}
-
-.nav_menu li {
-	margin: 0px;
-}
-
-.nav_menu li a {
-	font-size: 22px;
-	display: inline-block;
-	padding: 0 55px;
-}
-
-.nav_menu li a:hover {
-	color: var(--background-color);
-}
-
-.nav_icons {
-	display: flex;
-	color: #7dc0ff;
-	list-style: none;
-	padding-left: 0;
-}
-
-.nav_icons li {
-	padding: 8px 5px;
-}
-
-.navbar img {
-	margin-left: 300px;
-}
-
-@media ( max-width : 768px) {
-	.nav_menu {
-		display: none;
-	}
-	.nav_icons {
-		display: none;
-	}
-	.navbar_toggleBtn {
-		display: block;
-	}
 }
 
 .hashtag {
@@ -575,6 +438,20 @@ a {
 	border: none;
 	cursor: pointer;
 }
+
+@media (max-width: 750px) {
+    .nav_menu {
+        display: none;
+    }
+    
+    .nav_icons {
+        display: none;
+    }
+    
+    .navbar_toggleBtn {
+        display: block;
+    }
+
 </style>
 
 </head>

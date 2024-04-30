@@ -7,6 +7,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
+:root {
+    --accent-color: #BAD7E9;
+    --text-color: #2D2F7A;
+    --background-color: #5e63f5;
+}
+
 body {
 	font-family: Arial, sans-serif;
 	margin: 0;
@@ -16,42 +22,61 @@ body {
 }
 
 .navbar {
-	position: relative;
-	display: flex;
-	align-items: center;
-	background-color: white;
-	padding: 12px;
-	margin-bottom: 20px;
-	z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 8px 12px;
+    margin-top: 0px;
+    margin-bottom: 25px;
 }
 
-.navbar img {
-	margin-left: 275px;
+.nav_logo i {
+    color: var(--accent-color);
+}
+
+.nav_logo span {
+    color: var(--accent-color);
 }
 
 .nav_menu {
-	display: flex;
-	list-style: none;
-	justify-content: center;
-	padding-right: 0;
-	margin: 10px;
-	margin-top: 0px;
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    padding-right: 100px; 
+    margin: 0px;
+    margin-right: 50px;
 }
 
 .nav_menu li {
-	margin: 22px;
+    margin: 0px;
 }
 
 .nav_menu li a {
-	font-size: 22px;
-	display: inline-block;
-	text-decoration: none;
-	padding: 0 25px;
-	color: #2D2F7A;
+    font-size: 22px;
+    padding:  50px; 
+    color: #2D2F7A; /* 텍스트 색상 변경 */
+    text-decoration: none; /* 링크 텍스트에 있는 밑줄 제거 */
+}
+}
+.nav_menu li a:hover {
+    color: var(--background-color);
 }
 
-.nav_menu li a:hover {
-	color: #1e1f5e;
+.nav_icons {
+    display: flex;
+    color: #7dc0ff;
+    list-style: none;
+    padding-left: 0;
+}
+
+.nav_icons li {
+    padding: 8px 5px;
+}
+
+.navbar img {
+    margin-left: 185px;
+    display: block;
 }
 
 .user-box {
@@ -86,6 +111,19 @@ header {
 .matching-process {
 	margin-top: 75px;
 }
+
+@media (max-width: 750px) {
+    .nav_menu {
+        display: none;
+    }
+    
+    .nav_icons {
+        display: none;
+    }
+    
+    .navbar_toggleBtn {
+        display: block;
+    }
 </style>
 </head>
 <body>

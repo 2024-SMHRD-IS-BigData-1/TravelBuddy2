@@ -60,8 +60,9 @@ a {
     display: flex;
     justify-content: space-between;
     list-style: none;
-    padding-right: 0px; 
+    padding-right: 100px; 
     margin: 0px;
+    margin-right: 50px;
 }
 
 .nav_menu li {
@@ -69,7 +70,7 @@ a {
 }
 
 .nav_menu li a {
-    font-size: 25px;
+    font-size: 22px;
     padding:  50px; 
 }
 
@@ -89,7 +90,7 @@ a {
 }
 
 .navbar img {
-    margin-left: 200px;
+    margin-left: 185px;
     display: block;
 }
 
@@ -179,8 +180,45 @@ a {
 }
 
 
+    .w3-bar {
+        display: flex;
+        margin-top: 20px; /* 필요에 따라 조정하세요 */
+        margin-bottom: 20px; /* 필요에 따라 조정하세요 */
+        margin-left: 825px;
+    }
 
+    .w3-bar-item {
+        padding: 8px 16px;
+        text-decoration: none;
+        color: #2D2F7A;
+    }
 
+    .w3-button {
+        background-color: white;
+        border: 1px solid #2D2F7A;
+        margin: 0 4px;
+        cursor: pointer;
+    }
+
+    .w3-black {
+        background-color: #2D2F7A;
+        color: white;
+    }
+
+    .w3-hover-black:hover {
+        background-color: #2D2F7A;
+        color: white;
+    }
+.w3-row-padding {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.w3-row-padding .w3-quarter {
+    width: calc(30% - 100px); 
+    margin-bottom: 20px;
+}
 
 @media (max-width: 750px) {
     .nav_menu {
@@ -208,54 +246,7 @@ a {
     .w3-padding-32 {
     padding: 32px;
     }
-
-
-}
-
-.w3-bar {
-    margin-left: 750px;
-    margin-bottom: 25px;
-}
-
-.w3-bar-item {
-    padding: 8px 16px;
-    text-decoration: none;
-    color: #2D2F7A;
-}
-
-.w3-button {
-    background-color: white;
-    border: 1px solid #2D2F7A;
-    margin: 0 4px;
-    cursor: pointer;
-}
-
-.w3-black {
-    background-color: #2D2F7A;
-    color: white;
-}
-
-.w3-hover-black:hover {
-    background-color: #2D2F7A;
-    color: white;
-}
-
-.w3-row-padding {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.w3-row-padding .w3-quarter {
-    width: calc(30% - 100px); 
-    margin-bottom: 20px;
-}
-
-@media (max-width: 750px) {
-    .w3-row-padding .w3-quarter {
-        width: 150%; 
-    }
-}
+ }
 </style>
 </head>
 <body>
