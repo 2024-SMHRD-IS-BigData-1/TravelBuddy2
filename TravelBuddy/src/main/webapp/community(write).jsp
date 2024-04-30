@@ -154,6 +154,7 @@ th {
                     <tr>
                         <th>카테고리</th>
                         <td><select name="b_category" class="select-box">
+                        		<option>카테고리를 선택해 주세요</option>
                                 <option value="여행후기">여행후기</option>
                                 <option value="여행정보">여행정보</option>
                         </select></td>
