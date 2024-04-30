@@ -30,7 +30,8 @@ public class CommunityService extends HttpServlet {
         }
 		String mem_id = loginMember.getMem_id();
 		System.out.println("mem_id : " + mem_id);
-		String path = "./img/"+mem_id; //폴더 경로
+		String path = request.getServletContext().getRealPath("./img/"+mem_id);
+//		String path = "./img/"+mem_id; //폴더 경로
     	File Folder = new File(path);
 
     	// 해당 디렉토리가 없다면 디렉토리를 생성.

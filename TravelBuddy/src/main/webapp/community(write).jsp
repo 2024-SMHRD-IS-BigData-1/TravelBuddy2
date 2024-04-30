@@ -151,14 +151,16 @@ th {
                         <th>제목</th>
                         <td><textarea cols="50" rows="1" name="title"></textarea></td>
                     </tr>
+                    <form name='cateG' onsubmit="return cate();">
                     <tr>
                         <th>카테고리</th>
                         <td><select name="b_category" class="select-box">
-                        		<option>카테고리를 선택해 주세요</option>
+                        		<option value="">카테고리를 선택해 주세요</option>
                                 <option value="여행후기">여행후기</option>
                                 <option value="여행정보">여행정보</option>
                         </select></td>
                     </tr>
+                    </form>
                     <tr>
                         <th>내용</th>
                         <td><textarea cols="50" rows="15" name="b_content"></textarea></td>
@@ -179,6 +181,8 @@ th {
             </form>
         </div>
     </div>
+    
+    
 
     <script src="assets/js/jquery.min.js"></script>
 	<script src="assets/js/jquery.scrolly.min.js"></script>
