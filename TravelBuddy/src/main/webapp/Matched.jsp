@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -104,12 +106,12 @@
 
         function showUsers() {
             var matches = [
-                { name: "활기찬인사햄찌", age: 28, gender: "여", travelPreference: "해변 휴양지", image: "images/08.jpg" },
-                { name: "사랑이궁금한냥이", age: 25, gender: "여", travelPreference: "도시 탐방", image: "images/011.jpg" },
-                { name: "윙크뿅댕댕이", age: 30, gender: "남", travelPreference: "자연 속 여행", image: "images/020.jpg" },
-                { name: "좋아죽는고영희", age: 26, gender: "여", travelPreference: "산악 여행", image: "images/012.jpg" },
-                { name: "핥기전문가햄쥐", age: 33, gender: "남", travelPreference: "역사 탐방", image: "images/019.jpg" },
-                { name: "파릇파릇한아깽이", age: 29, gender: "남", travelPreference: "테마파크", image: "images/55.jpg" }
+                { name: "활기찬인사햄찌", age: 28, gender: "여", travelPreference: "해변 휴양지", image: "images/081.jpg" },
+                { name: "사랑이궁금한냥이", age: 25, gender: "여", travelPreference: "도시 탐방", image: "images/0111.jpg" },
+                { name: "윙크뿅댕댕이", age: 30, gender: "남", travelPreference: "자연 속 여행", image: "images/0121.jpg" },
+                { name: "좋아죽는고영희", age: 26, gender: "여", travelPreference: "산악 여행", image: "images/0191.jpg" },
+                { name: "핥기전문가햄쥐", age: 33, gender: "남", travelPreference: "역사 탐방", image: "images/0201.jpg" },
+                { name: "파릇파릇한아깽이", age: 29, gender: "남", travelPreference: "테마파크", image: "images/551.jpg" }
             ];
 
             var container = document.getElementById('userContainer');
@@ -154,4 +156,4 @@
     
 </body>
 </html>
-    
+        
