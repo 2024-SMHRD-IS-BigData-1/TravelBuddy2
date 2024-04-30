@@ -54,9 +54,9 @@
 			<attribute name="owner.project.facets" value="jst.web"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/Smhrd/Desktop/eclipse/lombok.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Smhrd/git/TravelBuddy6/TravelBuddy/src/main/webapp/WEB-INF/lib/javaSDK-2.2.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Smhrd/git/TravelBuddy6/TravelBuddy/src/main/webapp/WEB-INF/lib/json-simple-1.1.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Smhrd/Desktop/sqldeveloper/jdbc/lib/ojdbc11.jar"/>
+	<classpathentry kind="lib" path="C:/Users/shmrd/Desktop/Web(Server)/lombok.jar"/>
+	<classpathentry kind="lib" path="C:/Users/shmrd/Desktop/summerProject/src/main/webapp/WEB-INF/lib/javaSDK-2.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/shmrd/Desktop/summerProject/src/main/webapp/WEB-INF/lib/json-simple-1.1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/shmrd/Desktop/summerProject/src/main/webapp/WEB-INF/lib/ojdbc11.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

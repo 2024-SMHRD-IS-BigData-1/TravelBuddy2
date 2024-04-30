@@ -645,7 +645,7 @@ a {
 			<li><a href="test.jsp"><b>버디매칭</b></a></li>
 			<li><a href="Finding_Buddy2.jsp"><b>버디찾기</b></a></li>
 			<li><a href="Communuity.jsp"><b>커뮤니티</b></a></li>
-			<li><a href="MyProfile.jsp?mem_id=<%= mem_id%>"><b>프로필</b></a></li>
+			<li><a href="MyProfile.jsp?mem_id=<%= session.getAttribute("mem_id")%>"><b>프로필</b></a></li>
 			<li><a href="LogoutService"><b>로그아웃</b></a></li>
 		</ul>
 	</nav>
