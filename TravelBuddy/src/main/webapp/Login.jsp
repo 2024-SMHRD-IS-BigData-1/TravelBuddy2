@@ -61,7 +61,7 @@
                   <input type="password" name = "mem_pw" class="form-control">
                 </div>
                 <div class="form-group">
-                  <button type="submit" class="form-control btn btn-primary rounded submit px-3">로그인</button>
+                  <input type="submit" value="login" class="form-control btn btn-primary rounded submit px-3">
                 </div>
                 </form>
                 <div class="form-group d-md-flex">
