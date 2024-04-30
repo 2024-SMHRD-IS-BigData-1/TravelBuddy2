@@ -1,6 +1,6 @@
-<%@page import="com.smhrd.model.CommunityDAO"%>
 <%@page import="java.util.List"%>
 <%@page import="com.smhrd.model.Community"%>
+<%@page import="com.smhrd.model.CommunityDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
