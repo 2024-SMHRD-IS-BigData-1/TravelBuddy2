@@ -1,8 +1,8 @@
 <%@page import="com.smhrd.model.CommunityDAO"%>
 <%@page import="java.util.List"%>
 <%@page import="com.smhrd.model.Community"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@page import="com.smhrd.model.Member"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -107,6 +107,18 @@ a {
     margin-top: 0px;
 }
 
+.write-button {
+    position: absolute;
+    top: 145px; /* 원하는 위치로 조정 */
+    right: 400px; /* 원하는 위치로 조정 */
+    color: #2D2F7A;
+    background-color: transparent;
+    background-color: white;
+    border: 1px solid #2D2F7A; 
+    cursor: pointer;
+    text-align: center;
+    padding: 12px 22px; 
+}
 .image-container {
     border: 1px solid #ccc;
     background-color: white;
@@ -117,6 +129,7 @@ a {
     left: 250px;
     width: 300px; 
     text-align: center;
+    margin: 12px;
 }
 
 .image-container img {
@@ -149,10 +162,24 @@ a {
     margin-right: 5px; 
 }
 
+.btn-primary {
+    color: #2D2F7A;
+    background-color: transparent;
+    background-color: white;
+    border: 1px solid #2D2F7A; 
+    cursor: pointer;
+    text-align: center;
+    padding: 8px 22px; 
+    margin-right: 5px; 
+}
+
 .category-tab:hover {
     background-color: #2D2F7A; 
     color: white;
 }
+
+
+
 
 
 @media (max-width: 750px) {
@@ -245,26 +272,29 @@ a {
 			%>
 			<input type="hidden" value="board_write" name="command"> <input
 				type="hidden" name="mem_id" value="<%=mem_id%>">
-    <nav class="navbar">
-       <img src="images/bg23412.jpg" alt="Background Image">
-        <ul class="nav_menu">
-            <li><a href="Main.jsp"><b>메인화면</b></a></li>
-            <li><a href="test.jsp"><b>버디매칭</b></a></li>
-            <li><a href="Finding_Buddy2.jsp"><b>버디찾기</b></a></li>
-            <li><a href="Community.jsp"><b>커뮤니티</b></a></li>
-            <li><a href="MyProfile.jsp?mem_id=<%= session.getAttribute("mem_id") %>"><b>프로필</b></a></li>
-            <li><a href="LogoutService"><b>로그아웃</b></a></li>
-            <li><a href="MemberUpdate.jsp"><b>회원정보수정</b></a></li>
-        </ul>
-    </nav>
-    <div class="category-tabs">
-        <button class="category-tab" data-category="all">전체</button>
-        <button class="category-tab" data-category="여행정보">여행정보</button>
-        <button class="category-tab" data-category="여행후기">여행후기</button>
-    </div>
-    <div class="w3-main w3-content w3-padding post-container">
-        <div class="w3-row-padding w3-padding-16 w3-center">
-     	 <ul>
+<!-- 네비게이션 부분 -->
+<nav class="navbar">
+    <img src="images/bg23412.jpg" alt="네비게이션 로고">
+    <ul class="nav_menu">
+        <li><a href="Main.jsp"><b>메인화면</b></a></li>
+        <li><a href="test.jsp"><b>버디매칭</b></a></li>
+        <li><a href="Finding_Buddy2.jsp"><b>버디찾기</b></a></li>
+        <li><a href="Community.jsp"><b>커뮤니티</b></a></li>
+        <li><a href="MyProfile.jsp?mem_id=<%= mem_id%>"><b>프로필</b></a></li>
+        <li><a href="LogoutService"><b>로그아웃</b></a></li>
+        <li><a href="MemberUpdate.jsp"><b>회원정보수정</b></a></li>
+    </ul>
+</nav>
+<!-- 커뮤니티 카테고리 탭 -->
+<div class="category-tabs">
+    <button class="category-tab" data-category="all">전체</button>
+    <button class="category-tab" data-category="여행정보">여행정보</button>
+    <button class="category-tab" data-category="여행후기">여행후기</button>
+</div>
+<!-- 커뮤니티 게시글 영역 -->
+<div class="w3-main w3-content w3-padding post-container">
+    <div class="w3-row-padding w3-padding-16 w3-center">
+         <ul>
          <%
           for (Community community : CommunityList) {
          %>
@@ -281,21 +311,22 @@ a {
             <%
              }
             %>
-        </div>
-        	<div class="text-center">
-            	<a href="community(write).jsp" class="btn btn-primary" style="background-color: gray; float: center;"><button>게시글 작성</button></a>
-            </div>
-            <br>
-            <div class="w3-bar">
-                <a href="#page1" class="w3-bar-item w3-button w3-hover-black">«</a>
-                <a href="#page1" class="w3-bar-item w3-black w3-button">1</a>
-                <a href="#page2" class="w3-bar-item w3-button w3-hover-black">2</a>
-                <a href="#page3" class="w3-bar-item w3-button w3-hover-black">3</a>
-                <a href="#page4" class="w3-bar-item w3-button w3-hover-black">4</a>
-                <a href="#page4" class="w3-bar-item w3-button w3-hover-black">»</a>
-            </div>
-        </div>
-    </div>    
+    </div>
+    <!-- 게시글 작성 버튼 -->
+    <div class="write-buttons">
+        <a href="community(write).jsp" class="write-button">게시글 작성</a>
+    </div>
+    <br>
+    <!-- 페이지 네비게이션 -->
+    <div class="w3-bar">
+        <a href="#page1" class="w3-bar-item w3-button w3-hover-black">«</a>
+        <a href="#page1" class="w3-bar-item w3-black w3-button">1</a>
+        <a href="#page2" class="w3-bar-item w3-button w3-hover-black">2</a>
+        <a href="#page3" class="w3-bar-item w3-button w3-hover-black">3</a>
+        <a href="#page4" class="w3-bar-item w3-button w3-hover-black">4</a>
+        <a href="#page4" class="w3-bar-item w3-button w3-hover-black">»</a>
+    </div>
+</div>
     <script>
 function filterImages(event) {
     var category = event.target.dataset.category;
