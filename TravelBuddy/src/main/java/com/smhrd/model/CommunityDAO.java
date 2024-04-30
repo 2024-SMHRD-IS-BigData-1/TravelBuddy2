@@ -18,14 +18,14 @@ public class CommunityDAO {
     
     public List<Community> showCommunity(){
 		SqlSession session = sqlSessionFactory.openSession(true);
-		List<Community> communityList = session.selectList("com.smhrd.db.CommunityMapper.Community");
+		List<Community> communityList = session.selectList("com.smhrd.db.CommunityMapper.showCommunity");
 		session.close();
 		return communityList;
 	}
     
     public Community detailCommunity(int b_idx) {
 		SqlSession session = sqlSessionFactory.openSession(true);
-		Community community = session.selectOne("com.smhrd.db.CommunityMapper.Community", b_idx);
+		Community community = session.selectOne("com.smhrd.db.CommunityMapper.detailCommunity", b_idx);
 		session.close();
 		return community;
 	}
