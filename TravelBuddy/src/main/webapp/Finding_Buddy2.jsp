@@ -256,107 +256,135 @@ a.navbar:hover {
 	background-color: #2D2F7A;
 	color: white;
 }
+
+.custom-btn-container {
+	text-align: center;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.custom-btn {
+	background-color: #2D2F7A;
+	color: white;
+	padding: 10px 20px;
+	border-radius: 5px;
+	text-decoration: none;
+	transition: background-color 0.3s;
+	display: inline-block;
+}
+
+.custom-btn:hover {
+	background-color: #1A1C59;
+}
 </style>
 <link
 	href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
 	rel="stylesheet">
 </head>
 <body>
-   <%
-    List<BuddyFinding> boardList = new BuddyFindingDAO().showBoard();
-    pageContext.setAttribute("boardList", boardList);
-    %>
-    <nav class="navbar">
-        <a href="Main.jsp"><img src="images/bg23412.jpg" alt="Background Image"></a>
-        <ul class="nav_menu">
-            <li><a href="Main.jsp"><b>메인화면</b></a></li>
-            <li><a href="test.jsp"><b>버디매칭</b></a></li>
-            <li><a href="Finding_Buddy2.jsp"><b>버디찾기</b></a></li>
-            <li><a href="Community.jsp"><b>커뮤니티</b></a></li>
-            <li><a href="MyProfile.jsp?mem_id=<%= session.getAttribute("mem_id") %>"><b>프로필</b></a></li>
-            <li><a href="LogoutService"><b>로그아웃</b></a></li>
-            <li><a href="MemberUpdate.jsp"><b>회원정보수정</b></a></li>
-        </ul>
-    </nav>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8">
-                <div class="chat_container">
-                    <div class="row">
-                        <div class="col-md-6 col-sm-6">
-                        </div>
-                    </div>
-                </div>
-                <div class="inbox-message">
-                    <ul>
-                    <%
-                     for (BuddyFinding board : boardList) {
-                    %>
-                    </ul>
-                </div>
-                <br><br>
-                <div class="w3-center w3-padding-32">
-                    <div class="w3-bar">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8">
-                <div class="chat_container">
-                    <div class="job-box">
-                        <div class="job-box-filter">
-                            <div class="row">
-                                <div class="col-md-6 col-sm-6">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="inbox-message">
-                        <ul>
-                            <li>
-                               <a href="post.jsp?buddy_idx=<%=board.getBuddy_idx()%>">
-                                    <div class="message-avatar">
-                                        <img src="images/11.jpg" alt="">
-                                    </div>
-                                    <div class="message-body">
-                                        <div class="message-body-heading">
-                                            <h5><%=board.getTitle()%></h5>
-                                            <p>
-                                        작성자:
-                                        <%=board.getMem_id()%></p>
-                                   
-                                    <p>
-                                        여행 출발일:
-                                        <%=board.getTravel_dt()%></p>
-                                   
-                                        </div> 
-                                    </div>
-                                </a>
-                            </li>
-                            <%
-                             }
-                             %>
-                    </div>
-                    <div class="text-center">
-                    <a href="post(write).jsp" class="btn btn-primary" style="background-color: gray;">게시글 작성</a>
-                    </div>
-                    <br><br>
-                    <div class="w3-center w3-padding-32">
-                        <div class="w3-bar">
-                            <a href="#page1" class="w3-bar-item w3-button w3-hover-black">«</a>
-                            <a href="#page1" class="w3-bar-item w3-black w3-button">1</a>
-                            <a href="#page2" class="w3-bar-item w3-button w3-hover-black">2</a>
-                            <a href="#page3" class="w3-bar-item w3-button w3-hover-black">3</a>
-                            <a href="#page4" class="w3-bar-item w3-button w3-hover-black">4</a>
-                            <a href="#page4" class="w3-bar-item w3-button w3-hover-black">»</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+	<%
+	List<BuddyFinding> boardList = new BuddyFindingDAO().showBoard();
+	pageContext.setAttribute("boardList", boardList);
+	%>
+	<nav class="navbar">
+		<a href="Main.jsp"><img src="images/bg23412.jpg"
+			alt="Background Image"></a>
+		<ul class="nav_menu">
+			<li><a href="Main.jsp"><b>메인화면</b></a></li>
+			<li><a href="test.jsp"><b>버디매칭</b></a></li>
+			<li><a href="Finding_Buddy2.jsp"><b>버디찾기</b></a></li>
+			<li><a href="Community.jsp"><b>커뮤니티</b></a></li>
+			<li><a
+				href="MyProfile.jsp?mem_id=<%=session.getAttribute("mem_id")%>"><b>프로필</b></a></li>
+			<li><a href="LogoutService"><b>로그아웃</b></a></li>
+			<li><a href="MemberUpdate.jsp"><b>회원정보수정</b></a></li>
+		</ul>
+	</nav>
+
+
+	<div style="text-align: center;">
+		<a href="post(write).jsp" class="btn btn-primary custom-btn">게시글
+			작성</a>
+	</div>
+
+
+
+
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8">
+				<div class="chat_container">
+					<div class="row">
+						<div class="col-md-6 col-sm-6"></div>
+					</div>
+				</div>
+				<div class="inbox-message">
+					<ul>
+						<%
+						for (BuddyFinding board : boardList) {
+						%>
+					</ul>
+				</div>
+				<br> <br>
+				<div class="w3-center w3-padding-32">
+					<div class="w3-bar"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8">
+				<div class="chat_container">
+					<div class="job-box">
+						<div class="job-box-filter">
+							<div class="row">
+								<div class="col-md-6 col-sm-6"></div>
+							</div>
+						</div>
+						<div class="inbox-message">
+							<ul>
+								<li><a href="post.jsp?buddy_idx=<%=board.getBuddy_idx()%>">
+										<div class="message-avatar">
+											<img src="images/11.jpg" alt="">
+										</div>
+										<div class="message-body">
+											<div class="message-body-heading">
+												<h5><%=board.getTitle()%></h5>
+												<p>
+													작성자:
+													<%=board.getMem_id()%></p>
+
+												<p>
+													여행 출발일:
+													<%=board.getTravel_dt()%></p>
+
+											</div>
+										</div>
+								</a></li>
+								<%
+								}
+								%>
+							
+						</div>
+						
+
+						<br> <br>
+						<div class="w3-center w3-padding-32">
+							<div class="w3-bar">
+								<a href="#page1" class="w3-bar-item w3-button w3-hover-black">«</a>
+								<a href="#page1" class="w3-bar-item w3-black w3-button">1</a> 
+								<a href="#page2" class="w3-bar-item w3-button w3-hover-black">2</a>
+								<a href="#page3" class="w3-bar-item w3-button w3-hover-black">3</a>
+								<a href="#page4" class="w3-bar-item w3-button w3-hover-black">4</a>
+								<a href="#page4" class="w3-bar-item w3-button w3-hover-black">»</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </body>
 </html>

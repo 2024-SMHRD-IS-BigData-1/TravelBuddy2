@@ -293,15 +293,10 @@ th {
                      <input type="hidden" name="buddy_idx" value="<%=b_idx%>">
                      <input type="hidden" name="parent_comment_id"
                         value="<%=comment.getComment_id()%>">
-                     <button type="submit" style="margin-top: 10px;">대댓글 작성</button>
                   </form>
                </div>
                   </div>
                </div>
-               <%
-               }
-               }
-               %>
             </div>
             <%
             }
@@ -311,29 +306,19 @@ th {
             <p style="margin-top: 20px;">댓글이 없습니다.</p>
             <%
             }
+          }
+      	}
             %>
          </div>
-
-
-
-
-
-
-
-         <div class="button">
-            <!-- 게시물 목록 페이지로 이동하는 링크 -->
-            <button type="button" class="btn btn-danger my-3" onclick="deletePost(this)" font-family="Freesentation-9Black">삭제</button>
-            <a href="Community.jsp"><button>돌아가기</button></a>
-         </div>
-      </div>
+	         <div class="button">
+	            <!-- 게시물 목록 페이지로 이동하는 링크 -->
+	            <button type="button" class="btn btn-danger my-3" onclick="deletePost(this)" font-family="Freesentation-9Black">삭제</button>
+	            <a href="Community.jsp"><button>돌아가기</button></a>
+	         </div>
+	      </div>
+	   </div>
    </div>
-
-         <div class="button">
-            <!-- 게시물 목록 페이지로 이동하는 링크 -->
-            <a href="Community.jsp">게시물 목록으로 돌아가기</a>
-         </div>
-      </div>
-   </div>
+</div>
 
 
 
