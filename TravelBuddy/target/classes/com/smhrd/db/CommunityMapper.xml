@@ -16,5 +16,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     <select id="detailCommunity" resultType="Community">
 		select * from community where b_idx=#{b_idx}
 	</select>
+	
+	<select id="showCommunity" resultType="Community">
+		select *
+		from community
+	</select>
+	
+	
 
 </mapper>

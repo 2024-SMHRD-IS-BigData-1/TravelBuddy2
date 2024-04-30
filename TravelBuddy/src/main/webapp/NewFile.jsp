@@ -1,6 +1,3 @@
-<%@page import="com.smhrd.model.CommunityDAO"%>
-<%@page import="java.util.List"%>
-<%@page import="com.smhrd.model.Community"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -234,22 +231,20 @@ a {
 <body>
 <%@ page import="com.smhrd.model.Member"%>
 
-			<%
-			Member loginMember = (Member) session.getAttribute("loginMember");
-			String mem_id = "";
-			if (loginMember != null) {
-				mem_id = loginMember.getMem_id();
-			}
-			List<Community> CommunityList = new CommunityDAO().showCommunity();
-			pageContext.setAttribute("CommunityList", CommunityList);
-			%>
-			<input type="hidden" value="board_write" name="command"> <input
-				type="hidden" name="mem_id" value="<%=mem_id%>">
+         <%
+         Member loginMember = (Member) session.getAttribute("loginMember");
+         String mem_id = "";
+         if (loginMember != null) {
+            mem_id = loginMember.getMem_id();
+         }
+         %>
+         <input type="hidden" value="board_write" name="command"> <input
+            type="hidden" name="mem_id" value="<%=mem_id%>">
     <nav class="navbar">
        <img src="images/bg23412.jpg" alt="Background Image">
         <ul class="nav_menu">
             <li><a href="Main.jsp"><b>메인화면</b></a></li>
-            <li><a href="test.jsp"><b>버디매칭</b></a></li>
+            <li><a href="Matching.jsp"><b>버디매칭</b></a></li>
             <li><a href="Finding_Buddy2.jsp"><b>버디찾기</b></a></li>
             <li><a href="Community.jsp"><b>커뮤니티</b></a></li>
             <li><a href="MyProfile.jsp?mem_id=<%= mem_id%>"><b>프로필</b></a></li>
@@ -264,24 +259,50 @@ a {
     </div>
     <div class="w3-main w3-content w3-padding post-container">
         <div class="w3-row-padding w3-padding-16 w3-center">
-     	 <ul>
-         <%
-          for (Community community : CommunityList) {
-         %>
-         </ul>
-            <div class=<%=community.getB_category() %>>
+            <div class="w3-quarter 여행정보">
                 <div class="image-container">
-                    <img src="./img/<%=loginMember.getMem_id() %>/<%=community.getFilename() %>" style="width:100%">
-                    <h3><%=community.getTitle() %></h3>
-                    <p><%=community.getB_category() %></p>
+                    <img src="images/3.jpg" alt="여행정보" style="width:100%">
+                    <h3>쫄아든햄찌</h3>
+                    <p>여행정보 : ~ </p>
                 </div>
             </div>
-            <%
-             }
-            %>
+            <div class="w3-quarter 여행후기">
+                <div class="image-container">
+                    <img src="images/5.jpg" alt="여행후기" style="width:100%">
+                    <h3>귀챠니즘야옹이</h3>
+                </div>
+            </div>
+            <div class="w3-quarter 여행정보">
+                <div class="image-container">
+                    <img src="images/6.jpg" alt="여행정보" style="width:100%">
+                    <h3>엄근진야옹이</h3>
+                    <p>여행정보 : ~</p>
+                </div>
+            </div>
+            <div class="w3-quarter 여행후기">
+                <div class="image-container">
+                    <img src="images/7.jpg" alt="여행후기" style="width:100%">
+                    <h3>인생이고달픈야옹이</h3>
+                    <p>여행후기 : ~</p>
+                </div>
+            </div>
+            <div class="w3-quarter 여행정보">
+                <div class="image-container">
+                    <img src="images/8.jpg" alt="여행정보" style="width:100%">
+                    <h3>현피각재는야옹이</h3>
+                    <p>여행정보 : ~</p>
+                </div>
+            </div>
+            <div class="w3-quarter 여행후기">
+                <div class="image-container">
+                    <img src="images/9.jpg" alt="여행후기" style="width:100%">
+                    <h3>붕어빵바라기야옹이</h3>
+                    <p>여행후기 : ~</p>
+                </div>
+            </div>
         </div>
-        	<div class="text-center">
-            	<a href="community(write).jsp" class="btn btn-primary" style="background-color: gray; float: center;"><button>게시글 작성</button></a>
+           <div class="text-center">
+               <a href="community(write).jsp" class="btn btn-primary" style="background-color: gray; float: center;"><button>게시글 작성</button></a>
             </div>
             <br>
             <div class="w3-bar">
