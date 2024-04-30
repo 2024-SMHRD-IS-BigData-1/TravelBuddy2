@@ -137,7 +137,7 @@ th {
 						<td><textarea cols="50" rows="1" name="title"></textarea></td>
 					</tr>
 					<tr>
-						<th>카테고리</th>
+						<th>여행일정</th>
 						<td><input type="date" name="travel_dt"></td>
 					</tr>
 					<tr>
