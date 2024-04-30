@@ -312,17 +312,7 @@ th {
                         작성</button>
                   </div>
                </div>
-               <div id="reply-form-<%=comment.getComment_id()%>"
-                  style="display: none; margin-top: 10px;">
-                  <form action="AddChildCommentServlet" method="post">
-                     <textarea name="comment-content" placeholder="대댓글을 입력하세요"
-                        required style="width: 100%;"></textarea>
-                     <input type="hidden" name="buddy_idx" value="<%=buddy_idx%>">
-                     <input type="hidden" name="parent_comment_id"
-                        value="<%=comment.getComment_id()%>">
-                     <button type="submit" style="margin-top: 10px;">대댓글 작성</button>
-                  </form>
-               </div>
+              
                <%
                // 대댓글 목록 가져오기
                List<Comment> childComments = commentDAO.getChildCommentsByParentCommentId(comment.getComment_id());
