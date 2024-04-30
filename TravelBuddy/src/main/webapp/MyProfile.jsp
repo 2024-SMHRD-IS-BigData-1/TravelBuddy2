@@ -81,7 +81,7 @@ button {
 }
 
 button.primary {
-	background: #1e1f5e;
+	background: green;
 	color: white;
 	-webkit-text-fill-color: white;
 }
@@ -664,6 +664,10 @@ a {
 						<form id="followForm" action="FollowService" method="post">
 							
 							<input type="hidden" name="Followee" value="<%=mem_id%>">
+							
+							<button class="primary"
+								value=""
+								>My Profile</button>
 						</form>
 
 						<%
@@ -806,26 +810,6 @@ a {
 			</div>
 		</div>
 	</main>
-	<script>
-		document.addEventListener("DOMContentLoaded", function() {
-			const followButton = document
-					.querySelector(".title button.primary");
-
-			followButton.addEventListener("mouseenter", function() {
-				followButton.style.cursor = "pointer";
-			});
-
-			followButton.addEventListener("click", function() {
-				if (followButton.textContent === "팔로우") {
-					followButton.textContent = "✓ 팔로우중";
-					followButton.style.backgroundColor = "green";
-				} else {
-					followButton.textContent = "팔로우";
-					followButton.style.backgroundColor = "";
-				}
-			});
-		});
-	</script>
 
 	<%
 	}
