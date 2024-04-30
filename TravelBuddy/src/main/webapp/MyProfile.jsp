@@ -587,7 +587,6 @@ a {
 	PreparedStatement pstmt = null;
 	ResultSet rs = null;
 	
-
 	String mem_id = request.getParameter("mem_id");
 
 	if (mem_id != null && !mem_id.isEmpty()) {
@@ -665,10 +664,6 @@ a {
 						<form id="followForm" action="FollowService" method="post">
 							
 							<input type="hidden" name="Followee" value="<%=mem_id%>">
-							
-							<button class="primary"
-								value=""
-								>팔로우</button>
 						</form>
 
 						<%
