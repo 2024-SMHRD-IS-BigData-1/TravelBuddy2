@@ -13,28 +13,24 @@ import com.smhrd.model.MemberDAO;
 
 @WebServlet("/LoginService")
 public class LoginService extends HttpServlet {
-    protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-      
-       // 로그인 기능
-        request.setCharacterEncoding("UTF-8");
-        String id = request.getParameter("mem_id");
-        String pw = request.getParameter("mem_pw");
+	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	    // 로그인 기능
+	    request.setCharacterEncoding("UTF-8");
+	    String id = request.getParameter("mem_id");
+	    String pw = request.getParameter("mem_pw");
 
-        Member member = new Member(id, pw);
+	    Member member = new Member(id, pw);
+	    Member loginMember = new MemberDAO().login(member);
 
-        Member loginMember = new MemberDAO().login(member);
-
-      if (loginMember != null) {
-         System.out.println("로그인 성공!");
-         System.out.println(id+pw);
-         HttpSession session = request.getSession();
-         session.setAttribute("loginMember", loginMember);
-      } else {
-    	 response.sendRedirect("Login.jsp");
-         System.out.println("로그인 실패..");
-      }
-
-      response.sendRedirect("Main.jsp");
-
-    }
-}
+	    if (loginMember != null) {
+	        System.out.println("로그인 성공!");
+	        System.out.println(id + pw);
+	        HttpSession session = request.getSession();
+	        session.setAttribute("loginMember", loginMember);
+	        session.setAttribute("mem_id", id); // 여기서 mem_id를 세션에 저장
+	        response.sendRedirect("Main.jsp");
+	    } else {
+	        response.sendRedirect("Login.jsp");
+	        System.out.println("로그인 실패..");
+	    }
+	}}
