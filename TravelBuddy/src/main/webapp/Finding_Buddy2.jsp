@@ -326,11 +326,11 @@ a.navbar:hover {
                                             <p>
                                         작성자:
                                         <%=board.getMem_id()%></p>
-                                    <!-- 작성자 -->
+                                   
                                     <p>
                                         여행 출발일:
                                         <%=board.getTravel_dt()%></p>
-                                    <!-- 여행 출발일 -->
+                                   
                                         </div> 
                                     </div>
                                 </a>

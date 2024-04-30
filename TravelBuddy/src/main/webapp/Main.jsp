@@ -72,43 +72,18 @@
             <li><a href="Finding_Buddy2.jsp"><b>버디찾기</b></a></li>
             <li><a href="Community.jsp"><b>커뮤니티</b></a></li>
             <li><a href="MyProfile.jsp"><b>프로필</b></a></li>
-            <li><a href="Login.jsp"><b>로그인</b></a></li>
-            <li><a href="LogoutService"><b>로그아웃</b></a></li>
-            <li><a href="MemberUpdate.jsp"><b>회원정보수정</b></a></li>
+            <% 
+                if (session.getAttribute("loginMember") == null) {
+            %>
+                <li><a href="Login.jsp"><b>로그인</b></a></li>
+            <% } else { %>
+                <li><a href="LogoutService"><b>로그아웃</b></a></li>
+                <li><a href="MemberUpdate.jsp"><b>회원정보수정</b></a></li>
+            <% } %>
         </ul>
     </nav>
     <div class="image-container">
         <img src="images/main.jpg" alt="gif">
     </div>
-
-    <script>
-        // 페이지 로드될 때 실행되는 함수
-        window.onload = function() {
-            // 사용자의 로그인 상태를 확인하여 메뉴를 동적으로 변경
-            var loginMember = <%= session.getAttribute("loginMember") %>;
-            var menu = document.getElementById("menu");
-            if (loginMember) {
-                // 로그인된 상태일 때
-                menu.innerHTML = `
-                    <li><a href="Main.jsp"><b>메인화면</b></a></li>
-                    <li><a href="test.jsp"><b>버디매칭</b></a></li>
-                    <li><a href="Finding_Buddy2.jsp"><b>버디찾기</b></a></li>
-                    <li><a href="Community.jsp"><b>커뮤니티</b></a></li>
-                    <li><a href="MyProfile.jsp"><b>프로필</b></a></li>
-                    <li><a href="LogoutService"><b>로그아웃</b></a></li>
-                    <li><a href="MemberUpdate.jsp"><b>회원정보수정</b></a></li>
-                `;
-            } else {
-                // 로그인되지 않은 상태일 때
-                menu.innerHTML = `
-                    <li><a href="Main.jsp"><b>메인화면</b></a></li>
-                    <li><a href="test.jsp"><b>버디매칭</b></a></li>
-                    <li><a href="Finding_Buddy2.jsp"><b>버디찾기</b></a></li>
-                    <li><a href="Community.jsp"><b>커뮤니티</b></a></li>
-                    <li><a href="Login.jsp"><b>로그인</b></a></li>
-                `;
-            }
-        };
-    </script>
 </body>
 </html>
