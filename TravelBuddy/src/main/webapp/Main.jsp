@@ -24,7 +24,6 @@ body {
 }
 
 .navbar img {
-	margin-left: 275px;
 }
 
 .nav_menu {
