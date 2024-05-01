@@ -408,11 +408,6 @@ a {
          </div>
       </div>
    </div>
-=======
-	<%
-	List<BuddyFinding> boardList = new BuddyFindingDAO().showBoard();
-	pageContext.setAttribute("boardList", boardList);
-	%>
 	<nav class="navbar">
 		<a href="Main.jsp"><img src="images/bg23412.jpg"
 			alt="Background Image"></a>
