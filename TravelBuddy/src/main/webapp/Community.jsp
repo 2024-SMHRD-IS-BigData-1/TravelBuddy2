@@ -286,7 +286,7 @@ a {
     </ul>
 </nav>
 <!-- 커뮤니티 카테고리 탭 -->
-<div class="category-tabs">
+<div class="category-tabs" id="community">
     <button class="category-tab" data-category="all">전체</button>
     <button class="category-tab" data-category="여행정보">여행정보</button>
     <button class="category-tab" data-category="여행후기">여행후기</button>

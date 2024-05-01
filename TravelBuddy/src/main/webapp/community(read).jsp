@@ -310,6 +310,7 @@ th {
       	}
             %>
          </div>
+
 	         <div class="button">
 	            <!-- 게시물 목록 페이지로 이동하는 링크 -->
 	            <button type="button" class="btn btn-danger my-3" onclick="deletePost(this)" font-family="Freesentation-9Black">삭제</button>
