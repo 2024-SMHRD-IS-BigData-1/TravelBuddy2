@@ -309,14 +309,7 @@ a {
     </div>
     <br>
     <!-- 페이지 네비게이션 -->
-    <div class="w3-bar">
-        <a href="#page1" class="w3-bar-item w3-button w3-hover-black">«</a>
-        <a href="#page1" class="w3-bar-item w3-black w3-button">1</a>
-        <a href="#page2" class="w3-bar-item w3-button w3-hover-black">2</a>
-        <a href="#page3" class="w3-bar-item w3-button w3-hover-black">3</a>
-        <a href="#page4" class="w3-bar-item w3-button w3-hover-black">4</a>
-        <a href="#page4" class="w3-bar-item w3-button w3-hover-black">»</a>
-    </div>
+    
 </div>
     <script>
 function filterImages(event) {

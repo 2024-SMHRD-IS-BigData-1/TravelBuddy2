@@ -209,30 +209,30 @@ th {
                buddy_idx = Integer.parseInt(buddy_idx_param);
             }
 
-                if (buddy_idx_param != null) {
-                    BuddyFinding buddyFinding = new BuddyFindingDAO().getBuddyFindingByBuddyIdx(buddy_idx);
-                    if (buddyFinding != null) {
-                %>
-                <p>
-                    <strong>게시물 제목</strong>:
-                    <%=buddyFinding.getTitle()%>
-                </p>
-                <p>
-                    <strong>여행날짜</strong>:
-                    <%=buddyFinding.getTravel_dt()%>
-                </p>
-                <p>
-                    <strong>여행국가</strong>:
-                    <%=buddyFinding.getPlace_name()%>
-                </p>
-               <p>
-                    <strong>작성자 닉네임</strong>:
-                    <a href="Profile.jsp?buddy_idx=<%=buddy_idx%>"><%=buddyFinding.getMem_id()%></a>
-                </p>
-                <p>
-                    <strong>내용</strong>:
-                    <%=buddyFinding.getContent()%>
-                </p>
+            if (buddy_idx_param != null) {
+               BuddyFinding buddyFinding = new BuddyFindingDAO().getBuddyFindingByBuddyIdx(buddy_idx);
+               if (buddyFinding != null) {
+            %>
+            <p>
+               <strong>게시물 제목</strong>:
+               <%=buddyFinding.getTitle()%>
+            </p>
+            <p>
+               <strong>여행날짜</strong>:
+               <%=buddyFinding.getTravel_dt()%>
+            </p>
+            <p>
+               <strong>여행국가</strong>:
+               <%=buddyFinding.getPlace_name()%>
+            </p>
+            <p>
+               <strong>작성자 닉네임</strong>: <a
+                  href="Profile.jsp?buddy_idx=<%=buddy_idx%>"><%=buddyFinding.getMem_id()%></a>
+            </p>
+            <p>
+               <strong>내용</strong>:
+               <%=buddyFinding.getContent()%>
+            </p>
             <p>
             <div id="map" style="width: 100%; height: 400px;"></div>
             <p>
@@ -308,42 +308,11 @@ th {
                      <%
                      }
                      %>
-                     <button onclick="showReplyForm(<%=comment.getComment_id()%>)">대댓글
-                        작성</button>
+                     
                   </div>
                </div>
-              
-               <%
-               // 대댓글 목록 가져오기
-               List<Comment> childComments = commentDAO.getChildCommentsByParentCommentId(comment.getComment_id());
 
-               if (childComments != null && !childComments.isEmpty()) {
-                  // 대댓글이 있을 경우 출력
-                  for (Comment childComment : childComments) {
-               %>
-               <div class="comment child-comment" style="margin-left: 30px;">
-                  <strong><%=childComment.getMem_id()%></strong>
-                  <p><%=childComment.getComment_content()%></p>
-                  <p><%=childComment.getComment_date()%></p>
-                  <div class="action-buttons">
-                     <%
-                     // 로그인한 사용자와 대댓글 작성자가 일치하는 경우에만 삭제 버튼을 출력
-                     if (loginMember != null && loginMember.getMem_id().equals(childComment.getMem_id())) {
-                     %>
-                     <form action="DeleteCommentServlet" method="post">
-                        <input type="hidden" name="comment_id"
-                           value="<%=childComment.getComment_id()%>">
-                        <button type="submit">댓글 삭제</button>
-                     </form>
-                     <%
-                     }
-                     %>
-                  </div>
-               </div>
-               <%
-               }
-               }
-               %>
+
             </div>
             <%
             }
@@ -364,17 +333,18 @@ th {
 
          <div class="button">
             <!-- 게시물 목록 페이지로 이동하는 링크 -->
-            <button type="button" class="btn btn-danger my-3" onclick="deletePost(this)" font-family="Freesentation-9Black">삭제</button>
+            <button type="button" class="btn btn-danger my-3"
+               onclick="deletePost(this)" font-family="Freesentation-9Black">삭제</button>
             <a href="Finding_Buddy2.jsp"><button>돌아가기</button></a>
          </div>
       </div>
    </div>
 
-         <div class="button">
-            <!-- 게시물 목록 페이지로 이동하는 링크 -->
-            <a href="Finding_Buddy.jsp">게시물 목록으로 돌아가기</a>
-         </div>
-      </div>
+   <div class="button">
+      <!-- 게시물 목록 페이지로 이동하는 링크 -->
+      <a href="Finding_Buddy.jsp">게시물 목록으로 돌아가기</a>
+   </div>
+   </div>
    </div>
 
 
@@ -390,7 +360,7 @@ th {
         }
     </script>
 
-   
+
 
 
 
