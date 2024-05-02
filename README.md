@@ -87,6 +87,7 @@
 ### 메인페이지
 
 ### 로그인/회원가입
+![image](https://github.com/2024-SMHRD-IS-BigData-1/TravelBuddy2/assets/160591985/01dbc991-3f3e-4183-ab74-ab011eb0b5a9)
 
 ### 게시글 작성(구글맵) / 댓글 작성
 
