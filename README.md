@@ -98,7 +98,7 @@
 <table>
   <tr>
     <td align="center"><img src="https://i.pinimg.com/originals/86/27/84/86278419c8a08407d640ea7432d68f9f.png" width="100" height="100"/></td>
-    <td align="center"><img src="https://mb.ntdtv.kr/assets/uploads/2019/01/Screen-Shot-2019-01-08-at-4.31.55-PM-e1546932545978.png" width="100" height="100"/></td>
+    <td align="center"><img src="https://item.kakaocdn.net/do/9ac8ba2dd82efb5cad54d5c7451167a14022de826f725e10df604bf1b9725cfd" width="100" height="100"/></td>
     <td align="center"><img src="https://mblogthumb-phinf.pstatic.net/20160127_177/krazymouse_1453865104404DjQIi_PNG/%C4%AB%C4%AB%BF%C0%C7%C1%B7%BB%C1%EE_%B6%F3%C0%CC%BE%F0.png?type=w2" width="100" height="100"/></td>
     <td align="center"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOhkg548k9LSSggIHPZ9W4weo-zhpftkJFNO-ePIr_uA&s" width="100" height="100"/></td>
     <td align="center"><img src="https://item.kakaocdn.net/do/30cef086c8778d80e1487385bd5efe7b2df16ed7012359e344d47930e49e9310" width="100" height="100"/></td>
@@ -122,9 +122,9 @@
   <tr>
     <td align="center"><a href="https://github.com/kzy282" target='_blank'>github</a></td>
     <td align="center"><a href="https://github.com/jojo12425" target='_blank'>github</a></td>
-    <td align="center"><a href="https://github.com/자신의username작성해주세요" target='_blank'>github</a></td>
+    <td align="center"><a href="https://github.com/DMSDK94" target='_blank'>github</a></td>
     <td align="center"><a href="https://github.com/Kayadadu" target='_blank'>github</a></td>
-    <td align="center"><a href="https://github.com/자신의username작성해주세요" target='_blank'>github</a></td>
+    <td align="center"><a href="https://github.com/EasyPeasy0" target='_blank'>github</a></td>
   </tr>
 </table>
 
