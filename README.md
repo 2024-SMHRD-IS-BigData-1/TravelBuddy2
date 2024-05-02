@@ -18,8 +18,8 @@
 * 구글지도로 핀을 찍어 장소를 찍을수 있는 게시글 작성 기능
 * 사용자 간 지속적인 연결이 가능하도록 돕는 팔로우 기능
 * cool sms를 이용한 신원확인을 위한 본인인증 기능
-* 기능4
-* 기능5
+* 게시글 작성 시 사진 첨부 기능
+  
 <br>
 
 ## ⛏ 기술스택
@@ -95,7 +95,9 @@
     <td align="center"><img src="https://e7.pngegg.com/pngimages/537/529/png-clipart-cartoon-character-illustration-kakaotalk-kakao-friends-emoticon-sticker-viber-smiley-internet-thumbnail.png" width="100" height="100"/></td>
     <td align="center"><img src="https://mb.ntdtv.kr/assets/uploads/2019/01/Screen-Shot-2019-01-08-at-4.31.55-PM-e1546932545978.png" width="100" height="100"/></td>
     <td align="center"><img src="https://mblogthumb-phinf.pstatic.net/20160127_177/krazymouse_1453865104404DjQIi_PNG/%C4%AB%C4%AB%BF%C0%C7%C1%B7%BB%C1%EE_%B6%F3%C0%CC%BE%F0.png?type=w2" width="100" height="100"/></td>
+    <td align="center"><img src="https://item.kakaocdn.net/do/30cef086c8778d80e1487385bd5efe7b2df16ed7012359e344d47930e49e9310" width="100" height="100"/></td>
     <td align="center"><img src="https://item.kakaocdn.net/do/b5d3d6a7b67fbf5afdaffb79fffbf8b18f324a0b9c48f77dbce3a43bd11ce785" width="100" height="100"/></td>
+    <td align="center"><img src="https://item.kakaocdn.net/do/30cef086c8778d80e1487385bd5efe7bb3a18fdf58bc66ec3f4b6084b7d0b570" width="100" height="100"/></td>
   </tr>
   <tr>
     <td align="center"><strong>정여진</strong></td>
@@ -125,7 +127,8 @@
 프로젝트 진행하는 동안 발생했던 이슈 중 가장 기억에 남았던 문제와 해결 프로세스 나열(2~5가지 정도)
   
 * 문제1<br>
- 문제점 설명 및 해결방안
+  GitHub 연동 문제: 개발하는 내내 GitHub를 통해서 팀원들 간 코드를 공유해야했는데, pull과 push를 하는 과정에서 코드가 충돌되거나 손상되는 문제가 있었음.
+  해결방안: 팀원들 간 더욱 활발한 소통을 통해서 기능이 완성되었을 때 바로 pull과 push를 실시하고, GitHub 오류 발생 시 해결 방안을 공유하여 문제를 최소화하고자 노력하였음.
  
 * 문제2<br>
  문제점 설명 및 해결방안
