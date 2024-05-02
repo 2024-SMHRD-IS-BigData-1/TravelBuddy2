@@ -77,8 +77,6 @@
 ## 📌 SW유스케이스
 ![image](https://github.com/2024-SMHRD-IS-BigData-1/TravelBuddy2/assets/160591985/006f74da-1893-4345-b140-ca0988bbdf1a)
 
-
-
 ## 📌 서비스 흐름도
 ![image](https://github.com/2024-SMHRD-IS-BigData-1/TravelBuddy2/assets/160591985/b5a2bbd6-8147-4107-8578-3d32e11c6329)
 
@@ -88,8 +86,10 @@
 ![Main](https://github.com/2024-SMHRD-IS-BigData-1/TravelBuddy2/assets/160591985/5f4ccf45-df94-44a5-b127-20382727d90c)
 
 ### 로그인/회원가입
+![로그인,회원가입](https://github.com/2024-SMHRD-IS-BigData-1/TravelBuddy2/assets/160591985/eee5bea5-8796-4f11-b8ec-3c41bcbbadb9)
 
 ### 버디찾기
+![버디찾기](https://github.com/2024-SMHRD-IS-BigData-1/TravelBuddy2/assets/160591985/ab0334b4-61b4-46f7-9848-f24e1c91a53e)
 
 ### 커뮤니티
 ![커뮤니티](https://github.com/2024-SMHRD-IS-BigData-1/TravelBuddy2/assets/160591985/d2e87dc9-07af-47c6-9ceb-a7fc6778753d)
