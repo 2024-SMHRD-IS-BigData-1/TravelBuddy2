@@ -85,9 +85,9 @@
 ## 🖥 화면 구성
 
 ### 메인페이지
+![메인페이지](https://github.com/2024-SMHRD-IS-BigData-1/TravelBuddy2/assets/160591985/d9061f48-6eed-471c-8768-0f1dc35806e3)
 
 ### 로그인/회원가입
-![KakaoTalk_20240502_144333188](https://github.com/2024-SMHRD-IS-BigData-1/TravelBuddy2/assets/160591985/92f34a74-bcd3-4600-bc91-c150cc21101d)
 
 ### 게시글 작성(구글맵) / 댓글 작성
 
