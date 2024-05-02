@@ -89,11 +89,16 @@
 
 ### 로그인/회원가입
 
-### 게시글 작성(구글맵) / 댓글 작성
+### 버디찾기
+
+### 커뮤니티
+![커뮤니티](https://github.com/2024-SMHRD-IS-BigData-1/TravelBuddy2/assets/160591985/d2e87dc9-07af-47c6-9ceb-a7fc6778753d)
 
 ### 프로필 
+![프로필](https://github.com/2024-SMHRD-IS-BigData-1/TravelBuddy2/assets/160591985/77171ffa-420b-4b27-9646-19642218a8fd)
 
 ### 팔로우
+![팔로우](https://github.com/2024-SMHRD-IS-BigData-1/TravelBuddy2/assets/160591985/e61db84a-4744-4b82-ac6f-1baa924bfad6)
 
 ## 👨‍👩‍👦‍👦 팀원 역할
 <table>
