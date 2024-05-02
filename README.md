@@ -85,6 +85,7 @@
 ## 🖥 화면 구성
 
 ### 메인페이지
+![image](https://github.com/2024-SMHRD-IS-BigData-1/TravelBuddy2/assets/160591985/55dfccbf-38fd-48d2-a704-ad92a23862dd)
 
 ### 로그인/회원가입
 
