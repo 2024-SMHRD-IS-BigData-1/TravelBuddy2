@@ -113,7 +113,7 @@
     <td align="center"><strong>유현수</strong></td>
   </tr>
   <tr>
-    <td align="center"><b>Frontend</b></td>
+    <td align="center"><b>Backend</b></td>
     <td align="center"><b>Backend</b></td>
     <td align="center"><b>Frontend</b></td>
     <td align="center"><b>Backend</b></td>
