@@ -104,6 +104,7 @@
     <td align="center"><b>Frontend</b></td>
     <td align="center"><b>Backend</b></td>
     <td align="center"><b>Backend</b></td>
+    <td align="center"><b>Frontend</b></td>
   </tr>
   <tr>
     <td align="center"><a href="https://github.com/jojo12425" target='_blank'>github</a></td>
