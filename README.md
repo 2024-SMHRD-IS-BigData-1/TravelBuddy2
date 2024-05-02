@@ -1,7 +1,5 @@
 # TravelBuddy2(팀명: 여행곰)
 
-
-
 ## 👀 서비스 소개
 * 서비스명: 여행 동행자를 구하는 사람을 위한 sns
 * 서비스설명: 
@@ -13,7 +11,7 @@
 
 ## ⭐ 주요 기능
 * 구글지도로 핑을 찍어 장소를 찍을수 있는 게시글 작성 기능
-* 
+* 기능2
 * 기능3
 * 기능4
 * 기능5
@@ -28,25 +26,25 @@
     <tr>
         <td>사용언어</td>
         <td>
-            <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=HTML5&logoColor=white"/>
-            <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=CSS3&logoColor=white"/>
-            <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=JavaScript&logoColor=black"/>
-            [![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+            <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"/>
+            <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"/>
+            <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"/>
+            <a href="https://www.python.org/"><img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"/></a>
         </td>
     </tr>
     <tr>
         <td>라이브러리</td>
         <td>
-            [![Google](https://img.shields.io/badge/Google-4285F4?style=for-the-badge&logo=google&logoColor=white)](https://www.google.com/)
-            [![CoolSMS](https://img.shields.io/badge/CoolSMS-00C4B4?style=for-the-badge&logo=coolsms&logoColor=white)](https://www.coolsms.co.kr/)
+            <a href="https://www.google.com/"><img src="https://img.shields.io/badge/Google-4285F4?style=for-the-badge&logo=google&logoColor=white"/></a>
+            <a href="https://www.coolsms.co.kr/"><img src="https://img.shields.io/badge/CoolSMS-00C4B4?style=for-the-badge&logo=coolsms&logoColor=white"/></a>
         </td>
     </tr>
     <tr>
         <td>개발도구</td>
         <td>
-            <img src="https://img.shields.io/badge/Eclipse-2C2255?style=for-the-badge&logo=Eclipse&logoColor=white"/>
-            [![Jupyter](https://img.shields.io/badge/Jupyter-F37626?style=for-the-badge&logo=jupyter&logoColor=white)](https://jupyter.org/)
-            <img src="https://img.shields.io/badge/VSCode-007ACC?style=for-the-badge&logo=VisualStudioCode&logoColor=white"/>
+            <img src="https://img.shields.io/badge/Eclipse-2C2255?style=for-the-badge&logo=eclipseide&logoColor=white"/>
+            <a href="https://jupyter.org/"><img src="https://img.shields.io/badge/Jupyter-F37626?style=for-the-badge&logo=jupyter&logoColor=white"/></a>
+            <img src="https://img.shields.io/badge/VSCode-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=white"/>
         </td>
     </tr>
     <tr>
@@ -69,38 +67,21 @@
     </tr>
 </table>
 
-
-<br>
-
 ## ⚙ 시스템 아키텍처(구조) 예시 
-
-<br>
 
 ## 📌 SW유스케이스
 
-<br>
-
 ## 📌 서비스 흐름도
-
-<br>
 
 ## 📌 ER다이어그램
 
-<br>
-
 ## 🖥 화면 구성
 
-### 로그인/회원가입/회원괸리/회원수정/회원탈퇴
-
-<br>
+### 로그인/회원가입/회원관리/회원수정/회원탈퇴
 
 ### 옷 정보/코디 추천(날씨, 팁, 오늘의 코디, 참고할 수 있는 코디)
 
-<br>
-
 ### 일정/고객센터
-
-<br>
 
 ## 👨‍👩‍👦‍👦 팀원 역할
 <table>
@@ -123,7 +104,6 @@
     <td align="center"><b>Frontend</b></td>
     <td align="center"><b>Backend</b></td>
     <td align="center"><b>Backend</b></td>
-    
   </tr>
   <tr>
     <td align="center"><a href="https://github.com/jojo12425" target='_blank'>github</a></td>
