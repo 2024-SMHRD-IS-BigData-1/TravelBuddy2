@@ -75,7 +75,8 @@
 ## ⚙ 시스템 아키텍처(구조) 예시 
 
 ## 📌 SW유스케이스
-![image](https://github.com/2024-SMHRD-IS-BigData-1/TravelBuddy2/assets/160591985/04e7d4e4-bd9f-43ce-b00c-529fc9ffd74b)
+![image](https://github.com/2024-SMHRD-IS-BigData-1/TravelBuddy2/assets/160591985/80edee07-1c22-4095-ac9a-d1fa9511fee7)
+
 
 ## 📌 서비스 흐름도
 ![image](https://github.com/2024-SMHRD-IS-BigData-1/TravelBuddy2/assets/160591985/b5a2bbd6-8147-4107-8578-3d32e11c6329)
